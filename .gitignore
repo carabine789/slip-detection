@@ -10,6 +10,9 @@ __pycache__/
 /slip_detection/data/
 /slip_detection/logs_archive/
 
+# Internal progress report, not for the public repo
+/slip_detection/docs/progress_report_20260718.md
+
 # IDE
 .idea/
 
