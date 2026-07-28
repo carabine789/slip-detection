@@ -1,0 +1,652 @@
+[INFO] device=cuda
+[INFO] loading train dataset: data/raw_cnn/train_windows_diag013_train_val011.csv
+[INFO] train samples=600 window=8 input_mode=refdiff norm=batch size=320x180
+[INFO] loading val dataset: data/raw_cnn/val_windows_diag013_train_val011.csv
+[INFO] val samples=116
+[INFO] epoch 1/30 started
+  [train] batch 1/19 loss=0.6959 avg=0.6959 speed=0.28 batch/s
+  [train] batch 19/19 loss=0.3009 avg=0.5410 speed=1.30 batch/s
+[BEST] epoch=1 smoothed_balanced_acc=0.4130 saved
+[Epoch 001] loss=0.5410 window=8 val_acc=0.4914 balanced_acc=0.4130 smoothed_balanced_acc=0.4130 f1=0.0000 precision=0.0000 recall=0.0000 pred_pos=0.1034 mean_p=0.4976 mean_p_pos=0.4966 mean_p_neg=0.4982 tp=0 tn=57 fp=12 fn=47 lr=1.00e-03 time=17.8s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.0000 err=28 tp=0 tn=0 fp=0 fn=28 pred_pos=0.0000
+    translational sliding: n=19 acc=0.0000 err=19 tp=0 tn=0 fp=0 fn=19 pred_pos=0.0000
+    continuous variable-force pressing: n=32 acc=0.7812 err=7 tp=0 tn=25 fp=7 fn=0 pred_pos=0.2188
+    diagonal constant-force pressing: n=21 acc=0.8571 err=3 tp=0 tn=18 fp=3 fn=0 pred_pos=0.1429
+    constant-force pressing: n=16 acc=0.8750 err=2 tp=0 tn=14 fp=2 fn=0 pred_pos=0.1250
+  [val/motion_type]
+    rotation: n=28 acc=0.0000 err=28 tp=0 tn=0 fp=0 fn=28 pred_pos=0.0000
+    translation: n=19 acc=0.0000 err=19 tp=0 tn=0 fp=0 fn=19 pred_pos=0.0000
+    non-slip: n=69 acc=0.8261 err=12 tp=0 tn=57 fp=12 fn=0 pred_pos=0.1739
+  [val/session]
+    session_011: n=40 acc=0.4500 err=22 tp=0 tn=18 fp=3 fn=19 pred_pos=0.0750
+    session_018: n=25 acc=0.4400 err=14 tp=0 tn=11 fp=5 fn=9 pred_pos=0.2000
+    session_003: n=26 acc=0.5385 err=12 tp=0 tn=14 fp=2 fn=10 pred_pos=0.0769
+    session_008: n=25 acc=0.5600 err=11 tp=0 tn=14 fp=2 fn=9 pred_pos=0.0800
+  [val/material]
+    plastic: n=116 acc=0.4914 err=59 tp=0 tn=57 fp=12 fn=47 pred_pos=0.1034
+[INFO] epoch 2/30 started
+  [train] batch 1/19 loss=0.3342 avg=0.3342 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.4709 avg=0.3960 speed=1.37 batch/s
+[BEST] epoch=2 smoothed_balanced_acc=0.4565 saved
+[Epoch 002] loss=0.3960 window=8 val_acc=0.5948 balanced_acc=0.5000 smoothed_balanced_acc=0.4565 f1=0.0000 precision=0.0000 recall=0.0000 pred_pos=0.0000 mean_p=0.1980 mean_p_pos=0.2381 mean_p_neg=0.1706 tp=0 tn=69 fp=0 fn=47 lr=1.00e-03 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.0000 err=28 tp=0 tn=0 fp=0 fn=28 pred_pos=0.0000
+    translational sliding: n=19 acc=0.0000 err=19 tp=0 tn=0 fp=0 fn=19 pred_pos=0.0000
+    continuous variable-force pressing: n=32 acc=1.0000 err=0 tp=0 tn=32 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.0000 err=28 tp=0 tn=0 fp=0 fn=28 pred_pos=0.0000
+    translation: n=19 acc=0.0000 err=19 tp=0 tn=0 fp=0 fn=19 pred_pos=0.0000
+    non-slip: n=69 acc=1.0000 err=0 tp=0 tn=69 fp=0 fn=0 pred_pos=0.0000
+  [val/session]
+    session_011: n=40 acc=0.5250 err=19 tp=0 tn=21 fp=0 fn=19 pred_pos=0.0000
+    session_003: n=26 acc=0.6154 err=10 tp=0 tn=16 fp=0 fn=10 pred_pos=0.0000
+    session_008: n=25 acc=0.6400 err=9 tp=0 tn=16 fp=0 fn=9 pred_pos=0.0000
+    session_018: n=25 acc=0.6400 err=9 tp=0 tn=16 fp=0 fn=9 pred_pos=0.0000
+  [val/material]
+    plastic: n=116 acc=0.5948 err=47 tp=0 tn=69 fp=0 fn=47 pred_pos=0.0000
+[INFO] epoch 3/30 started
+  [train] batch 1/19 loss=0.3487 avg=0.3487 speed=0.33 batch/s
+  [train] batch 19/19 loss=0.7850 avg=0.3923 speed=1.35 batch/s
+[BEST] epoch=3 smoothed_balanced_acc=0.5100 saved
+[Epoch 003] loss=0.3923 window=8 val_acc=0.6897 balanced_acc=0.6170 smoothed_balanced_acc=0.5100 f1=0.3793 precision=1.0000 recall=0.2340 pred_pos=0.0948 mean_p=0.1652 mean_p_pos=0.3235 mean_p_neg=0.0574 tp=11 tn=69 fp=0 fn=36 lr=1.00e-03 time=17.4s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.0714 err=26 tp=2 tn=0 fp=0 fn=26 pred_pos=0.0714
+    translational sliding: n=19 acc=0.4737 err=10 tp=9 tn=0 fp=0 fn=10 pred_pos=0.4737
+    continuous variable-force pressing: n=32 acc=1.0000 err=0 tp=0 tn=32 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.0714 err=26 tp=2 tn=0 fp=0 fn=26 pred_pos=0.0714
+    translation: n=19 acc=0.4737 err=10 tp=9 tn=0 fp=0 fn=10 pred_pos=0.4737
+    non-slip: n=69 acc=1.0000 err=0 tp=0 tn=69 fp=0 fn=0 pred_pos=0.0000
+  [val/session]
+    session_011: n=40 acc=0.5250 err=19 tp=0 tn=21 fp=0 fn=19 pred_pos=0.0000
+    session_018: n=25 acc=0.7200 err=7 tp=2 tn=16 fp=0 fn=7 pred_pos=0.0800
+    session_008: n=25 acc=0.7600 err=6 tp=3 tn=16 fp=0 fn=6 pred_pos=0.1200
+    session_003: n=26 acc=0.8462 err=4 tp=6 tn=16 fp=0 fn=4 pred_pos=0.2308
+  [val/material]
+    plastic: n=116 acc=0.6897 err=36 tp=11 tn=69 fp=0 fn=36 pred_pos=0.0948
+[INFO] epoch 4/30 started
+  [train] batch 1/19 loss=0.2788 avg=0.2788 speed=0.33 batch/s
+  [train] batch 19/19 loss=0.1804 avg=0.2772 speed=1.36 batch/s
+[BEST] epoch=4 smoothed_balanced_acc=0.5993 saved
+[Epoch 004] loss=0.2772 window=8 val_acc=0.7414 balanced_acc=0.6809 smoothed_balanced_acc=0.5993 f1=0.5312 precision=1.0000 recall=0.3617 pred_pos=0.1466 mean_p=0.1822 mean_p_pos=0.3994 mean_p_neg=0.0342 tp=17 tn=69 fp=0 fn=30 lr=1.00e-03 time=17.1s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translational sliding: n=19 acc=0.6842 err=6 tp=13 tn=0 fp=0 fn=6 pred_pos=0.6842
+    continuous variable-force pressing: n=32 acc=1.0000 err=0 tp=0 tn=32 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translation: n=19 acc=0.6842 err=6 tp=13 tn=0 fp=0 fn=6 pred_pos=0.6842
+    non-slip: n=69 acc=1.0000 err=0 tp=0 tn=69 fp=0 fn=0 pred_pos=0.0000
+  [val/session]
+    session_011: n=40 acc=0.5250 err=19 tp=0 tn=21 fp=0 fn=19 pred_pos=0.0000
+    session_018: n=25 acc=0.8000 err=5 tp=4 tn=16 fp=0 fn=5 pred_pos=0.1600
+    session_003: n=26 acc=0.8846 err=3 tp=7 tn=16 fp=0 fn=3 pred_pos=0.2692
+    session_008: n=25 acc=0.8800 err=3 tp=6 tn=16 fp=0 fn=3 pred_pos=0.2400
+  [val/material]
+    plastic: n=116 acc=0.7414 err=30 tp=17 tn=69 fp=0 fn=30 pred_pos=0.1466
+[INFO] epoch 5/30 started
+  [train] batch 1/19 loss=0.3753 avg=0.3753 speed=0.36 batch/s
+  [train] batch 19/19 loss=0.0671 avg=0.2934 speed=1.36 batch/s
+[BEST] epoch=5 smoothed_balanced_acc=0.6811 saved
+[Epoch 005] loss=0.2934 window=8 val_acc=0.7414 balanced_acc=0.7453 smoothed_balanced_acc=0.6811 f1=0.7059 precision=0.6545 recall=0.7660 pred_pos=0.4741 mean_p=0.4352 mean_p_pos=0.7519 mean_p_neg=0.2195 tp=36 tn=50 fp=19 fn=11 lr=1.00e-03 time=17.0s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.2500 err=12 tp=0 tn=4 fp=12 fn=0 pred_pos=0.7500
+    rotational sliding: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    continuous variable-force pressing: n=32 acc=0.7812 err=7 tp=0 tn=25 fp=7 fn=0 pred_pos=0.2188
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.7246 err=19 tp=0 tn=50 fp=19 fn=0 pred_pos=0.2754
+    rotation: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4800 err=13 tp=8 tn=4 fp=12 fn=1 pred_pos=0.8000
+    session_011: n=40 acc=0.7750 err=9 tp=10 tn=21 fp=0 fn=9 pred_pos=0.2500
+    session_018: n=25 acc=0.8000 err=5 tp=9 tn=11 fp=5 fn=0 pred_pos=0.5600
+    session_003: n=26 acc=0.8846 err=3 tp=9 tn=14 fp=2 fn=1 pred_pos=0.4231
+  [val/material]
+    plastic: n=116 acc=0.7414 err=30 tp=36 tn=50 fp=19 fn=11 pred_pos=0.4741
+[INFO] epoch 6/30 started
+  [train] batch 1/19 loss=0.1671 avg=0.1671 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0897 avg=0.2734 speed=1.36 batch/s
+[BEST] epoch=6 smoothed_balanced_acc=0.7070 saved
+[Epoch 006] loss=0.2734 window=8 val_acc=0.7500 balanced_acc=0.6949 smoothed_balanced_acc=0.7070 f1=0.5672 precision=0.9500 recall=0.4043 pred_pos=0.1724 mean_p=0.2058 mean_p_pos=0.4182 mean_p_neg=0.0611 tp=19 tn=68 fp=1 fn=28 lr=1.00e-03 time=17.4s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translational sliding: n=19 acc=0.7895 err=4 tp=15 tn=0 fp=0 fn=4 pred_pos=0.7895
+    continuous variable-force pressing: n=32 acc=0.9688 err=1 tp=0 tn=31 fp=1 fn=0 pred_pos=0.0312
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translation: n=19 acc=0.7895 err=4 tp=15 tn=0 fp=0 fn=4 pred_pos=0.7895
+    non-slip: n=69 acc=0.9855 err=1 tp=0 tn=68 fp=1 fn=0 pred_pos=0.0145
+  [val/session]
+    session_011: n=40 acc=0.5250 err=19 tp=0 tn=21 fp=0 fn=19 pred_pos=0.0000
+    session_018: n=25 acc=0.8000 err=5 tp=4 tn=16 fp=0 fn=5 pred_pos=0.1600
+    session_003: n=26 acc=0.8846 err=3 tp=8 tn=15 fp=1 fn=2 pred_pos=0.3462
+    session_008: n=25 acc=0.9200 err=2 tp=7 tn=16 fp=0 fn=2 pred_pos=0.2800
+  [val/material]
+    plastic: n=116 acc=0.7500 err=29 tp=19 tn=68 fp=1 fn=28 pred_pos=0.1724
+[INFO] epoch 7/30 started
+  [train] batch 1/19 loss=0.2278 avg=0.2278 speed=0.37 batch/s
+  [train] batch 19/19 loss=0.3938 avg=0.2431 speed=1.38 batch/s
+[BEST] epoch=7 smoothed_balanced_acc=0.7385 saved
+[Epoch 007] loss=0.2431 window=8 val_acc=0.7931 balanced_acc=0.7752 smoothed_balanced_acc=0.7385 f1=0.7273 precision=0.7805 recall=0.6809 pred_pos=0.3534 mean_p=0.3773 mean_p_pos=0.6664 mean_p_neg=0.1805 tp=32 tn=60 fp=9 fn=15 lr=1.00e-03 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    continuous variable-force pressing: n=32 acc=0.7500 err=8 tp=0 tn=24 fp=8 fn=0 pred_pos=0.2500
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    non-slip: n=69 acc=0.8696 err=9 tp=0 tn=60 fp=9 fn=0 pred_pos=0.1304
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_011: n=40 acc=0.6750 err=13 tp=6 tn=21 fp=0 fn=13 pred_pos=0.1500
+    session_018: n=25 acc=0.7200 err=7 tp=9 tn=9 fp=7 fn=0 pred_pos=0.6400
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.7931 err=24 tp=32 tn=60 fp=9 fn=15 pred_pos=0.3534
+[INFO] epoch 8/30 started
+  [train] batch 1/19 loss=0.2346 avg=0.2346 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.0326 avg=0.2074 speed=1.37 batch/s
+[Epoch 008] loss=0.2074 window=8 val_acc=0.6983 balanced_acc=0.6989 smoothed_balanced_acc=0.7230 f1=0.6535 precision=0.6111 recall=0.7021 pred_pos=0.4655 mean_p=0.4662 mean_p_pos=0.7225 mean_p_neg=0.2916 tp=33 tn=48 fp=21 fn=14 lr=1.00e-03 time=17.2s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.5714 err=12 tp=16 tn=0 fp=0 fn=12 pred_pos=0.5714
+    constant-force pressing: n=16 acc=0.2500 err=12 tp=0 tn=4 fp=12 fn=0 pred_pos=0.7500
+    continuous variable-force pressing: n=32 acc=0.7188 err=9 tp=0 tn=23 fp=9 fn=0 pred_pos=0.2812
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.6957 err=21 tp=0 tn=48 fp=21 fn=0 pred_pos=0.3043
+    rotation: n=28 acc=0.5714 err=12 tp=16 tn=0 fp=0 fn=12 pred_pos=0.5714
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4800 err=13 tp=8 tn=4 fp=12 fn=1 pred_pos=0.8000
+    session_011: n=40 acc=0.7000 err=12 tp=7 tn=21 fp=0 fn=12 pred_pos=0.1750
+    session_018: n=25 acc=0.6800 err=8 tp=9 tn=8 fp=8 fn=0 pred_pos=0.6800
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+  [val/material]
+    plastic: n=116 acc=0.6983 err=35 tp=33 tn=48 fp=21 fn=14 pred_pos=0.4655
+[INFO] epoch 9/30 started
+  [train] batch 1/19 loss=0.1708 avg=0.1708 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.2162 avg=0.1966 speed=1.38 batch/s
+[Epoch 009] loss=0.1966 window=8 val_acc=0.7155 balanced_acc=0.7202 smoothed_balanced_acc=0.7314 f1=0.6796 precision=0.6250 recall=0.7447 pred_pos=0.4828 mean_p=0.4724 mean_p_pos=0.7298 mean_p_neg=0.2970 tp=35 tn=48 fp=21 fn=12 lr=1.00e-03 time=17.1s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.2500 err=12 tp=0 tn=4 fp=12 fn=0 pred_pos=0.7500
+    rotational sliding: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    continuous variable-force pressing: n=32 acc=0.7188 err=9 tp=0 tn=23 fp=9 fn=0 pred_pos=0.2812
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.6957 err=21 tp=0 tn=48 fp=21 fn=0 pred_pos=0.3043
+    rotation: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4800 err=13 tp=8 tn=4 fp=12 fn=1 pred_pos=0.8000
+    session_011: n=40 acc=0.7500 err=10 tp=9 tn=21 fp=0 fn=10 pred_pos=0.2250
+    session_018: n=25 acc=0.6800 err=8 tp=9 tn=8 fp=8 fn=0 pred_pos=0.6800
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+  [val/material]
+    plastic: n=116 acc=0.7155 err=33 tp=35 tn=48 fp=21 fn=12 pred_pos=0.4828
+[INFO] epoch 10/30 started
+  [train] batch 1/19 loss=0.0945 avg=0.0945 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.4397 avg=0.2385 speed=1.37 batch/s
+[Epoch 010] loss=0.2385 window=8 val_acc=0.7241 balanced_acc=0.7308 smoothed_balanced_acc=0.7166 f1=0.6923 precision=0.6316 recall=0.7660 pred_pos=0.4914 mean_p=0.4939 mean_p_pos=0.7691 mean_p_neg=0.3065 tp=36 tn=48 fp=21 fn=11 lr=1.00e-03 time=17.1s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.1875 err=13 tp=0 tn=3 fp=13 fn=0 pred_pos=0.8125
+    continuous variable-force pressing: n=32 acc=0.7500 err=8 tp=0 tn=24 fp=8 fn=0 pred_pos=0.2500
+    rotational sliding: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    translational sliding: n=19 acc=0.8421 err=3 tp=16 tn=0 fp=0 fn=3 pred_pos=0.8421
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.6957 err=21 tp=0 tn=48 fp=21 fn=0 pred_pos=0.3043
+    rotation: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    translation: n=19 acc=0.8421 err=3 tp=16 tn=0 fp=0 fn=3 pred_pos=0.8421
+  [val/session]
+    session_008: n=25 acc=0.4400 err=14 tp=8 tn=3 fp=13 fn=1 pred_pos=0.8400
+    session_011: n=40 acc=0.8000 err=8 tp=11 tn=21 fp=0 fn=8 pred_pos=0.2750
+    session_018: n=25 acc=0.7600 err=6 tp=9 tn=10 fp=6 fn=0 pred_pos=0.6000
+    session_003: n=26 acc=0.8462 err=4 tp=8 tn=14 fp=2 fn=2 pred_pos=0.3846
+  [val/material]
+    plastic: n=116 acc=0.7241 err=32 tp=36 tn=48 fp=21 fn=11 pred_pos=0.4914
+[INFO] epoch 11/30 started
+  [train] batch 1/19 loss=0.1532 avg=0.1532 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.2832 avg=0.2627 speed=1.36 batch/s
+[BEST] epoch=11 smoothed_balanced_acc=0.7496 saved
+[Epoch 011] loss=0.2627 window=8 val_acc=0.8362 balanced_acc=0.7979 smoothed_balanced_acc=0.7496 f1=0.7467 precision=1.0000 recall=0.5957 pred_pos=0.2414 mean_p=0.2560 mean_p_pos=0.5465 mean_p_neg=0.0582 tp=28 tn=69 fp=0 fn=19 lr=1.00e-03 time=17.3s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.4286 err=16 tp=12 tn=0 fp=0 fn=16 pred_pos=0.4286
+    translational sliding: n=19 acc=0.8421 err=3 tp=16 tn=0 fp=0 fn=3 pred_pos=0.8421
+    continuous variable-force pressing: n=32 acc=1.0000 err=0 tp=0 tn=32 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.4286 err=16 tp=12 tn=0 fp=0 fn=16 pred_pos=0.4286
+    translation: n=19 acc=0.8421 err=3 tp=16 tn=0 fp=0 fn=3 pred_pos=0.8421
+    non-slip: n=69 acc=1.0000 err=0 tp=0 tn=69 fp=0 fn=0 pred_pos=0.0000
+  [val/session]
+    session_011: n=40 acc=0.6500 err=14 tp=5 tn=21 fp=0 fn=14 pred_pos=0.1250
+    session_003: n=26 acc=0.9231 err=2 tp=8 tn=16 fp=0 fn=2 pred_pos=0.3077
+    session_018: n=25 acc=0.9200 err=2 tp=7 tn=16 fp=0 fn=2 pred_pos=0.2800
+    session_008: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+  [val/material]
+    plastic: n=116 acc=0.8362 err=19 tp=28 tn=69 fp=0 fn=19 pred_pos=0.2414
+[INFO] epoch 12/30 started
+  [train] batch 1/19 loss=0.1500 avg=0.1500 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0941 avg=0.2293 speed=1.40 batch/s
+[BEST] epoch=12 smoothed_balanced_acc=0.7659 saved
+[Epoch 012] loss=0.2293 window=8 val_acc=0.8017 balanced_acc=0.7689 smoothed_balanced_acc=0.7659 f1=0.7089 precision=0.8750 recall=0.5957 pred_pos=0.2759 mean_p=0.3279 mean_p_pos=0.5930 mean_p_neg=0.1472 tp=28 tn=65 fp=4 fn=19 lr=1.00e-03 time=16.9s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.3929 err=17 tp=11 tn=0 fp=0 fn=17 pred_pos=0.3929
+    continuous variable-force pressing: n=32 acc=0.9062 err=3 tp=0 tn=29 fp=3 fn=0 pred_pos=0.0938
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.3929 err=17 tp=11 tn=0 fp=0 fn=17 pred_pos=0.3929
+    non-slip: n=69 acc=0.9420 err=4 tp=0 tn=65 fp=4 fn=0 pred_pos=0.0580
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_011: n=40 acc=0.6000 err=16 tp=3 tn=21 fp=0 fn=16 pred_pos=0.0750
+    session_018: n=25 acc=0.8800 err=3 tp=8 tn=14 fp=2 fn=1 pred_pos=0.4000
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8017 err=23 tp=28 tn=65 fp=4 fn=19 pred_pos=0.2759
+[INFO] epoch 13/30 started
+  [train] batch 1/19 loss=0.1894 avg=0.1894 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.1788 avg=0.1546 speed=1.37 batch/s
+[BEST] epoch=13 smoothed_balanced_acc=0.7731 saved
+[Epoch 013] loss=0.1546 window=8 val_acc=0.7500 balanced_acc=0.7525 smoothed_balanced_acc=0.7731 f1=0.7129 precision=0.6667 recall=0.7660 pred_pos=0.4655 mean_p=0.4156 mean_p_pos=0.7344 mean_p_neg=0.1984 tp=36 tn=51 fp=18 fn=11 lr=1.00e-03 time=17.2s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.2500 err=12 tp=0 tn=4 fp=12 fn=0 pred_pos=0.7500
+    rotational sliding: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    continuous variable-force pressing: n=32 acc=0.8125 err=6 tp=0 tn=26 fp=6 fn=0 pred_pos=0.1875
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.7391 err=18 tp=0 tn=51 fp=18 fn=0 pred_pos=0.2609
+    rotation: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4800 err=13 tp=8 tn=4 fp=12 fn=1 pred_pos=0.8000
+    session_011: n=40 acc=0.7750 err=9 tp=10 tn=21 fp=0 fn=9 pred_pos=0.2500
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_003: n=26 acc=0.8846 err=3 tp=9 tn=14 fp=2 fn=1 pred_pos=0.4231
+  [val/material]
+    plastic: n=116 acc=0.7500 err=29 tp=36 tn=51 fp=18 fn=11 pred_pos=0.4655
+[INFO] epoch 14/30 started
+  [train] batch 1/19 loss=0.6302 avg=0.6302 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.0763 avg=0.2335 speed=1.38 batch/s
+[Epoch 014] loss=0.2335 window=8 val_acc=0.7759 balanced_acc=0.7234 smoothed_balanced_acc=0.7483 f1=0.6176 precision=1.0000 recall=0.4468 pred_pos=0.1810 mean_p=0.1986 mean_p_pos=0.4430 mean_p_neg=0.0321 tp=21 tn=69 fp=0 fn=26 lr=1.00e-03 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    continuous variable-force pressing: n=32 acc=1.0000 err=0 tp=0 tn=32 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.1429 err=24 tp=4 tn=0 fp=0 fn=24 pred_pos=0.1429
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    non-slip: n=69 acc=1.0000 err=0 tp=0 tn=69 fp=0 fn=0 pred_pos=0.0000
+  [val/session]
+    session_011: n=40 acc=0.5250 err=19 tp=0 tn=21 fp=0 fn=19 pred_pos=0.0000
+    session_018: n=25 acc=0.8000 err=5 tp=4 tn=16 fp=0 fn=5 pred_pos=0.1600
+    session_003: n=26 acc=0.9615 err=1 tp=9 tn=16 fp=0 fn=1 pred_pos=0.3462
+    session_008: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+  [val/material]
+    plastic: n=116 acc=0.7759 err=26 tp=21 tn=69 fp=0 fn=26 pred_pos=0.1810
+[INFO] epoch 15/30 started
+  [train] batch 1/19 loss=0.1929 avg=0.1929 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.1329 avg=0.1749 speed=1.36 batch/s
+[Epoch 015] loss=0.1749 window=8 val_acc=0.8190 balanced_acc=0.7902 smoothed_balanced_acc=0.7554 f1=0.7407 precision=0.8824 recall=0.6383 pred_pos=0.2931 mean_p=0.3077 mean_p_pos=0.5898 mean_p_neg=0.1155 tp=30 tn=65 fp=4 fn=17 lr=1.00e-03 time=17.2s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.4643 err=15 tp=13 tn=0 fp=0 fn=15 pred_pos=0.4643
+    continuous variable-force pressing: n=32 acc=0.9062 err=3 tp=0 tn=29 fp=3 fn=0 pred_pos=0.0938
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.4643 err=15 tp=13 tn=0 fp=0 fn=15 pred_pos=0.4643
+    non-slip: n=69 acc=0.9420 err=4 tp=0 tn=65 fp=4 fn=0 pred_pos=0.0580
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_011: n=40 acc=0.6500 err=14 tp=5 tn=21 fp=0 fn=14 pred_pos=0.1250
+    session_018: n=25 acc=0.8800 err=3 tp=8 tn=14 fp=2 fn=1 pred_pos=0.4000
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8190 err=21 tp=30 tn=65 fp=4 fn=17 pred_pos=0.2931
+[INFO] epoch 16/30 started
+  [train] batch 1/19 loss=0.0729 avg=0.0729 speed=0.37 batch/s
+  [train] batch 19/19 loss=0.0754 avg=0.1426 speed=1.37 batch/s
+[Epoch 016] loss=0.1426 window=8 val_acc=0.7069 balanced_acc=0.7061 smoothed_balanced_acc=0.7399 f1=0.6600 precision=0.6226 recall=0.7021 pred_pos=0.4569 mean_p=0.4446 mean_p_pos=0.6798 mean_p_neg=0.2845 tp=33 tn=49 fp=20 fn=14 lr=1.00e-03 time=17.3s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.5714 err=12 tp=16 tn=0 fp=0 fn=12 pred_pos=0.5714
+    constant-force pressing: n=16 acc=0.2500 err=12 tp=0 tn=4 fp=12 fn=0 pred_pos=0.7500
+    continuous variable-force pressing: n=32 acc=0.7500 err=8 tp=0 tn=24 fp=8 fn=0 pred_pos=0.2500
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.7101 err=20 tp=0 tn=49 fp=20 fn=0 pred_pos=0.2899
+    rotation: n=28 acc=0.5714 err=12 tp=16 tn=0 fp=0 fn=12 pred_pos=0.5714
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4800 err=13 tp=8 tn=4 fp=12 fn=1 pred_pos=0.8000
+    session_011: n=40 acc=0.7000 err=12 tp=7 tn=21 fp=0 fn=12 pred_pos=0.1750
+    session_018: n=25 acc=0.7600 err=6 tp=9 tn=10 fp=6 fn=0 pred_pos=0.6000
+    session_003: n=26 acc=0.8846 err=3 tp=9 tn=14 fp=2 fn=1 pred_pos=0.4231
+  [val/material]
+    plastic: n=116 acc=0.7069 err=34 tp=33 tn=49 fp=20 fn=14 pred_pos=0.4569
+[INFO] epoch 17/30 started
+  [train] batch 1/19 loss=0.0739 avg=0.0739 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.1488 avg=0.1677 speed=1.36 batch/s
+[Epoch 017] loss=0.1677 window=8 val_acc=0.7328 balanced_acc=0.7516 smoothed_balanced_acc=0.7493 f1=0.7207 precision=0.6250 recall=0.8511 pred_pos=0.5517 mean_p=0.5550 mean_p_pos=0.8474 mean_p_neg=0.3558 tp=40 tn=45 fp=24 fn=7 lr=1.00e-03 time=17.3s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.1875 err=13 tp=0 tn=3 fp=13 fn=0 pred_pos=0.8125
+    continuous variable-force pressing: n=32 acc=0.6562 err=11 tp=0 tn=21 fp=11 fn=0 pred_pos=0.3438
+    rotational sliding: n=28 acc=0.8214 err=5 tp=23 tn=0 fp=0 fn=5 pred_pos=0.8214
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.6522 err=24 tp=0 tn=45 fp=24 fn=0 pred_pos=0.3478
+    rotation: n=28 acc=0.8214 err=5 tp=23 tn=0 fp=0 fn=5 pred_pos=0.8214
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_008: n=25 acc=0.4400 err=14 tp=8 tn=3 fp=13 fn=1 pred_pos=0.8400
+    session_018: n=25 acc=0.6800 err=8 tp=9 tn=8 fp=8 fn=0 pred_pos=0.6800
+    session_011: n=40 acc=0.8750 err=5 tp=14 tn=21 fp=0 fn=5 pred_pos=0.3500
+    session_003: n=26 acc=0.8462 err=4 tp=9 tn=13 fp=3 fn=1 pred_pos=0.4615
+  [val/material]
+    plastic: n=116 acc=0.7328 err=31 tp=40 tn=45 fp=24 fn=7 pred_pos=0.5517
+[INFO] epoch 18/30 started
+  [train] batch 1/19 loss=0.1131 avg=0.1131 speed=0.36 batch/s
+  [train] batch 19/19 loss=0.2121 avg=0.1190 speed=1.39 batch/s
+[Epoch 018] loss=0.1190 window=8 val_acc=0.8190 balanced_acc=0.7969 smoothed_balanced_acc=0.7516 f1=0.7529 precision=0.8421 recall=0.6809 pred_pos=0.3276 mean_p=0.3467 mean_p_pos=0.6784 mean_p_neg=0.1208 tp=32 tn=63 fp=6 fn=15 lr=5.00e-04 time=16.9s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    continuous variable-force pressing: n=32 acc=0.8438 err=5 tp=0 tn=27 fp=5 fn=0 pred_pos=0.1562
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    non-slip: n=69 acc=0.9130 err=6 tp=0 tn=63 fp=6 fn=0 pred_pos=0.0870
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_011: n=40 acc=0.6750 err=13 tp=6 tn=21 fp=0 fn=13 pred_pos=0.1500
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8190 err=21 tp=32 tn=63 fp=6 fn=15 pred_pos=0.3276
+[INFO] epoch 19/30 started
+  [train] batch 1/19 loss=0.0308 avg=0.0308 speed=0.33 batch/s
+  [train] batch 19/19 loss=0.0307 avg=0.0953 speed=1.38 batch/s
+[BEST] epoch=19 smoothed_balanced_acc=0.7854 saved
+[Epoch 019] loss=0.0953 window=8 val_acc=0.8276 balanced_acc=0.8076 smoothed_balanced_acc=0.7854 f1=0.7674 precision=0.8462 recall=0.7021 pred_pos=0.3362 mean_p=0.3633 mean_p_pos=0.7108 mean_p_neg=0.1266 tp=33 tn=63 fp=6 fn=14 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    continuous variable-force pressing: n=32 acc=0.8438 err=5 tp=0 tn=27 fp=5 fn=0 pred_pos=0.1562
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.5357 err=13 tp=15 tn=0 fp=0 fn=13 pred_pos=0.5357
+    non-slip: n=69 acc=0.9130 err=6 tp=0 tn=63 fp=6 fn=0 pred_pos=0.0870
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.6750 err=13 tp=6 tn=21 fp=0 fn=13 pred_pos=0.1500
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+    session_003: n=26 acc=0.9615 err=1 tp=10 tn=15 fp=1 fn=0 pred_pos=0.4231
+  [val/material]
+    plastic: n=116 acc=0.8276 err=20 tp=33 tn=63 fp=6 fn=14 pred_pos=0.3362
+[INFO] epoch 20/30 started
+  [train] batch 1/19 loss=0.0650 avg=0.0650 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0160 avg=0.1136 speed=1.38 batch/s
+[BEST] epoch=20 smoothed_balanced_acc=0.8087 saved
+[Epoch 020] loss=0.1136 window=8 val_acc=0.8362 balanced_acc=0.8216 smoothed_balanced_acc=0.8087 f1=0.7865 precision=0.8333 recall=0.7447 pred_pos=0.3621 mean_p=0.3901 mean_p_pos=0.7337 mean_p_neg=0.1561 tp=35 tn=62 fp=7 fn=12 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    continuous variable-force pressing: n=32 acc=0.8438 err=5 tp=0 tn=27 fp=5 fn=0 pred_pos=0.1562
+    translational sliding: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+    constant-force pressing: n=16 acc=0.8750 err=2 tp=0 tn=14 fp=2 fn=0 pred_pos=0.1250
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    non-slip: n=69 acc=0.8986 err=7 tp=0 tn=62 fp=7 fn=0 pred_pos=0.1014
+    translation: n=19 acc=0.8947 err=2 tp=17 tn=0 fp=0 fn=2 pred_pos=0.8947
+  [val/session]
+    session_011: n=40 acc=0.7500 err=10 tp=9 tn=21 fp=0 fn=10 pred_pos=0.2250
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_008: n=25 acc=0.8800 err=3 tp=8 tn=14 fp=2 fn=1 pred_pos=0.4000
+    session_003: n=26 acc=0.9231 err=2 tp=9 tn=15 fp=1 fn=1 pred_pos=0.3846
+  [val/material]
+    plastic: n=116 acc=0.8362 err=19 tp=35 tn=62 fp=7 fn=12 pred_pos=0.3621
+[INFO] epoch 21/30 started
+  [train] batch 1/19 loss=0.0613 avg=0.0613 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0471 avg=0.0749 speed=1.36 batch/s
+[Epoch 021] loss=0.0749 window=8 val_acc=0.7845 balanced_acc=0.7883 smoothed_balanced_acc=0.8058 f1=0.7525 precision=0.7037 recall=0.8085 pred_pos=0.4655 mean_p=0.4543 mean_p_pos=0.8045 mean_p_neg=0.2158 tp=38 tn=53 fp=16 fn=9 lr=5.00e-04 time=17.2s
+  [val/behavior]
+    constant-force pressing: n=16 acc=0.4375 err=9 tp=0 tn=7 fp=9 fn=0 pred_pos=0.5625
+    rotational sliding: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    continuous variable-force pressing: n=32 acc=0.7812 err=7 tp=0 tn=25 fp=7 fn=0 pred_pos=0.2188
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.7681 err=16 tp=0 tn=53 fp=16 fn=0 pred_pos=0.2319
+    rotation: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_008: n=25 acc=0.6000 err=10 tp=8 tn=7 fp=9 fn=1 pred_pos=0.6800
+    session_011: n=40 acc=0.8000 err=8 tp=11 tn=21 fp=0 fn=8 pred_pos=0.2750
+    session_018: n=25 acc=0.8000 err=5 tp=9 tn=11 fp=5 fn=0 pred_pos=0.5600
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+  [val/material]
+    plastic: n=116 acc=0.7845 err=25 tp=38 tn=53 fp=16 fn=9 pred_pos=0.4655
+[INFO] epoch 22/30 started
+  [train] batch 1/19 loss=0.0081 avg=0.0081 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.0692 avg=0.0841 speed=1.35 batch/s
+[BEST] epoch=22 smoothed_balanced_acc=0.8141 saved
+[Epoch 022] loss=0.0841 window=8 val_acc=0.8448 balanced_acc=0.8323 smoothed_balanced_acc=0.8141 f1=0.8000 precision=0.8372 recall=0.7660 pred_pos=0.3707 mean_p=0.3810 mean_p_pos=0.7839 mean_p_neg=0.1065 tp=36 tn=62 fp=7 fn=11 lr=5.00e-04 time=17.2s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    continuous variable-force pressing: n=32 acc=0.8125 err=6 tp=0 tn=26 fp=6 fn=0 pred_pos=0.1875
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    non-slip: n=69 acc=0.8986 err=7 tp=0 tn=62 fp=7 fn=0 pred_pos=0.1014
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.7500 err=10 tp=9 tn=21 fp=0 fn=10 pred_pos=0.2250
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8448 err=18 tp=36 tn=62 fp=7 fn=11 pred_pos=0.3707
+[INFO] epoch 23/30 started
+  [train] batch 1/19 loss=0.0408 avg=0.0408 speed=0.37 batch/s
+  [train] batch 19/19 loss=0.0231 avg=0.0895 speed=1.37 batch/s
+[BEST] epoch=23 smoothed_balanced_acc=0.8249 saved
+[Epoch 023] loss=0.0895 window=8 val_acc=0.8707 balanced_acc=0.8540 smoothed_balanced_acc=0.8249 f1=0.8276 precision=0.9000 recall=0.7660 pred_pos=0.3448 mean_p=0.3454 mean_p_pos=0.7602 mean_p_neg=0.0629 tp=36 tn=65 fp=4 fn=11 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    continuous variable-force pressing: n=32 acc=0.8750 err=4 tp=0 tn=28 fp=4 fn=0 pred_pos=0.1250
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    non-slip: n=69 acc=0.9420 err=4 tp=0 tn=65 fp=4 fn=0 pred_pos=0.0580
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.7500 err=10 tp=9 tn=21 fp=0 fn=10 pred_pos=0.2250
+    session_018: n=25 acc=0.8800 err=3 tp=9 tn=13 fp=3 fn=0 pred_pos=0.4800
+    session_003: n=26 acc=0.9615 err=1 tp=10 tn=15 fp=1 fn=0 pred_pos=0.4231
+    session_008: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+  [val/material]
+    plastic: n=116 acc=0.8707 err=15 tp=36 tn=65 fp=4 fn=11 pred_pos=0.3448
+[INFO] epoch 24/30 started
+  [train] batch 1/19 loss=0.0748 avg=0.0748 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.0107 avg=0.0534 speed=1.38 batch/s
+[BEST] epoch=24 smoothed_balanced_acc=0.8524 saved
+[Epoch 024] loss=0.0534 window=8 val_acc=0.8707 balanced_acc=0.8710 smoothed_balanced_acc=0.8524 f1=0.8454 precision=0.8200 recall=0.8723 pred_pos=0.4310 mean_p=0.4589 mean_p_pos=0.8722 mean_p_neg=0.1775 tp=41 tn=60 fp=9 fn=6 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    continuous variable-force pressing: n=32 acc=0.7812 err=7 tp=0 tn=25 fp=7 fn=0 pred_pos=0.2188
+    rotational sliding: n=28 acc=0.8214 err=5 tp=23 tn=0 fp=0 fn=5 pred_pos=0.8214
+    constant-force pressing: n=16 acc=0.8750 err=2 tp=0 tn=14 fp=2 fn=0 pred_pos=0.1250
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.8696 err=9 tp=0 tn=60 fp=9 fn=0 pred_pos=0.1304
+    rotation: n=28 acc=0.8214 err=5 tp=23 tn=0 fp=0 fn=5 pred_pos=0.8214
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.8750 err=5 tp=14 tn=21 fp=0 fn=5 pred_pos=0.3500
+    session_018: n=25 acc=0.8000 err=5 tp=9 tn=11 fp=5 fn=0 pred_pos=0.5600
+    session_008: n=25 acc=0.8800 err=3 tp=8 tn=14 fp=2 fn=1 pred_pos=0.4000
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+  [val/material]
+    plastic: n=116 acc=0.8707 err=15 tp=41 tn=60 fp=9 fn=6 pred_pos=0.4310
+[INFO] epoch 25/30 started
+  [train] batch 1/19 loss=0.0202 avg=0.0202 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.1047 avg=0.0483 speed=1.38 batch/s
+[BEST] epoch=25 smoothed_balanced_acc=0.8548 saved
+[Epoch 025] loss=0.0483 window=8 val_acc=0.8534 balanced_acc=0.8395 smoothed_balanced_acc=0.8548 f1=0.8090 precision=0.8571 recall=0.7660 pred_pos=0.3621 mean_p=0.3568 mean_p_pos=0.7595 mean_p_neg=0.0825 tp=36 tn=63 fp=6 fn=11 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    continuous variable-force pressing: n=32 acc=0.8438 err=5 tp=0 tn=27 fp=5 fn=0 pred_pos=0.1562
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.6429 err=10 tp=18 tn=0 fp=0 fn=10 pred_pos=0.6429
+    non-slip: n=69 acc=0.9130 err=6 tp=0 tn=63 fp=6 fn=0 pred_pos=0.0870
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.7500 err=10 tp=9 tn=21 fp=0 fn=10 pred_pos=0.2250
+    session_018: n=25 acc=0.8800 err=3 tp=9 tn=13 fp=3 fn=0 pred_pos=0.4800
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8534 err=17 tp=36 tn=63 fp=6 fn=11 pred_pos=0.3621
+[INFO] epoch 26/30 started
+  [train] batch 1/19 loss=0.0316 avg=0.0316 speed=0.36 batch/s
+  [train] batch 19/19 loss=0.1596 avg=0.0737 speed=1.38 batch/s
+[Epoch 026] loss=0.0737 window=8 val_acc=0.8534 balanced_acc=0.8463 smoothed_balanced_acc=0.8522 f1=0.8172 precision=0.8261 recall=0.8085 pred_pos=0.3966 mean_p=0.3937 mean_p_pos=0.8128 mean_p_neg=0.1083 tp=38 tn=61 fp=8 fn=9 lr=5.00e-04 time=16.9s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    continuous variable-force pressing: n=32 acc=0.7812 err=7 tp=0 tn=25 fp=7 fn=0 pred_pos=0.2188
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.8841 err=8 tp=0 tn=61 fp=8 fn=0 pred_pos=0.1159
+    rotation: n=28 acc=0.7143 err=8 tp=20 tn=0 fp=0 fn=8 pred_pos=0.7143
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.8000 err=8 tp=11 tn=21 fp=0 fn=8 pred_pos=0.2750
+    session_018: n=25 acc=0.8000 err=5 tp=9 tn=11 fp=5 fn=0 pred_pos=0.5600
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8534 err=17 tp=38 tn=61 fp=8 fn=9 pred_pos=0.3966
+[INFO] epoch 27/30 started
+  [train] batch 1/19 loss=0.0229 avg=0.0229 speed=0.36 batch/s
+  [train] batch 19/19 loss=0.0072 avg=0.0284 speed=1.40 batch/s
+[Epoch 027] loss=0.0284 window=8 val_acc=0.8793 balanced_acc=0.8748 smoothed_balanced_acc=0.8535 f1=0.8511 precision=0.8511 recall=0.8511 pred_pos=0.4052 mean_p=0.3975 mean_p_pos=0.8367 mean_p_neg=0.0983 tp=40 tn=62 fp=7 fn=7 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    continuous variable-force pressing: n=32 acc=0.8125 err=6 tp=0 tn=26 fp=6 fn=0 pred_pos=0.1875
+    rotational sliding: n=28 acc=0.7857 err=6 tp=22 tn=0 fp=0 fn=6 pred_pos=0.7857
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.8986 err=7 tp=0 tn=62 fp=7 fn=0 pred_pos=0.1014
+    rotation: n=28 acc=0.7857 err=6 tp=22 tn=0 fp=0 fn=6 pred_pos=0.7857
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.8500 err=6 tp=13 tn=21 fp=0 fn=6 pred_pos=0.3250
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8793 err=14 tp=40 tn=62 fp=7 fn=7 pred_pos=0.4052
+[INFO] epoch 28/30 started
+  [train] batch 1/19 loss=0.0015 avg=0.0015 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0326 avg=0.0392 speed=1.39 batch/s
+[BEST] epoch=28 smoothed_balanced_acc=0.8676 saved
+[Epoch 028] loss=0.0392 window=8 val_acc=0.8793 balanced_acc=0.8816 smoothed_balanced_acc=0.8676 f1=0.8571 precision=0.8235 recall=0.8936 pred_pos=0.4397 mean_p=0.4418 mean_p_pos=0.9002 mean_p_neg=0.1296 tp=42 tn=60 fp=9 fn=5 lr=5.00e-04 time=16.9s
+  [val/behavior]
+    continuous variable-force pressing: n=32 acc=0.7500 err=8 tp=0 tn=24 fp=8 fn=0 pred_pos=0.2500
+    rotational sliding: n=28 acc=0.8571 err=4 tp=24 tn=0 fp=0 fn=4 pred_pos=0.8571
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    constant-force pressing: n=16 acc=0.9375 err=1 tp=0 tn=15 fp=1 fn=0 pred_pos=0.0625
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=69 acc=0.8696 err=9 tp=0 tn=60 fp=9 fn=0 pred_pos=0.1304
+    rotation: n=28 acc=0.8571 err=4 tp=24 tn=0 fp=0 fn=4 pred_pos=0.8571
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_018: n=25 acc=0.7600 err=6 tp=9 tn=10 fp=6 fn=0 pred_pos=0.6000
+    session_011: n=40 acc=0.9000 err=4 tp=15 tn=21 fp=0 fn=4 pred_pos=0.3750
+    session_003: n=26 acc=0.9231 err=2 tp=10 tn=14 fp=2 fn=0 pred_pos=0.4615
+    session_008: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+  [val/material]
+    plastic: n=116 acc=0.8793 err=14 tp=42 tn=60 fp=9 fn=5 pred_pos=0.4397
+[INFO] epoch 29/30 started
+  [train] batch 1/19 loss=0.0009 avg=0.0009 speed=0.35 batch/s
+  [train] batch 19/19 loss=0.0229 avg=0.0257 speed=1.38 batch/s
+[Epoch 029] loss=0.0257 window=8 val_acc=0.8448 balanced_acc=0.8119 smoothed_balanced_acc=0.8561 f1=0.7692 precision=0.9677 recall=0.6383 pred_pos=0.2672 mean_p=0.2706 mean_p_pos=0.6372 mean_p_neg=0.0210 tp=30 tn=68 fp=1 fn=17 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.4286 err=16 tp=12 tn=0 fp=0 fn=16 pred_pos=0.4286
+    continuous variable-force pressing: n=32 acc=0.9688 err=1 tp=0 tn=31 fp=1 fn=0 pred_pos=0.0312
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.4286 err=16 tp=12 tn=0 fp=0 fn=16 pred_pos=0.4286
+    non-slip: n=69 acc=0.9855 err=1 tp=0 tn=68 fp=1 fn=0 pred_pos=0.0145
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.6000 err=16 tp=3 tn=21 fp=0 fn=16 pred_pos=0.0750
+    session_008: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+    session_018: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_003: n=26 acc=1.0000 err=0 tp=10 tn=16 fp=0 fn=0 pred_pos=0.3846
+  [val/material]
+    plastic: n=116 acc=0.8448 err=18 tp=30 tn=68 fp=1 fn=17 pred_pos=0.2672
+[INFO] epoch 30/30 started
+  [train] batch 1/19 loss=0.0075 avg=0.0075 speed=0.34 batch/s
+  [train] batch 19/19 loss=0.0693 avg=0.0217 speed=1.37 batch/s
+[Epoch 030] loss=0.0217 window=8 val_acc=0.8707 balanced_acc=0.8574 smoothed_balanced_acc=0.8503 f1=0.8315 precision=0.8810 recall=0.7872 pred_pos=0.3621 mean_p=0.3733 mean_p_pos=0.8005 mean_p_neg=0.0823 tp=37 tn=64 fp=5 fn=10 lr=5.00e-04 time=17.0s
+  [val/behavior]
+    rotational sliding: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    continuous variable-force pressing: n=32 acc=0.8438 err=5 tp=0 tn=27 fp=5 fn=0 pred_pos=0.1562
+    translational sliding: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+    diagonal constant-force pressing: n=21 acc=1.0000 err=0 tp=0 tn=21 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=16 acc=1.0000 err=0 tp=0 tn=16 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=28 acc=0.6786 err=9 tp=19 tn=0 fp=0 fn=9 pred_pos=0.6786
+    non-slip: n=69 acc=0.9275 err=5 tp=0 tn=64 fp=5 fn=0 pred_pos=0.0725
+    translation: n=19 acc=0.9474 err=1 tp=18 tn=0 fp=0 fn=1 pred_pos=0.9474
+  [val/session]
+    session_011: n=40 acc=0.7750 err=9 tp=10 tn=21 fp=0 fn=9 pred_pos=0.2500
+    session_018: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_003: n=26 acc=0.9615 err=1 tp=10 tn=15 fp=1 fn=0 pred_pos=0.4231
+    session_008: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+  [val/material]
+    plastic: n=116 acc=0.8707 err=15 tp=37 tn=64 fp=5 fn=10 pred_pos=0.3621

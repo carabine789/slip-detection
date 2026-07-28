@@ -1,0 +1,7 @@
+numpy
+opencv-python
+torch
+torchvision
+
+# GPU builds (CUDA 12.1+) usually need the PyTorch extra index instead, e.g.:
+#   pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu121
