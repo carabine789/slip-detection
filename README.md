@@ -1,7 +1,6 @@
 # Slip Detection CNN
 
-Binary slip / non-slip classification from short windows of consecutive RGB tactile frames, built on top of the NLiPsTac sensor used elsewhere in this repository. See [`docs/progress_report_20260718.md`](docs/progress_report_20260718.md) for the full methodology writeup (data collection design, the session_013 anomaly investigation, training stabilization, cross-validation results).
-
+Binary slip / non-slip classification from short windows of consecutive RGB tactile frames, built on top of the NLiPsTac sensor used elsewhere in this repository. S
 ## Layout
 
 ```
