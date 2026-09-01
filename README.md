@@ -1,7 +1,7 @@
 # Slip Detection CNN
 
-This module implements a binary slip / non-slip classifier from short windows
-of consecutive RGB tactile frames collected with the NLiPsTac sensor.
+This repository implements a binary slip / non-slip classifier from short
+windows of consecutive RGB tactile frames collected with the NLiPsTac sensor.
 
 The current baseline uses an 8-frame window, a per-session reference frame, and
 a compact CNN trained on session-level splits. The main implementation is
@@ -10,7 +10,7 @@ a compact CNN trained on session-level splits. The main implementation is
 ## Layout
 
 ```text
-slip_detection/
+.
 +-- slip_cnn.py              # Early baseline model
 +-- slip_cnn_v2.py           # Current model: InstanceNorm, augmentation, replay support
 +-- eval_on_test.py          # Read-only checkpoint evaluation on a CSV split
@@ -25,12 +25,21 @@ slip_detection/
 Large raw data, checkpoints, and local archives are intentionally not tracked by
 Git. Share them separately if needed.
 
+## Current Results
+
+The current baseline reaches 96.22% mean balanced accuracy in 5-fold
+session-level cross-validation and 87.79% balanced accuracy on the independent
+`test_windows_final_plus_diag.csv` test split with threshold 0.5. A threshold
+sensitivity scan reaches 88.32% balanced accuracy. See
+[`docs/progress_report_20260829.md`](docs/progress_report_20260829.md) for the
+full report.
+
 ## 1. Collect Data
 
 Example collection command from the repository root:
 
 ```bash
-python slip_detection/data_collect/raw_cnn_collect.py collect \
+python data_collect/raw_cnn_collect.py collect \
   --no-serial --preview --duration-sec 24 --target-fps 30 --min-frames 8 \
   --width 1920 --height 1080 --backend dshow --camera-fps 30 --fourcc MJPG \
   --default-label -1 --label-schedule 0:-1,5:0,15:-1,18:1 \
@@ -46,30 +55,30 @@ python slip_detection/data_collect/raw_cnn_collect.py collect \
 - `0`: non-slip
 - `1`: slip
 
-Each session is saved under `slip_detection/data/raw_cnn/session_NNN/`.
+Each session is saved under `data/raw_cnn/session_NNN/`.
 
 ## 2. Build Window CSVs
 
 Use session-level splits to avoid window leakage between train and validation:
 
 ```bash
-python slip_detection/data_collect/raw_cnn_collect.py windows \
-  --data-root slip_detection/data/raw_cnn \
+python data_collect/raw_cnn_collect.py windows \
+  --data-root data/raw_cnn \
   --window 8 --stride 8 --val-stride 16 \
   --split-by-session \
   --val-sessions session_003,session_008,session_012,session_018 \
   --label-policy last --balance-labels \
-  --train-csv slip_detection/data/raw_cnn/train_windows.csv \
-  --val-csv slip_detection/data/raw_cnn/val_windows.csv
+  --train-csv data/raw_cnn/train_windows.csv \
+  --val-csv data/raw_cnn/val_windows.csv
 ```
 
 For k-fold session-level cross-validation:
 
 ```bash
-python slip_detection/data_collect/session_cv_splits.py \
-  --source-csv slip_detection/data/raw_cnn/train_windows.csv \
-  --source-csv slip_detection/data/raw_cnn/val_windows.csv \
-  --out-dir slip_detection/data/raw_cnn/cv_splits \
+python data_collect/session_cv_splits.py \
+  --source-csv data/raw_cnn/train_windows.csv \
+  --source-csv data/raw_cnn/val_windows.csv \
+  --out-dir data/raw_cnn/cv_splits \
   --folds 5
 ```
 
@@ -78,11 +87,11 @@ python slip_detection/data_collect/session_cv_splits.py \
 Current recommended baseline:
 
 ```bash
-python slip_detection/slip_cnn_v2.py train \
-  --data-root slip_detection/data/raw_cnn \
-  --train-csv slip_detection/data/raw_cnn/train_windows.csv \
-  --val-csv slip_detection/data/raw_cnn/val_windows.csv \
-  --out-dir slip_detection/checkpoints/model_v2 \
+python slip_cnn_v2.py train \
+  --data-root data/raw_cnn \
+  --train-csv data/raw_cnn/train_windows.csv \
+  --val-csv data/raw_cnn/val_windows.csv \
+  --out-dir checkpoints/model_v2 \
   --width 320 --height 180 \
   --input-mode refdiff \
   --norm instance \
@@ -103,10 +112,10 @@ single-epoch peak.
 `eval_on_test.py` performs read-only checkpoint evaluation:
 
 ```bash
-python slip_detection/eval_on_test.py \
-  --checkpoint slip_detection/checkpoints/model_v2/slip_cnn_v2_best.pth \
-  --data-root slip_detection/data/raw_cnn_test \
-  --csv slip_detection/data/raw_cnn_test/test_windows.csv \
+python eval_on_test.py \
+  --checkpoint checkpoints/model_v2/slip_cnn_v2_best.pth \
+  --data-root data/raw_cnn_test \
+  --csv data/raw_cnn_test/test_windows.csv \
   --width 320 --height 180 \
   --thresholds 0.5
 ```
@@ -114,10 +123,10 @@ python slip_detection/eval_on_test.py \
 Multiple thresholds can be scanned for sensitivity analysis:
 
 ```bash
-python slip_detection/eval_on_test.py \
-  --checkpoint slip_detection/checkpoints/model_v2/slip_cnn_v2_best.pth \
-  --data-root slip_detection/data/raw_cnn_test \
-  --csv slip_detection/data/raw_cnn_test/test_windows.csv \
+python eval_on_test.py \
+  --checkpoint checkpoints/model_v2/slip_cnn_v2_best.pth \
+  --data-root data/raw_cnn_test \
+  --csv data/raw_cnn_test/test_windows.csv \
   --width 320 --height 180 \
   --thresholds 0.45,0.5,0.55,0.6,0.65,0.7
 ```
