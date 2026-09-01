@@ -82,7 +82,15 @@ USB cable & 263 \\
 
 \section{数据划分与 Session Metadata}
 
-本阶段最终训练与验证使用 \texttt{data/raw\_cnn/train\_windows\_multi\_material\_augdiag.csv} 和 \texttt{data/raw\_cnn/val\_windows\_multi\_material\_augdiag.csv}。独立测试使用 \texttt{data/raw\_cnn\_test/test\_windows\_final\_plus\_diag.csv}。训练/验证集与测试集位于不同数据根目录下，测试集中的 \texttt{session\_001} 等编号不对应训练集中的同名 session。
+本阶段最终使用的窗口 CSV 如下：
+
+\begin{itemize}
+  \item 训练集：\path{data/raw_cnn/train_windows_multi_material_augdiag.csv}
+  \item 验证集：\path{data/raw_cnn/val_windows_multi_material_augdiag.csv}
+  \item 独立测试集：\path{data/raw_cnn_test/test_windows_final_plus_diag.csv}
+\end{itemize}
+
+训练/验证集与测试集位于不同数据根目录下，测试集中的 \texttt{session\_001} 等编号不对应训练集中的同名 session。
 
 原始 RGB 图像序列、窗口 CSV、reference image 和模型 checkpoint 文件体积较大，未直接纳入 Git 仓库。交接时建议将 \texttt{data/raw\_cnn/}、\texttt{data/raw\_cnn\_test/} 和最终 checkpoint 作为单独数据包提供；Git 仓库中保留代码、报告和关键日志。
 
@@ -238,7 +246,7 @@ Mean & -- & 96.22\% \\
 最终模型训练完成于 \textbf{2026-08-27 20:42}。最佳 checkpoint 保存于 epoch 32：
 
 \begin{itemize}
-  \item checkpoint：\texttt{model\_v2\_augdiag\_59\_augprob08\_p05\_warm3/slip\_cnn\_v2\_best.pth}
+  \item checkpoint：\path{model_v2_augdiag_59_augprob08_p05_warm3/slip_cnn_v2_best.pth}
   \item best smoothed balanced accuracy：\textbf{96.55\%}
   \item train samples：2798
   \item val samples：294
