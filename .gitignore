@@ -7,6 +7,8 @@ data/
 checkpoints/
 cluster_*_results/checkpoints/
 logs_archive/
+handoff_core/
+handoff_archive/
 *.pth
 *.pt
 *.zip
