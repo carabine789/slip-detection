@@ -3,6 +3,7 @@
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{longtable}
 \usepackage{hyperref}
 \usepackage{xcolor}
 
@@ -74,6 +75,134 @@ USB cable & 263 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{数据划分与 Session Metadata}
+
+本阶段最终训练与验证使用 \texttt{data/raw\_cnn/train\_windows\_multi\_material\_augdiag.csv} 和 \texttt{data/raw\_cnn/val\_windows\_multi\_material\_augdiag.csv}。独立测试使用 \texttt{data/raw\_cnn\_test/test\_windows\_final\_plus\_diag.csv}。需要注意的是，训练/验证集与测试集位于不同数据根目录下，因此测试集中的 \texttt{session\_001} 等编号不对应训练集中的同名 session。
+
+原始 RGB 图像序列、窗口 CSV、reference image 和模型 checkpoint 文件体积较大，未直接纳入 Git 仓库。交接时建议将 \texttt{data/raw\_cnn/}、\texttt{data/raw\_cnn\_test/} 和最终 checkpoint 作为单独数据包提供；Git 仓库中保留代码、报告和关键日志。
+
+\scriptsize
+\begin{longtable}{lp{1.55cm}p{2.7cm}p{2.65cm}lrrrr}
+\caption{训练集 session metadata}\\
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endfirsthead
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endhead
+\texttt{session\_001} & plastic & continuous variable-force pressing & translational sliding & translation & 633 & 26.363 & 47 & 28/19 \\
+\texttt{session\_002} & plastic & continuous variable-force pressing & translational sliding & translation & 632 & 26.312 & 43 & 24/19 \\
+\texttt{session\_004} & plastic & continuous variable-force pressing & translational sliding & translation & 632 & 26.295 & 49 & 30/19 \\
+\texttt{session\_005} & plastic & continuous variable-force pressing & translational sliding & translation & 637 & 26.510 & 48 & 29/19 \\
+\texttt{session\_006} & plastic & constant-force pressing & translational sliding & translation & 650 & 27.081 & 49 & 29/20 \\
+\texttt{session\_007} & plastic & constant-force pressing & translational sliding & translation & 634 & 26.385 & 48 & 28/20 \\
+\texttt{session\_009} & plastic & constant-force pressing & translational sliding & translation & 655 & 27.252 & 45 & 26/19 \\
+\texttt{session\_010} & plastic & constant-force pressing & translational sliding & translation & 646 & 26.909 & 46 & 27/19 \\
+\texttt{session\_011} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 651 & 27.105 & 49 & 30/19 \\
+\texttt{session\_014} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 653 & 27.189 & 52 & 33/19 \\
+\texttt{session\_015} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 651 & 27.096 & 51 & 31/20 \\
+\texttt{session\_016} & plastic & continuous variable-force pressing & rotational sliding & rotation & 644 & 26.831 & 47 & 28/19 \\
+\texttt{session\_017} & plastic & continuous variable-force pressing & rotational sliding & rotation & 646 & 26.909 & 51 & 32/19 \\
+\texttt{session\_019} & plastic & continuous variable-force pressing & rotational sliding & rotation & 651 & 27.096 & 49 & 30/19 \\
+\texttt{session\_020} & plastic & continuous variable-force pressing & rotational sliding & rotation & 645 & 26.871 & 46 & 27/19 \\
+\texttt{session\_021} & A4 paper & static no motion & translational sliding & translation & 752 & 26.824 & 61 & 28/33 \\
+\texttt{session\_022} & A4 paper & static no motion & translational sliding & translation & 750 & 26.768 & 61 & 29/32 \\
+\texttt{session\_024} & A4 paper & static no motion & translational sliding & translation & 748 & 26.701 & 56 & 24/32 \\
+\texttt{session\_025} & A4 paper & static no motion & translational sliding & translation & 760 & 27.121 & 62 & 28/34 \\
+\texttt{session\_026} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 757 & 27.006 & 60 & 28/32 \\
+\texttt{session\_027} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 745 & 26.597 & 61 & 28/33 \\
+\texttt{session\_029} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 731 & 25.954 & 58 & 26/32 \\
+\texttt{session\_030} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 722 & 25.761 & 59 & 28/31 \\
+\texttt{session\_031} & soft foam earplug & constant-force pressing & translational sliding & translation & 717 & 25.600 & 57 & 26/31 \\
+\texttt{session\_032} & soft foam earplug & constant-force pressing & translational sliding & translation & 745 & 26.603 & 59 & 26/33 \\
+\texttt{session\_034} & soft foam earplug & constant-force pressing & translational sliding & translation & 750 & 26.754 & 60 & 28/32 \\
+\texttt{session\_035} & soft foam earplug & constant-force pressing & translational sliding & translation & 758 & 27.038 & 60 & 27/33 \\
+\texttt{session\_036} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 756 & 26.969 & 61 & 28/33 \\
+\texttt{session\_037} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 735 & 26.215 & 62 & 31/31 \\
+\texttt{session\_039} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 748 & 26.714 & 64 & 32/32 \\
+\texttt{session\_040} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 755 & 26.951 & 64 & 31/33 \\
+\texttt{session\_041} & USB cable & constant-force pressing & translational sliding & translation & 752 & 26.849 & 61 & 28/33 \\
+\texttt{session\_042} & USB cable & constant-force pressing & translational sliding & translation & 755 & 26.949 & 60 & 27/33 \\
+\texttt{session\_044} & USB cable & constant-force pressing & translational sliding & translation & 757 & 27.007 & 59 & 26/33 \\
+\texttt{session\_045} & USB cable & constant-force pressing & translational sliding & translation & 746 & 26.637 & 62 & 29/33 \\
+\texttt{session\_046} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 752 & 26.844 & 60 & 27/33 \\
+\texttt{session\_047} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 755 & 26.929 & 61 & 28/33 \\
+\texttt{session\_049} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 755 & 26.955 & 63 & 30/33 \\
+\texttt{session\_050} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 753 & 26.867 & 65 & 32/33 \\
+\texttt{session\_052} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 736 & 26.276 & 65 & 32/33 \\
+\texttt{session\_053} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 759 & 27.101 & 65 & 32/33 \\
+\texttt{session\_054} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 761 & 27.172 & 61 & 28/33 \\
+\texttt{session\_055} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 755 & 26.932 & 61 & 28/33 \\
+\texttt{session\_056} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 755 & 26.953 & 61 & 28/33 \\
+\texttt{session\_057} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 755 & 26.950 & 60 & 27/33 \\
+\texttt{session\_058} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 756 & 26.985 & 63 & 30/33 \\
+\texttt{session\_059} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 759 & 27.090 & 58 & 25/33 \\
+\texttt{session\_060} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 761 & 27.153 & 64 & 31/33 \\
+\texttt{session\_061} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 759 & 27.084 & 64 & 31/33 \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{lp{1.55cm}p{2.7cm}p{2.65cm}lrrrr}
+\caption{验证集 session metadata}\\
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endfirsthead
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endhead
+\texttt{session\_003} & plastic & continuous variable-force pressing & translational sliding & translation & 639 & 26.597 & 26 & 16/10 \\
+\texttt{session\_008} & plastic & constant-force pressing & translational sliding & translation & 647 & 26.942 & 25 & 16/9 \\
+\texttt{session\_012} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 645 & 26.864 & 25 & 16/9 \\
+\texttt{session\_018} & plastic & continuous variable-force pressing & rotational sliding & rotation & 641 & 26.692 & 25 & 16/9 \\
+\texttt{session\_023} & A4 paper & static no motion & translational sliding & translation & 749 & 26.723 & 32 & 16/16 \\
+\texttt{session\_028} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 737 & 26.298 & 32 & 16/16 \\
+\texttt{session\_033} & soft foam earplug & constant-force pressing & translational sliding & translation & 735 & 26.232 & 32 & 16/16 \\
+\texttt{session\_038} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 745 & 26.572 & 33 & 16/17 \\
+\texttt{session\_043} & USB cable & constant-force pressing & translational sliding & translation & 759 & 27.078 & 32 & 16/16 \\
+\texttt{session\_048} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 755 & 26.929 & 32 & 16/16 \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{lp{1.55cm}p{2.7cm}p{2.65cm}lrrrr}
+\caption{独立测试集 session metadata}\\
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endfirsthead
+\toprule
+Session & Material & Non-slip behavior & Slip behavior & Motion & Frames & FPS & Win. & 0/1 \\
+\midrule
+\endhead
+\texttt{session\_001} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 754 & 26.917 & 66 & 33/33 \\
+\texttt{session\_002} & A4 paper & continuous variable-force pressing & rotational sliding & rotation & 751 & 26.792 & 65 & 33/32 \\
+\texttt{session\_003} & soft foam earplug & constant-force pressing & translational sliding & translation & 759 & 27.075 & 66 & 33/33 \\
+\texttt{session\_004} & soft foam earplug & constant-force pressing & translational sliding & translation & 758 & 27.065 & 66 & 33/33 \\
+\texttt{session\_005} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 758 & 27.060 & 66 & 33/33 \\
+\texttt{session\_006} & soft foam earplug & continuous variable-force pressing & rotational sliding & rotation & 756 & 26.987 & 66 & 33/33 \\
+\texttt{session\_007} & USB cable & constant-force pressing & translational sliding & translation & 750 & 26.770 & 65 & 33/32 \\
+\texttt{session\_008} & USB cable & constant-force pressing & translational sliding & translation & 753 & 26.880 & 66 & 33/33 \\
+\texttt{session\_009} & A4 paper & constant-force pressing & translational sliding & translation & 726 & 25.917 & 63 & 32/31 \\
+\texttt{session\_010} & A4 paper & constant-force pressing & translational sliding & translation & 741 & 26.447 & 64 & 32/32 \\
+\texttt{session\_011} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 752 & 26.846 & 66 & 33/33 \\
+\texttt{session\_012} & USB cable & continuous variable-force pressing & rotational sliding & rotation & 756 & 26.978 & 66 & 33/33 \\
+\texttt{session\_013} & plastic & constant-force pressing & translational sliding & translation & 756 & 26.981 & 66 & 33/33 \\
+\texttt{session\_014} & plastic & constant-force pressing & translational sliding & translation & 750 & 26.780 & 65 & 33/32 \\
+\texttt{session\_015} & plastic & continuous variable-force pressing & rotational sliding & rotation & 758 & 27.044 & 65 & 33/32 \\
+\texttt{session\_016} & plastic & continuous variable-force pressing & rotational sliding & rotation & 758 & 27.044 & 66 & 33/33 \\
+\texttt{session\_017} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 748 & 26.694 & 65 & 33/32 \\
+\texttt{session\_018} & plastic & diagonal constant-force pressing & rotational sliding & rotation & 748 & 26.692 & 65 & 33/32 \\
+\texttt{session\_062} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 758 & 27.057 & 66 & 33/33 \\
+\texttt{session\_063} & plastic & diagonal changing-force pressing & diagonal rotational sliding & rotation & 759 & 27.099 & 66 & 33/33 \\
+\texttt{session\_064} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 750 & 26.751 & 65 & 33/32 \\
+\texttt{session\_065} & plastic & diagonal constant-force pressing & diagonal translational sliding & translation & 745 & 26.598 & 65 & 33/32 \\
+\bottomrule
+\end{longtable}
+\normalsize
 
 \section{交叉验证结果}
 
