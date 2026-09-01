@@ -25,6 +25,9 @@ a compact CNN trained on session-level splits. The main implementation is
 Large raw data, checkpoints, and local archives are intentionally not tracked by
 Git. Share them separately if needed.
 
+For the handoff data package layout and normalized session manifest, see
+[`docs/data_handoff.md`](docs/data_handoff.md).
+
 ## Current Results
 
 The current baseline reaches 96.22% mean balanced accuracy in 5-fold
