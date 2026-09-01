@@ -45,7 +45,7 @@
 
 模型设计上主要参考 PPTac 中利用多帧触觉图像判断滑移的思路，先使用结构较简单的 CNN 作为 baseline。早期版本在训练后期出现过验证集指标明显震荡的问题，相邻 epoch 的 balanced accuracy 有时会相差较大。后面加入了梯度裁剪、学习率自动衰减、early stopping，并使用平滑后的 balanced accuracy 选择 checkpoint。
 
-另外，7 月底的可视化检查发现，部分误判和接触位置、session 间外观差异有关。例如物体按压在传感器边缘时更容易被判为 slip，而在中心区域时相对稳定。这个现象提示模型可能学习到了一些和空间位置或单个 session 外观相关的 shortcut。后续训练中加入了随机平移增强，并使用 \texttt{refdiff} 与 InstanceNorm 来减弱 session 背景差异的影响。
+另外，7 月底的可视化检查发现，部分误判和接触位置、session 间外观差异有关。例如物体按压在传感器边缘时更容易被判为 slip，而在中心区域时相对稳定。这个现象提示模型可能学习到了一些和空间位置或单个 session 外观相关的 shortcut。原本的输入模式已经是 \texttt{refdiff}，归一化也已经使用 InstanceNorm；后续训练主要加入了随机平移增强，用来减弱模型对接触位置差异的依赖。
 
 \section{数据集情况}
 
