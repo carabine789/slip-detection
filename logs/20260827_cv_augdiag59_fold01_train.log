@@ -1,0 +1,1585 @@
+[INFO] device=cuda
+[INFO] loading train dataset: data/raw_cnn/cv_multi_material_augdiag_59/fold_01_train.csv
+[INFO] train samples=2433 window=8 input_mode=refdiff norm=instance architecture=stacked temporal_agg=meanmax size=320x180 augment_translate=True (+/-8%, prob=0.50, warmup=3 epoch(s))
+[INFO] loading val dataset: data/raw_cnn/cv_multi_material_augdiag_59/fold_01_val.csv
+[INFO] val samples=659
+[INFO] epoch 1/40 started augment=warmup-no-augment
+  [train] batch 1/77 loss=0.7014 avg=0.7014 speed=0.16 batch/s
+  [train] batch 20/77 loss=0.6901 avg=0.6941 speed=1.23 batch/s
+  [train] batch 40/77 loss=0.6829 avg=0.6896 speed=1.58 batch/s
+  [train] batch 60/77 loss=0.6834 avg=0.6906 speed=1.65 batch/s
+  [train] batch 77/77 loss=0.7276 avg=0.6899 speed=1.83 batch/s
+[BEST] epoch=1 smoothed_balanced_acc=0.6102 saved
+[Epoch 001] loss=0.6899 window=8 val_acc=0.6100 balanced_acc=0.6102 smoothed_balanced_acc=0.6102 f1=0.6259 precision=0.5989 recall=0.6555 pred_pos=0.5448 mean_p=0.4996 mean_p_pos=0.5059 mean_p_neg=0.4933 tp=215 tn=187 fp=144 fn=113 lr=5.00e-04 time=54.5s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.4080 err=74 tp=51 tn=0 fp=0 fn=74 pred_pos=0.4080
+    continuous variable-force pressing: n=143 acc=0.5804 err=60 tp=0 tn=83 fp=60 fn=0 pred_pos=0.4196
+    constant-force pressing: n=81 acc=0.4691 err=43 tp=0 tn=38 fp=43 fn=0 pred_pos=0.5309
+    diagonal rotational sliding: n=33 acc=0.0303 err=32 tp=1 tn=0 fp=0 fn=32 pred_pos=0.0303
+    static no motion: n=29 acc=0.0000 err=29 tp=0 tn=0 fp=29 fn=0 pred_pos=1.0000
+    diagonal changing-force pressing: n=30 acc=0.6000 err=12 tp=0 tn=18 fp=12 fn=0 pred_pos=0.4000
+    translational sliding: n=137 acc=0.9708 err=4 tp=133 tn=0 fp=0 fn=4 pred_pos=0.9708
+    diagonal translational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.5650 err=144 tp=0 tn=187 fp=144 fn=0 pred_pos=0.4350
+    rotation: n=158 acc=0.3291 err=106 tp=52 tn=0 fp=0 fn=106 pred_pos=0.3291
+    translation: n=170 acc=0.9588 err=7 tp=163 tn=0 fp=0 fn=7 pred_pos=0.9588
+  [val/session]
+    session_058: n=63 acc=0.3016 err=44 tp=1 tn=18 fp=12 fn=32 pred_pos=0.2063
+    session_027: n=61 acc=0.2787 err=44 tp=0 tn=17 fp=11 fn=33 pred_pos=0.1803
+    session_022: n=61 acc=0.5082 err=30 tp=31 tn=0 fp=29 fn=1 pred_pos=0.9836
+    session_017: n=51 acc=0.4314 err=29 tp=3 tn=19 fp=13 fn=16 pred_pos=0.3137
+    session_042: n=60 acc=0.5500 err=27 tp=33 tn=0 fp=27 fn=0 pred_pos=1.0000
+    session_037: n=62 acc=0.6452 err=22 tp=22 tn=18 fp=13 fn=9 pred_pos=0.5645
+    session_047: n=61 acc=0.6557 err=21 tp=26 tn=14 fp=14 fn=7 pred_pos=0.6557
+    session_032: n=59 acc=0.6780 err=19 tp=30 tn=10 fp=16 fn=3 pred_pos=0.7797
+    session_002: n=43 acc=0.7907 err=9 tp=19 tn=15 fp=9 fn=0 pred_pos=0.6512
+    session_012: n=25 acc=0.6400 err=9 tp=0 tn=16 fp=0 fn=9 pred_pos=0.0000
+    session_053: n=65 acc=0.9538 err=3 tp=30 tn=32 fp=0 fn=3 pred_pos=0.4615
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+  [val/material]
+    plastic: n=295 acc=0.6814 err=94 tp=73 tn=128 fp=34 fn=60 pred_pos=0.3627
+    A4 paper: n=122 acc=0.3934 err=74 tp=31 tn=17 fp=40 fn=34 pred_pos=0.5820
+    USB cable: n=121 acc=0.6033 err=48 tp=59 tn=14 fp=41 fn=7 pred_pos=0.8264
+    soft foam earplug: n=121 acc=0.6612 err=41 tp=52 tn=28 fp=29 fn=12 pred_pos=0.6694
+[INFO] epoch 2/40 started augment=warmup-no-augment
+  [train] batch 1/77 loss=0.6724 avg=0.6724 speed=0.27 batch/s
+  [train] batch 20/77 loss=0.6821 avg=0.6757 speed=1.80 batch/s
+  [train] batch 40/77 loss=0.6670 avg=0.6677 speed=2.21 batch/s
+  [train] batch 60/77 loss=0.6071 avg=0.6531 speed=2.10 batch/s
+  [train] batch 77/77 loss=0.4764 avg=0.6429 speed=2.21 batch/s
+[Epoch 002] loss=0.6429 window=8 val_acc=0.5964 balanced_acc=0.5982 smoothed_balanced_acc=0.6042 f1=0.7115 precision=0.5522 recall=1.0000 pred_pos=0.9014 mean_p=0.6464 mean_p_pos=0.6960 mean_p_neg=0.5973 tp=328 tn=65 fp=266 fn=0 lr=5.00e-04 time=46.8s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.2517 err=107 tp=0 tn=36 fp=107 fn=0 pred_pos=0.7483
+    constant-force pressing: n=81 acc=0.3086 err=56 tp=0 tn=25 fp=56 fn=0 pred_pos=0.6914
+    diagonal constant-force pressing: n=48 acc=0.0833 err=44 tp=0 tn=4 fp=44 fn=0 pred_pos=0.9167
+    diagonal changing-force pressing: n=30 acc=0.0000 err=30 tp=0 tn=0 fp=30 fn=0 pred_pos=1.0000
+    static no motion: n=29 acc=0.0000 err=29 tp=0 tn=0 fp=29 fn=0 pred_pos=1.0000
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotational sliding: n=125 acc=1.0000 err=0 tp=125 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.1964 err=266 tp=0 tn=65 fp=266 fn=0 pred_pos=0.8036
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotation: n=158 acc=1.0000 err=0 tp=158 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_053: n=65 acc=0.5077 err=32 tp=33 tn=0 fp=32 fn=0 pred_pos=1.0000
+    session_058: n=63 acc=0.5238 err=30 tp=33 tn=0 fp=30 fn=0 pred_pos=1.0000
+    session_022: n=61 acc=0.5246 err=29 tp=32 tn=0 fp=29 fn=0 pred_pos=1.0000
+    session_047: n=61 acc=0.5410 err=28 tp=33 tn=0 fp=28 fn=0 pred_pos=1.0000
+    session_042: n=60 acc=0.5500 err=27 tp=33 tn=0 fp=27 fn=0 pred_pos=1.0000
+    session_032: n=59 acc=0.5593 err=26 tp=33 tn=0 fp=26 fn=0 pred_pos=1.0000
+    session_027: n=61 acc=0.6066 err=24 tp=33 tn=4 fp=24 fn=0 pred_pos=0.9344
+    session_037: n=62 acc=0.6452 err=22 tp=31 tn=9 fp=22 fn=0 pred_pos=0.8548
+    session_017: n=51 acc=0.6078 err=20 tp=19 tn=12 fp=20 fn=0 pred_pos=0.7647
+    session_002: n=43 acc=0.6977 err=13 tp=19 tn=11 fp=13 fn=0 pred_pos=0.7442
+    session_012: n=25 acc=0.5200 err=12 tp=9 tn=4 fp=12 fn=0 pred_pos=0.8400
+    session_007: n=48 acc=0.9375 err=3 tp=20 tn=25 fp=3 fn=0 pred_pos=0.4792
+  [val/material]
+    plastic: n=295 acc=0.6271 err=110 tp=133 tn=52 fp=110 fn=0 pred_pos=0.8237
+    USB cable: n=121 acc=0.5455 err=55 tp=66 tn=0 fp=55 fn=0 pred_pos=1.0000
+    A4 paper: n=122 acc=0.5656 err=53 tp=65 tn=4 fp=53 fn=0 pred_pos=0.9672
+    soft foam earplug: n=121 acc=0.6033 err=48 tp=64 tn=9 fp=48 fn=0 pred_pos=0.9256
+[INFO] epoch 3/40 started augment=warmup-no-augment
+  [train] batch 1/77 loss=0.7329 avg=0.7329 speed=0.27 batch/s
+  [train] batch 20/77 loss=0.5165 avg=0.5580 speed=1.82 batch/s
+  [train] batch 40/77 loss=0.6778 avg=0.5627 speed=2.16 batch/s
+  [train] batch 60/77 loss=0.3976 avg=0.5553 speed=2.06 batch/s
+  [train] batch 77/77 loss=0.0408 avg=0.5265 speed=2.18 batch/s
+[BEST] epoch=3 smoothed_balanced_acc=0.6213 saved
+[Epoch 003] loss=0.5265 window=8 val_acc=0.6571 balanced_acc=0.6555 smoothed_balanced_acc=0.6213 f1=0.4817 precision=0.9722 recall=0.3201 pred_pos=0.1639 mean_p=0.2099 mean_p_pos=0.3572 mean_p_neg=0.0640 tp=105 tn=328 fp=3 fn=223 lr=5.00e-04 time=47.4s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.0240 err=122 tp=3 tn=0 fp=0 fn=122 pred_pos=0.0240
+    translational sliding: n=137 acc=0.6131 err=53 tp=84 tn=0 fp=0 fn=53 pred_pos=0.6131
+    diagonal rotational sliding: n=33 acc=0.0303 err=32 tp=1 tn=0 fp=0 fn=32 pred_pos=0.0303
+    diagonal translational sliding: n=33 acc=0.5152 err=16 tp=17 tn=0 fp=0 fn=16 pred_pos=0.5152
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    static no motion: n=29 acc=1.0000 err=0 tp=0 tn=29 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.0253 err=154 tp=4 tn=0 fp=0 fn=154 pred_pos=0.0253
+    translation: n=170 acc=0.5941 err=69 tp=101 tn=0 fp=0 fn=69 pred_pos=0.5941
+    non-slip: n=331 acc=0.9909 err=3 tp=0 tn=328 fp=3 fn=0 pred_pos=0.0091
+  [val/session]
+    session_058: n=63 acc=0.4444 err=35 tp=1 tn=27 fp=3 fn=32 pred_pos=0.0635
+    session_027: n=61 acc=0.4754 err=32 tp=1 tn=28 fp=0 fn=32 pred_pos=0.0164
+    session_047: n=61 acc=0.4754 err=32 tp=1 tn=28 fp=0 fn=32 pred_pos=0.0164
+    session_037: n=62 acc=0.5161 err=30 tp=1 tn=31 fp=0 fn=30 pred_pos=0.0161
+    session_042: n=60 acc=0.6667 err=20 tp=13 tn=27 fp=0 fn=20 pred_pos=0.2167
+    session_017: n=51 acc=0.6275 err=19 tp=0 tn=32 fp=0 fn=19 pred_pos=0.0000
+    session_053: n=65 acc=0.7538 err=16 tp=17 tn=32 fp=0 fn=16 pred_pos=0.2615
+    session_002: n=43 acc=0.7209 err=12 tp=7 tn=24 fp=0 fn=12 pred_pos=0.1628
+    session_007: n=48 acc=0.7708 err=11 tp=9 tn=28 fp=0 fn=11 pred_pos=0.1875
+    session_032: n=59 acc=0.8475 err=9 tp=24 tn=26 fp=0 fn=9 pred_pos=0.4068
+    session_012: n=25 acc=0.6400 err=9 tp=0 tn=16 fp=0 fn=9 pred_pos=0.0000
+    session_022: n=61 acc=0.9836 err=1 tp=31 tn=29 fp=0 fn=1 pred_pos=0.5082
+  [val/material]
+    plastic: n=295 acc=0.6542 err=102 tp=34 tn=159 fp=3 fn=99 pred_pos=0.1254
+    USB cable: n=121 acc=0.5702 err=52 tp=14 tn=55 fp=0 fn=52 pred_pos=0.1157
+    soft foam earplug: n=121 acc=0.6777 err=39 tp=25 tn=57 fp=0 fn=39 pred_pos=0.2066
+    A4 paper: n=122 acc=0.7295 err=33 tp=32 tn=57 fp=0 fn=33 pred_pos=0.2623
+[INFO] epoch 4/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=1.0792 avg=1.0792 speed=0.17 batch/s
+  [train] batch 20/77 loss=0.4291 avg=0.6586 speed=1.44 batch/s
+  [train] batch 40/77 loss=0.4349 avg=0.5469 speed=1.83 batch/s
+  [train] batch 60/77 loss=0.3001 avg=0.4848 speed=1.83 batch/s
+  [train] batch 77/77 loss=0.0573 avg=0.4566 speed=1.93 batch/s
+[BEST] epoch=4 smoothed_balanced_acc=0.6601 saved
+[Epoch 004] loss=0.4566 window=8 val_acc=0.7253 balanced_acc=0.7266 smoothed_balanced_acc=0.6601 f1=0.7838 precision=0.6444 recall=1.0000 pred_pos=0.7724 mean_p=0.7417 mean_p_pos=0.9365 mean_p_neg=0.5487 tp=328 tn=150 fp=181 fn=0 lr=5.00e-04 time=52.1s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.2378 err=109 tp=0 tn=34 fp=109 fn=0 pred_pos=0.7622
+    diagonal changing-force pressing: n=30 acc=0.0000 err=30 tp=0 tn=0 fp=30 fn=0 pred_pos=1.0000
+    static no motion: n=29 acc=0.3793 err=18 tp=0 tn=11 fp=18 fn=0 pred_pos=0.6207
+    diagonal constant-force pressing: n=48 acc=0.6667 err=16 tp=0 tn=32 fp=16 fn=0 pred_pos=0.3333
+    constant-force pressing: n=81 acc=0.9012 err=8 tp=0 tn=73 fp=8 fn=0 pred_pos=0.0988
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotational sliding: n=125 acc=1.0000 err=0 tp=125 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.4532 err=181 tp=0 tn=150 fp=181 fn=0 pred_pos=0.5468
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotation: n=158 acc=1.0000 err=0 tp=158 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.5238 err=30 tp=33 tn=0 fp=30 fn=0 pred_pos=1.0000
+    session_017: n=51 acc=0.4706 err=27 tp=19 tn=5 fp=27 fn=0 pred_pos=0.9020
+    session_027: n=61 acc=0.5738 err=26 tp=33 tn=2 fp=26 fn=0 pred_pos=0.9672
+    session_047: n=61 acc=0.5738 err=26 tp=33 tn=2 fp=26 fn=0 pred_pos=0.9672
+    session_037: n=62 acc=0.7097 err=18 tp=31 tn=13 fp=18 fn=0 pred_pos=0.7903
+    session_022: n=61 acc=0.7049 err=18 tp=32 tn=11 fp=18 fn=0 pred_pos=0.8197
+    session_012: n=25 acc=0.3600 err=16 tp=9 tn=0 fp=16 fn=0 pred_pos=1.0000
+    session_002: n=43 acc=0.7209 err=12 tp=19 tn=12 fp=12 fn=0 pred_pos=0.7209
+    session_032: n=59 acc=0.8814 err=7 tp=33 tn=19 fp=7 fn=0 pred_pos=0.6780
+    session_042: n=60 acc=0.9833 err=1 tp=33 tn=26 fp=1 fn=0 pred_pos=0.5667
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+  [val/material]
+    plastic: n=295 acc=0.7119 err=85 tp=133 tn=77 fp=85 fn=0 pred_pos=0.7390
+    A4 paper: n=122 acc=0.6393 err=44 tp=65 tn=13 fp=44 fn=0 pred_pos=0.8934
+    USB cable: n=121 acc=0.7769 err=27 tp=66 tn=28 fp=27 fn=0 pred_pos=0.7686
+    soft foam earplug: n=121 acc=0.7934 err=25 tp=64 tn=32 fp=25 fn=0 pred_pos=0.7355
+[INFO] epoch 5/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.8253 avg=0.8253 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.1477 avg=0.3734 speed=1.72 batch/s
+  [train] batch 40/77 loss=0.3411 avg=0.3308 speed=1.89 batch/s
+  [train] batch 60/77 loss=0.2494 avg=0.3203 speed=1.95 batch/s
+  [train] batch 77/77 loss=0.5138 avg=0.3135 speed=2.02 batch/s
+[BEST] epoch=5 smoothed_balanced_acc=0.7331 saved
+[Epoch 005] loss=0.3135 window=8 val_acc=0.8179 balanced_acc=0.8172 smoothed_balanced_acc=0.7331 f1=0.7834 precision=0.9602 recall=0.6616 pred_pos=0.3429 mean_p=0.3401 mean_p_pos=0.6153 mean_p_neg=0.0675 tp=217 tn=322 fp=9 fn=111 lr=5.00e-04 time=50.2s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.5120 err=61 tp=64 tn=0 fp=0 fn=61 pred_pos=0.5120
+    translational sliding: n=137 acc=0.7956 err=28 tp=109 tn=0 fp=0 fn=28 pred_pos=0.7956
+    diagonal rotational sliding: n=33 acc=0.3939 err=20 tp=13 tn=0 fp=0 fn=20 pred_pos=0.3939
+    diagonal changing-force pressing: n=30 acc=0.7000 err=9 tp=0 tn=21 fp=9 fn=0 pred_pos=0.3000
+    diagonal translational sliding: n=33 acc=0.9394 err=2 tp=31 tn=0 fp=0 fn=2 pred_pos=0.9394
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    static no motion: n=29 acc=1.0000 err=0 tp=0 tn=29 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.4873 err=81 tp=77 tn=0 fp=0 fn=81 pred_pos=0.4873
+    translation: n=170 acc=0.8235 err=30 tp=140 tn=0 fp=0 fn=30 pred_pos=0.8235
+    non-slip: n=331 acc=0.9728 err=9 tp=0 tn=322 fp=9 fn=0 pred_pos=0.0272
+  [val/session]
+    session_058: n=63 acc=0.5397 err=29 tp=13 tn=21 fp=9 fn=20 pred_pos=0.3492
+    session_027: n=61 acc=0.7377 err=16 tp=17 tn=28 fp=0 fn=16 pred_pos=0.2787
+    session_017: n=51 acc=0.7059 err=15 tp=4 tn=32 fp=0 fn=15 pred_pos=0.0784
+    session_037: n=62 acc=0.7742 err=14 tp=17 tn=31 fp=0 fn=14 pred_pos=0.2742
+    session_047: n=61 acc=0.8033 err=12 tp=21 tn=28 fp=0 fn=12 pred_pos=0.3443
+    session_042: n=60 acc=0.8167 err=11 tp=22 tn=27 fp=0 fn=11 pred_pos=0.3667
+    session_007: n=48 acc=0.8750 err=6 tp=14 tn=28 fp=0 fn=6 pred_pos=0.2917
+    session_002: n=43 acc=0.8605 err=6 tp=13 tn=24 fp=0 fn=6 pred_pos=0.3023
+    session_032: n=59 acc=0.9322 err=4 tp=29 tn=26 fp=0 fn=4 pred_pos=0.4915
+    session_012: n=25 acc=0.8400 err=4 tp=5 tn=16 fp=0 fn=4 pred_pos=0.2000
+    session_053: n=65 acc=0.9692 err=2 tp=31 tn=32 fp=0 fn=2 pred_pos=0.4769
+    session_022: n=61 acc=0.9836 err=1 tp=31 tn=29 fp=0 fn=1 pred_pos=0.5082
+  [val/material]
+    plastic: n=295 acc=0.7898 err=62 tp=80 tn=153 fp=9 fn=53 pred_pos=0.3017
+    USB cable: n=121 acc=0.8099 err=23 tp=43 tn=55 fp=0 fn=23 pred_pos=0.3554
+    soft foam earplug: n=121 acc=0.8512 err=18 tp=46 tn=57 fp=0 fn=18 pred_pos=0.3802
+    A4 paper: n=122 acc=0.8607 err=17 tp=48 tn=57 fp=0 fn=17 pred_pos=0.3934
+[INFO] epoch 6/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.3791 avg=0.3791 speed=0.25 batch/s
+  [train] batch 20/77 loss=0.1187 avg=0.2615 speed=1.70 batch/s
+  [train] batch 40/77 loss=0.1587 avg=0.2648 speed=2.03 batch/s
+  [train] batch 60/77 loss=0.3171 avg=0.2792 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0324 avg=0.2795 speed=2.05 batch/s
+[BEST] epoch=6 smoothed_balanced_acc=0.8252 saved
+[Epoch 006] loss=0.2795 window=8 val_acc=0.9317 balanced_acc=0.9317 smoothed_balanced_acc=0.8252 f1=0.9315 precision=0.9301 recall=0.9329 pred_pos=0.4992 mean_p=0.5062 mean_p_pos=0.8711 mean_p_neg=0.1445 tp=306 tn=308 fp=23 fn=22 lr=5.00e-04 time=49.8s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8640 err=17 tp=108 tn=0 fp=0 fn=17 pred_pos=0.8640
+    diagonal changing-force pressing: n=30 acc=0.5000 err=15 tp=0 tn=15 fp=15 fn=0 pred_pos=0.5000
+    diagonal constant-force pressing: n=48 acc=0.9167 err=4 tp=0 tn=44 fp=4 fn=0 pred_pos=0.0833
+    continuous variable-force pressing: n=143 acc=0.9790 err=3 tp=0 tn=140 fp=3 fn=0 pred_pos=0.0210
+    diagonal rotational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    translational sliding: n=137 acc=0.9854 err=2 tp=135 tn=0 fp=0 fn=2 pred_pos=0.9854
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9305 err=23 tp=0 tn=308 fp=23 fn=0 pred_pos=0.0695
+    rotation: n=158 acc=0.8734 err=20 tp=138 tn=0 fp=0 fn=20 pred_pos=0.8734
+    translation: n=170 acc=0.9882 err=2 tp=168 tn=0 fp=0 fn=2 pred_pos=0.9882
+  [val/session]
+    session_058: n=63 acc=0.7143 err=18 tp=30 tn=15 fp=15 fn=3 pred_pos=0.7143
+    session_017: n=51 acc=0.8824 err=6 tp=13 tn=32 fp=0 fn=6 pred_pos=0.2549
+    session_027: n=61 acc=0.9180 err=5 tp=29 tn=27 fp=1 fn=4 pred_pos=0.4918
+    session_047: n=61 acc=0.9180 err=5 tp=30 tn=26 fp=2 fn=3 pred_pos=0.5246
+    session_012: n=25 acc=0.8000 err=5 tp=8 tn=12 fp=4 fn=1 pred_pos=0.4800
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_042: n=60 acc=0.9667 err=2 tp=31 tn=27 fp=0 fn=2 pred_pos=0.5167
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9017 err=29 tp=123 tn=143 fp=19 fn=10 pred_pos=0.4814
+    USB cable: n=121 acc=0.9421 err=7 tp=61 tn=53 fp=2 fn=5 pred_pos=0.5207
+    A4 paper: n=122 acc=0.9508 err=6 tp=61 tn=55 fp=2 fn=4 pred_pos=0.5164
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+[INFO] epoch 7/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.2272 avg=0.2272 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.2916 avg=0.2579 speed=1.74 batch/s
+  [train] batch 40/77 loss=0.1519 avg=0.2132 speed=1.99 batch/s
+  [train] batch 60/77 loss=0.0717 avg=0.2176 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0058 avg=0.2312 speed=2.04 batch/s
+[BEST] epoch=7 smoothed_balanced_acc=0.8858 saved
+[Epoch 007] loss=0.2312 window=8 val_acc=0.9090 balanced_acc=0.9086 smoothed_balanced_acc=0.8858 f1=0.9000 precision=0.9926 recall=0.8232 pred_pos=0.4127 mean_p=0.4089 mean_p_pos=0.7792 mean_p_neg=0.0420 tp=270 tn=329 fp=2 fn=58 lr=5.00e-04 time=50.1s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.7280 err=34 tp=91 tn=0 fp=0 fn=34 pred_pos=0.7280
+    diagonal rotational sliding: n=33 acc=0.5758 err=14 tp=19 tn=0 fp=0 fn=14 pred_pos=0.5758
+    translational sliding: n=137 acc=0.9416 err=8 tp=129 tn=0 fp=0 fn=8 pred_pos=0.9416
+    diagonal translational sliding: n=33 acc=0.9394 err=2 tp=31 tn=0 fp=0 fn=2 pred_pos=0.9394
+    diagonal changing-force pressing: n=30 acc=0.9333 err=2 tp=0 tn=28 fp=2 fn=0 pred_pos=0.0667
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    static no motion: n=29 acc=1.0000 err=0 tp=0 tn=29 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.6962 err=48 tp=110 tn=0 fp=0 fn=48 pred_pos=0.6962
+    translation: n=170 acc=0.9412 err=10 tp=160 tn=0 fp=0 fn=10 pred_pos=0.9412
+    non-slip: n=331 acc=0.9940 err=2 tp=0 tn=329 fp=2 fn=0 pred_pos=0.0060
+  [val/session]
+    session_058: n=63 acc=0.7460 err=16 tp=19 tn=28 fp=2 fn=14 pred_pos=0.3333
+    session_027: n=61 acc=0.8361 err=10 tp=23 tn=28 fp=0 fn=10 pred_pos=0.3770
+    session_017: n=51 acc=0.8235 err=9 tp=10 tn=32 fp=0 fn=9 pred_pos=0.1961
+    session_047: n=61 acc=0.8852 err=7 tp=26 tn=28 fp=0 fn=7 pred_pos=0.4262
+    session_037: n=62 acc=0.9032 err=6 tp=25 tn=31 fp=0 fn=6 pred_pos=0.4032
+    session_002: n=43 acc=0.9302 err=3 tp=16 tn=24 fp=0 fn=3 pred_pos=0.3721
+    session_053: n=65 acc=0.9692 err=2 tp=31 tn=32 fp=0 fn=2 pred_pos=0.4769
+    session_007: n=48 acc=0.9583 err=2 tp=18 tn=28 fp=0 fn=2 pred_pos=0.3750
+    session_012: n=25 acc=0.9200 err=2 tp=7 tn=16 fp=0 fn=2 pred_pos=0.2800
+    session_022: n=61 acc=0.9836 err=1 tp=31 tn=29 fp=0 fn=1 pred_pos=0.5082
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_032: n=59 acc=0.9831 err=1 tp=32 tn=26 fp=0 fn=1 pred_pos=0.5424
+  [val/material]
+    plastic: n=295 acc=0.8847 err=34 tp=101 tn=160 fp=2 fn=32 pred_pos=0.3492
+    A4 paper: n=122 acc=0.9098 err=11 tp=54 tn=57 fp=0 fn=11 pred_pos=0.4426
+    USB cable: n=121 acc=0.9339 err=8 tp=58 tn=55 fp=0 fn=8 pred_pos=0.4793
+    soft foam earplug: n=121 acc=0.9421 err=7 tp=57 tn=57 fp=0 fn=7 pred_pos=0.4711
+[INFO] epoch 8/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1790 avg=0.1790 speed=0.24 batch/s
+  [train] batch 20/77 loss=0.4711 avg=0.2497 speed=1.64 batch/s
+  [train] batch 40/77 loss=0.3074 avg=0.2557 speed=1.98 batch/s
+  [train] batch 60/77 loss=0.0792 avg=0.2315 speed=1.98 batch/s
+  [train] batch 77/77 loss=0.2399 avg=0.2328 speed=2.06 batch/s
+[BEST] epoch=8 smoothed_balanced_acc=0.9070 saved
+[Epoch 008] loss=0.2328 window=8 val_acc=0.8801 balanced_acc=0.8806 smoothed_balanced_acc=0.9070 f1=0.8916 precision=0.8105 recall=0.9909 pred_pos=0.6085 mean_p=0.6112 mean_p_pos=0.9671 mean_p_neg=0.2586 tp=325 tn=255 fp=76 fn=3 lr=5.00e-04 time=49.6s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.0333 err=29 tp=0 tn=1 fp=29 fn=0 pred_pos=0.9667
+    continuous variable-force pressing: n=143 acc=0.8042 err=28 tp=0 tn=115 fp=28 fn=0 pred_pos=0.1958
+    diagonal constant-force pressing: n=48 acc=0.7292 err=13 tp=0 tn=35 fp=13 fn=0 pred_pos=0.2708
+    static no motion: n=29 acc=0.7931 err=6 tp=0 tn=23 fp=6 fn=0 pred_pos=0.2069
+    rotational sliding: n=125 acc=0.9760 err=3 tp=122 tn=0 fp=0 fn=3 pred_pos=0.9760
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.7704 err=76 tp=0 tn=255 fp=76 fn=0 pred_pos=0.2296
+    rotation: n=158 acc=0.9810 err=3 tp=155 tn=0 fp=0 fn=3 pred_pos=0.9810
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.5397 err=29 tp=33 tn=1 fp=29 fn=0 pred_pos=0.9841
+    session_047: n=61 acc=0.7869 err=13 tp=33 tn=15 fp=13 fn=0 pred_pos=0.7541
+    session_012: n=25 acc=0.4800 err=13 tp=9 tn=3 fp=13 fn=0 pred_pos=0.8800
+    session_017: n=51 acc=0.7843 err=11 tp=17 tn=23 fp=9 fn=2 pred_pos=0.5098
+    session_022: n=61 acc=0.9016 err=6 tp=32 tn=23 fp=6 fn=0 pred_pos=0.6230
+    session_027: n=61 acc=0.9180 err=5 tp=32 tn=24 fp=4 fn=1 pred_pos=0.5902
+    session_037: n=62 acc=0.9677 err=2 tp=31 tn=29 fp=2 fn=0 pred_pos=0.5323
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.8203 err=53 tp=131 tn=111 fp=51 fn=2 pred_pos=0.6169
+    USB cable: n=121 acc=0.8926 err=13 tp=66 tn=42 fp=13 fn=0 pred_pos=0.6529
+    A4 paper: n=122 acc=0.9098 err=11 tp=64 tn=47 fp=10 fn=1 pred_pos=0.6066
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=2 fn=0 pred_pos=0.5455
+[INFO] epoch 9/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1129 avg=0.1129 speed=0.20 batch/s
+  [train] batch 20/77 loss=0.3556 avg=0.2003 speed=1.64 batch/s
+  [train] batch 40/77 loss=0.2890 avg=0.2196 speed=1.95 batch/s
+  [train] batch 60/77 loss=0.1266 avg=0.2050 speed=1.94 batch/s
+  [train] batch 77/77 loss=3.7093 avg=0.2470 speed=2.03 batch/s
+[Epoch 009] loss=0.2470 window=8 val_acc=0.8923 balanced_acc=0.8927 smoothed_balanced_acc=0.8940 f1=0.9007 precision=0.8320 recall=0.9817 pred_pos=0.5873 mean_p=0.5913 mean_p_pos=0.9643 mean_p_neg=0.2217 tp=322 tn=266 fp=65 fn=6 lr=5.00e-04 time=50.4s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.8112 err=27 tp=0 tn=116 fp=27 fn=0 pred_pos=0.1888
+    diagonal changing-force pressing: n=30 acc=0.4333 err=17 tp=0 tn=13 fp=17 fn=0 pred_pos=0.5667
+    diagonal constant-force pressing: n=48 acc=0.7500 err=12 tp=0 tn=36 fp=12 fn=0 pred_pos=0.2500
+    constant-force pressing: n=81 acc=0.9259 err=6 tp=0 tn=75 fp=6 fn=0 pred_pos=0.0741
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    diagonal rotational sliding: n=33 acc=0.9394 err=2 tp=31 tn=0 fp=0 fn=2 pred_pos=0.9394
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.8036 err=65 tp=0 tn=266 fp=65 fn=0 pred_pos=0.1964
+    rotation: n=158 acc=0.9620 err=6 tp=152 tn=0 fp=0 fn=6 pred_pos=0.9620
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.6984 err=19 tp=31 tn=13 fp=17 fn=2 pred_pos=0.7619
+    session_047: n=61 acc=0.7705 err=14 tp=33 tn=14 fp=14 fn=0 pred_pos=0.7705
+    session_012: n=25 acc=0.5200 err=12 tp=9 tn=4 fp=12 fn=0 pred_pos=0.8400
+    session_017: n=51 acc=0.8235 err=9 tp=16 tn=26 fp=6 fn=3 pred_pos=0.4314
+    session_032: n=59 acc=0.9153 err=5 tp=33 tn=21 fp=5 fn=0 pred_pos=0.6441
+    session_027: n=61 acc=0.9344 err=4 tp=32 tn=25 fp=3 fn=1 pred_pos=0.5738
+    session_037: n=62 acc=0.9516 err=3 tp=31 tn=28 fp=3 fn=0 pred_pos=0.5484
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_042: n=60 acc=0.9833 err=1 tp=33 tn=26 fp=1 fn=0 pred_pos=0.5667
+    session_002: n=43 acc=0.9767 err=1 tp=19 tn=23 fp=1 fn=0 pred_pos=0.4651
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+  [val/material]
+    plastic: n=295 acc=0.8610 err=41 tp=128 tn=126 fp=36 fn=5 pred_pos=0.5559
+    USB cable: n=121 acc=0.8760 err=15 tp=66 tn=40 fp=15 fn=0 pred_pos=0.6694
+    soft foam earplug: n=121 acc=0.9339 err=8 tp=64 tn=49 fp=8 fn=0 pred_pos=0.5950
+    A4 paper: n=122 acc=0.9426 err=7 tp=64 tn=51 fp=6 fn=1 pred_pos=0.5738
+[INFO] epoch 10/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1677 avg=0.1677 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.0792 avg=0.2713 speed=1.68 batch/s
+  [train] batch 40/77 loss=0.1320 avg=0.2441 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.4424 avg=0.2344 speed=1.95 batch/s
+  [train] batch 77/77 loss=0.0002 avg=0.2194 speed=2.03 batch/s
+[Epoch 010] loss=0.2194 window=8 val_acc=0.9226 balanced_acc=0.9224 smoothed_balanced_acc=0.8986 f1=0.9192 precision=0.9571 recall=0.8841 pred_pos=0.4598 mean_p=0.4434 mean_p_pos=0.8314 mean_p_neg=0.0590 tp=290 tn=318 fp=13 fn=38 lr=5.00e-04 time=50.1s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8560 err=18 tp=107 tn=0 fp=0 fn=18 pred_pos=0.8560
+    translational sliding: n=137 acc=0.8978 err=14 tp=123 tn=0 fp=0 fn=14 pred_pos=0.8978
+    diagonal changing-force pressing: n=30 acc=0.6333 err=11 tp=0 tn=19 fp=11 fn=0 pred_pos=0.3667
+    diagonal translational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    diagonal rotational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.8671 err=21 tp=137 tn=0 fp=0 fn=21 pred_pos=0.8671
+    translation: n=170 acc=0.9000 err=17 tp=153 tn=0 fp=0 fn=17 pred_pos=0.9000
+    non-slip: n=331 acc=0.9607 err=13 tp=0 tn=318 fp=13 fn=0 pred_pos=0.0393
+  [val/session]
+    session_058: n=63 acc=0.7778 err=14 tp=30 tn=19 fp=11 fn=3 pred_pos=0.6508
+    session_042: n=60 acc=0.8333 err=10 tp=23 tn=27 fp=0 fn=10 pred_pos=0.3833
+    session_017: n=51 acc=0.8824 err=6 tp=13 tn=32 fp=0 fn=6 pred_pos=0.2549
+    session_027: n=61 acc=0.9180 err=5 tp=28 tn=28 fp=0 fn=5 pred_pos=0.4590
+    session_037: n=62 acc=0.9355 err=4 tp=27 tn=31 fp=0 fn=4 pred_pos=0.4355
+    session_053: n=65 acc=0.9538 err=3 tp=30 tn=32 fp=0 fn=3 pred_pos=0.4615
+    session_007: n=48 acc=0.9375 err=3 tp=17 tn=28 fp=0 fn=3 pred_pos=0.3542
+    session_047: n=61 acc=0.9672 err=2 tp=31 tn=28 fp=0 fn=2 pred_pos=0.5082
+    session_012: n=25 acc=0.9200 err=2 tp=8 tn=15 fp=1 fn=1 pred_pos=0.3600
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_032: n=59 acc=0.9831 err=1 tp=32 tn=26 fp=0 fn=1 pred_pos=0.5424
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9051 err=28 tp=117 tn=150 fp=12 fn=16 pred_pos=0.4373
+    USB cable: n=121 acc=0.9008 err=12 tp=54 tn=55 fp=0 fn=12 pred_pos=0.4463
+    A4 paper: n=122 acc=0.9508 err=6 tp=60 tn=56 fp=1 fn=5 pred_pos=0.5000
+    soft foam earplug: n=121 acc=0.9587 err=5 tp=59 tn=57 fp=0 fn=5 pred_pos=0.4876
+[INFO] epoch 11/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1975 avg=0.1975 speed=0.25 batch/s
+  [train] batch 20/77 loss=0.2135 avg=0.1496 speed=1.71 batch/s
+  [train] batch 40/77 loss=0.2947 avg=0.1607 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.2727 avg=0.1660 speed=1.92 batch/s
+  [train] batch 77/77 loss=0.3464 avg=0.1681 speed=2.02 batch/s
+[BEST] epoch=11 smoothed_balanced_acc=0.9202 saved
+[Epoch 011] loss=0.1681 window=8 val_acc=0.9454 balanced_acc=0.9454 smoothed_balanced_acc=0.9202 f1=0.9451 precision=0.9451 recall=0.9451 pred_pos=0.4977 mean_p=0.5140 mean_p_pos=0.9295 mean_p_neg=0.1023 tp=310 tn=313 fp=18 fn=18 lr=5.00e-04 time=50.2s
+  [val/behavior]
+    diagonal rotational sliding: n=33 acc=0.6970 err=10 tp=23 tn=0 fp=0 fn=10 pred_pos=0.6970
+    rotational sliding: n=125 acc=0.9360 err=8 tp=117 tn=0 fp=0 fn=8 pred_pos=0.9360
+    diagonal constant-force pressing: n=48 acc=0.8542 err=7 tp=0 tn=41 fp=7 fn=0 pred_pos=0.1458
+    diagonal changing-force pressing: n=30 acc=0.8333 err=5 tp=0 tn=25 fp=5 fn=0 pred_pos=0.1667
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9456 err=18 tp=0 tn=313 fp=18 fn=0 pred_pos=0.0544
+    rotation: n=158 acc=0.8861 err=18 tp=140 tn=0 fp=0 fn=18 pred_pos=0.8861
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.7619 err=15 tp=23 tn=25 fp=5 fn=10 pred_pos=0.4444
+    session_012: n=25 acc=0.7200 err=7 tp=9 tn=9 fp=7 fn=0 pred_pos=0.6400
+    session_017: n=51 acc=0.9020 err=5 tp=15 tn=31 fp=1 fn=4 pred_pos=0.3137
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9085 err=27 tp=119 tn=149 fp=13 fn=14 pred_pos=0.4475
+    A4 paper: n=122 acc=0.9754 err=3 tp=64 tn=55 fp=2 fn=1 pred_pos=0.5410
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=0.9752 err=3 tp=66 tn=52 fp=3 fn=0 pred_pos=0.5702
+[INFO] epoch 12/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1688 avg=0.1688 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.1827 avg=0.2147 speed=1.66 batch/s
+  [train] batch 40/77 loss=0.0947 avg=0.1853 speed=1.91 batch/s
+  [train] batch 60/77 loss=0.0896 avg=0.1771 speed=1.92 batch/s
+  [train] batch 77/77 loss=0.0231 avg=0.1604 speed=2.02 batch/s
+[BEST] epoch=12 smoothed_balanced_acc=0.9417 saved
+[Epoch 012] loss=0.1604 window=8 val_acc=0.9575 balanced_acc=0.9574 smoothed_balanced_acc=0.9417 f1=0.9560 precision=0.9870 recall=0.9268 pred_pos=0.4674 mean_p=0.4615 mean_p_pos=0.9023 mean_p_neg=0.0248 tp=304 tn=327 fp=4 fn=24 lr=5.00e-04 time=50.1s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8480 err=19 tp=106 tn=0 fp=0 fn=19 pred_pos=0.8480
+    diagonal rotational sliding: n=33 acc=0.8788 err=4 tp=29 tn=0 fp=0 fn=4 pred_pos=0.8788
+    diagonal changing-force pressing: n=30 acc=0.9333 err=2 tp=0 tn=28 fp=2 fn=0 pred_pos=0.0667
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.8544 err=23 tp=135 tn=0 fp=0 fn=23 pred_pos=0.8544
+    non-slip: n=331 acc=0.9879 err=4 tp=0 tn=327 fp=4 fn=0 pred_pos=0.0121
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_027: n=61 acc=0.8852 err=7 tp=26 tn=28 fp=0 fn=7 pred_pos=0.4262
+    session_017: n=51 acc=0.8627 err=7 tp=12 tn=32 fp=0 fn=7 pred_pos=0.2353
+    session_058: n=63 acc=0.9048 err=6 tp=29 tn=28 fp=2 fn=4 pred_pos=0.4921
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_012: n=25 acc=0.9200 err=2 tp=7 tn=16 fp=0 fn=2 pred_pos=0.2800
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_047: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9458 err=16 tp=119 tn=160 fp=2 fn=14 pred_pos=0.4102
+    A4 paper: n=122 acc=0.9262 err=9 tp=58 tn=55 fp=2 fn=7 pred_pos=0.4918
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=1.0000 err=0 tp=66 tn=55 fp=0 fn=0 pred_pos=0.5455
+[INFO] epoch 13/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1393 avg=0.1393 speed=0.24 batch/s
+  [train] batch 20/77 loss=0.2927 avg=0.2147 speed=1.65 batch/s
+  [train] batch 40/77 loss=0.1942 avg=0.1847 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.0816 avg=0.1671 speed=1.98 batch/s
+  [train] batch 77/77 loss=0.0020 avg=0.1583 speed=2.07 batch/s
+[BEST] epoch=13 smoothed_balanced_acc=0.9464 saved
+[Epoch 013] loss=0.1583 window=8 val_acc=0.9363 balanced_acc=0.9365 smoothed_balanced_acc=0.9464 f1=0.9386 precision=0.9017 recall=0.9787 pred_pos=0.5402 mean_p=0.5496 mean_p_pos=0.9703 mean_p_neg=0.1328 tp=321 tn=296 fp=35 fn=7 lr=5.00e-04 time=49.1s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.3333 err=20 tp=0 tn=10 fp=20 fn=0 pred_pos=0.6667
+    continuous variable-force pressing: n=143 acc=0.9441 err=8 tp=0 tn=135 fp=8 fn=0 pred_pos=0.0559
+    rotational sliding: n=125 acc=0.9440 err=7 tp=118 tn=0 fp=0 fn=7 pred_pos=0.9440
+    diagonal constant-force pressing: n=48 acc=0.9375 err=3 tp=0 tn=45 fp=3 fn=0 pred_pos=0.0625
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    constant-force pressing: n=81 acc=0.9877 err=1 tp=0 tn=80 fp=1 fn=0 pred_pos=0.0123
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.8943 err=35 tp=0 tn=296 fp=35 fn=0 pred_pos=0.1057
+    rotation: n=158 acc=0.9557 err=7 tp=151 tn=0 fp=0 fn=7 pred_pos=0.9557
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.6825 err=20 tp=33 tn=10 fp=20 fn=0 pred_pos=0.8413
+    session_047: n=61 acc=0.9016 err=6 tp=33 tn=22 fp=6 fn=0 pred_pos=0.6393
+    session_027: n=61 acc=0.9344 err=4 tp=30 tn=27 fp=1 fn=3 pred_pos=0.5082
+    session_017: n=51 acc=0.9216 err=4 tp=16 tn=31 fp=1 fn=3 pred_pos=0.3333
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_012: n=25 acc=0.8800 err=3 tp=9 tn=13 fp=3 fn=0 pred_pos=0.4800
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_032: n=59 acc=0.9831 err=1 tp=33 tn=25 fp=1 fn=0 pred_pos=0.5763
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9085 err=27 tp=130 tn=138 fp=24 fn=3 pred_pos=0.5220
+    A4 paper: n=122 acc=0.9426 err=7 tp=62 tn=53 fp=4 fn=3 pred_pos=0.5410
+    USB cable: n=121 acc=0.9504 err=6 tp=66 tn=49 fp=6 fn=0 pred_pos=0.5950
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=63 tn=56 fp=1 fn=1 pred_pos=0.5289
+[INFO] epoch 14/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.2037 avg=0.2037 speed=0.20 batch/s
+  [train] batch 20/77 loss=0.1195 avg=0.2020 speed=1.55 batch/s
+  [train] batch 40/77 loss=0.1568 avg=0.1713 speed=1.93 batch/s
+  [train] batch 60/77 loss=0.0259 avg=0.1649 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0255 avg=0.1523 speed=2.05 batch/s
+[Epoch 014] loss=0.1523 window=8 val_acc=0.9454 balanced_acc=0.9453 smoothed_balanced_acc=0.9464 f1=0.9441 precision=0.9620 recall=0.9268 pred_pos=0.4795 mean_p=0.4917 mean_p_pos=0.9237 mean_p_neg=0.0637 tp=304 tn=319 fp=12 fn=24 lr=5.00e-04 time=49.8s
+  [val/behavior]
+    diagonal rotational sliding: n=33 acc=0.6061 err=13 tp=20 tn=0 fp=0 fn=13 pred_pos=0.6061
+    rotational sliding: n=125 acc=0.9440 err=7 tp=118 tn=0 fp=0 fn=7 pred_pos=0.9440
+    diagonal changing-force pressing: n=30 acc=0.8333 err=5 tp=0 tn=25 fp=5 fn=0 pred_pos=0.1667
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    translational sliding: n=137 acc=0.9781 err=3 tp=134 tn=0 fp=0 fn=3 pred_pos=0.9781
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.8734 err=20 tp=138 tn=0 fp=0 fn=20 pred_pos=0.8734
+    non-slip: n=331 acc=0.9637 err=12 tp=0 tn=319 fp=12 fn=0 pred_pos=0.0363
+    translation: n=170 acc=0.9765 err=4 tp=166 tn=0 fp=0 fn=4 pred_pos=0.9765
+  [val/session]
+    session_058: n=63 acc=0.7143 err=18 tp=20 tn=25 fp=5 fn=13 pred_pos=0.3968
+    session_027: n=61 acc=0.9344 err=4 tp=29 tn=28 fp=0 fn=4 pred_pos=0.4754
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_022: n=61 acc=0.9508 err=3 tp=31 tn=27 fp=2 fn=1 pred_pos=0.5410
+    session_017: n=51 acc=0.9412 err=3 tp=17 tn=31 fp=1 fn=2 pred_pos=0.3529
+    session_042: n=60 acc=0.9667 err=2 tp=31 tn=27 fp=0 fn=2 pred_pos=0.5167
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_012: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9220 err=23 tp=117 tn=155 fp=7 fn=16 pred_pos=0.4203
+    A4 paper: n=122 acc=0.9426 err=7 tp=60 tn=55 fp=2 fn=5 pred_pos=0.5082
+    USB cable: n=121 acc=0.9587 err=5 tp=64 tn=52 fp=3 fn=2 pred_pos=0.5537
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 15/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0168 avg=0.0168 speed=0.20 batch/s
+  [train] batch 20/77 loss=0.3560 avg=0.1929 speed=1.61 batch/s
+  [train] batch 40/77 loss=0.0467 avg=0.1655 speed=1.96 batch/s
+  [train] batch 60/77 loss=0.0281 avg=0.1453 speed=1.97 batch/s
+  [train] batch 77/77 loss=1.1597 avg=0.1630 speed=2.06 batch/s
+[Epoch 015] loss=0.1630 window=8 val_acc=0.9272 balanced_acc=0.9274 smoothed_balanced_acc=0.9364 f1=0.9308 precision=0.8825 recall=0.9848 pred_pos=0.5554 mean_p=0.5567 mean_p_pos=0.9685 mean_p_neg=0.1486 tp=323 tn=288 fp=43 fn=5 lr=5.00e-04 time=49.6s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.8671 err=19 tp=0 tn=124 fp=19 fn=0 pred_pos=0.1329
+    diagonal constant-force pressing: n=48 acc=0.7500 err=12 tp=0 tn=36 fp=12 fn=0 pred_pos=0.2500
+    diagonal changing-force pressing: n=30 acc=0.6667 err=10 tp=0 tn=20 fp=10 fn=0 pred_pos=0.3333
+    diagonal rotational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    rotational sliding: n=125 acc=0.9840 err=2 tp=123 tn=0 fp=0 fn=2 pred_pos=0.9840
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.8701 err=43 tp=0 tn=288 fp=43 fn=0 pred_pos=0.1299
+    rotation: n=158 acc=0.9684 err=5 tp=153 tn=0 fp=0 fn=5 pred_pos=0.9684
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_047: n=61 acc=0.7213 err=17 tp=33 tn=11 fp=17 fn=0 pred_pos=0.8197
+    session_058: n=63 acc=0.7937 err=13 tp=30 tn=20 fp=10 fn=3 pred_pos=0.6349
+    session_012: n=25 acc=0.5200 err=12 tp=9 tn=4 fp=12 fn=0 pred_pos=0.8400
+    session_017: n=51 acc=0.9412 err=3 tp=18 tn=30 fp=2 fn=1 pred_pos=0.3922
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9051 err=28 tp=129 tn=138 fp=24 fn=4 pred_pos=0.5186
+    USB cable: n=121 acc=0.8595 err=17 tp=66 tn=38 fp=17 fn=0 pred_pos=0.6860
+    A4 paper: n=122 acc=0.9754 err=3 tp=64 tn=55 fp=2 fn=1 pred_pos=0.5410
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 16/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1186 avg=0.1186 speed=0.20 batch/s
+  [train] batch 20/77 loss=0.1565 avg=0.1713 speed=1.55 batch/s
+  [train] batch 40/77 loss=0.1802 avg=0.1526 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.1089 avg=0.1327 speed=1.93 batch/s
+  [train] batch 77/77 loss=0.0009 avg=0.1269 speed=2.04 batch/s
+[Epoch 016] loss=0.1269 window=8 val_acc=0.9545 balanced_acc=0.9546 smoothed_balanced_acc=0.9424 f1=0.9554 precision=0.9331 recall=0.9787 pred_pos=0.5220 mean_p=0.5214 mean_p_pos=0.9647 mean_p_neg=0.0821 tp=321 tn=308 fp=23 fn=7 lr=5.00e-04 time=50.1s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9301 err=10 tp=0 tn=133 fp=10 fn=0 pred_pos=0.0699
+    diagonal changing-force pressing: n=30 acc=0.6667 err=10 tp=0 tn=20 fp=10 fn=0 pred_pos=0.3333
+    rotational sliding: n=125 acc=0.9440 err=7 tp=118 tn=0 fp=0 fn=7 pred_pos=0.9440
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9305 err=23 tp=0 tn=308 fp=23 fn=0 pred_pos=0.0695
+    rotation: n=158 acc=0.9557 err=7 tp=151 tn=0 fp=0 fn=7 pred_pos=0.9557
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.8413 err=10 tp=33 tn=20 fp=10 fn=0 pred_pos=0.6825
+    session_047: n=61 acc=0.8689 err=8 tp=33 tn=20 fp=8 fn=0 pred_pos=0.6721
+    session_027: n=61 acc=0.9016 err=6 tp=29 tn=26 fp=2 fn=4 pred_pos=0.5082
+    session_017: n=51 acc=0.9412 err=3 tp=16 tn=32 fp=0 fn=3 pred_pos=0.3137
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_012: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9525 err=14 tp=130 tn=151 fp=11 fn=3 pred_pos=0.4780
+    A4 paper: n=122 acc=0.9344 err=8 tp=61 tn=53 fp=4 fn=4 pred_pos=0.5328
+    USB cable: n=121 acc=0.9339 err=8 tp=66 tn=47 fp=8 fn=0 pred_pos=0.6116
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 17/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0720 avg=0.0720 speed=0.21 batch/s
+  [train] batch 20/77 loss=0.0762 avg=0.1773 speed=1.63 batch/s
+  [train] batch 40/77 loss=0.1833 avg=0.1459 speed=1.96 batch/s
+  [train] batch 60/77 loss=0.2313 avg=0.1619 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0015 avg=0.1655 speed=2.04 batch/s
+[BEST] epoch=17 smoothed_balanced_acc=0.9491 saved
+[Epoch 017] loss=0.1655 window=8 val_acc=0.9651 balanced_acc=0.9651 smoothed_balanced_acc=0.9491 f1=0.9653 precision=0.9552 recall=0.9756 pred_pos=0.5083 mean_p=0.5121 mean_p_pos=0.9597 mean_p_neg=0.0685 tp=320 tn=316 fp=15 fn=8 lr=5.00e-04 time=50.2s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9520 err=6 tp=119 tn=0 fp=0 fn=6 pred_pos=0.9520
+    continuous variable-force pressing: n=143 acc=0.9650 err=5 tp=0 tn=138 fp=5 fn=0 pred_pos=0.0350
+    diagonal changing-force pressing: n=30 acc=0.8333 err=5 tp=0 tn=25 fp=5 fn=0 pred_pos=0.1667
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    diagonal constant-force pressing: n=48 acc=0.9583 err=2 tp=0 tn=46 fp=2 fn=0 pred_pos=0.0417
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9547 err=15 tp=0 tn=316 fp=15 fn=0 pred_pos=0.0453
+    rotation: n=158 acc=0.9620 err=6 tp=152 tn=0 fp=0 fn=6 pred_pos=0.9620
+    translation: n=170 acc=0.9882 err=2 tp=168 tn=0 fp=0 fn=2 pred_pos=0.9882
+  [val/session]
+    session_058: n=63 acc=0.9206 err=5 tp=33 tn=25 fp=5 fn=0 pred_pos=0.6032
+    session_017: n=51 acc=0.9216 err=4 tp=16 tn=31 fp=1 fn=3 pred_pos=0.3333
+    session_027: n=61 acc=0.9508 err=3 tp=31 tn=27 fp=1 fn=2 pred_pos=0.5246
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_012: n=25 acc=0.9200 err=2 tp=9 tn=14 fp=2 fn=0 pred_pos=0.4400
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9593 err=12 tp=129 tn=154 fp=8 fn=4 pred_pos=0.4644
+    A4 paper: n=122 acc=0.9508 err=6 tp=63 tn=53 fp=4 fn=2 pred_pos=0.5492
+    USB cable: n=121 acc=0.9669 err=4 tp=65 tn=52 fp=3 fn=1 pred_pos=0.5620
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 18/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0514 avg=0.0514 speed=0.21 batch/s
+  [train] batch 20/77 loss=0.1365 avg=0.0887 speed=1.66 batch/s
+  [train] batch 40/77 loss=0.0215 avg=0.1132 speed=1.95 batch/s
+  [train] batch 60/77 loss=0.0512 avg=0.1165 speed=1.94 batch/s
+  [train] batch 77/77 loss=0.0000 avg=0.1244 speed=2.03 batch/s
+[Epoch 018] loss=0.1244 window=8 val_acc=0.9029 balanced_acc=0.9025 smoothed_balanced_acc=0.9407 f1=0.8930 precision=0.9889 recall=0.8140 pred_pos=0.4097 mean_p=0.3943 mean_p_pos=0.7803 mean_p_neg=0.0119 tp=267 tn=328 fp=3 fn=61 lr=5.00e-04 time=50.3s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8000 err=25 tp=100 tn=0 fp=0 fn=25 pred_pos=0.8000
+    diagonal rotational sliding: n=33 acc=0.4848 err=17 tp=16 tn=0 fp=0 fn=17 pred_pos=0.4848
+    translational sliding: n=137 acc=0.8905 err=15 tp=122 tn=0 fp=0 fn=15 pred_pos=0.8905
+    diagonal translational sliding: n=33 acc=0.8788 err=4 tp=29 tn=0 fp=0 fn=4 pred_pos=0.8788
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    static no motion: n=29 acc=1.0000 err=0 tp=0 tn=29 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.7342 err=42 tp=116 tn=0 fp=0 fn=42 pred_pos=0.7342
+    translation: n=170 acc=0.8882 err=19 tp=151 tn=0 fp=0 fn=19 pred_pos=0.8882
+    non-slip: n=331 acc=0.9909 err=3 tp=0 tn=328 fp=3 fn=0 pred_pos=0.0091
+  [val/session]
+    session_058: n=63 acc=0.6825 err=20 tp=16 tn=27 fp=3 fn=17 pred_pos=0.3016
+    session_027: n=61 acc=0.8361 err=10 tp=23 tn=28 fp=0 fn=10 pred_pos=0.3770
+    session_017: n=51 acc=0.8627 err=7 tp=12 tn=32 fp=0 fn=7 pred_pos=0.2353
+    session_042: n=60 acc=0.9167 err=5 tp=28 tn=27 fp=0 fn=5 pred_pos=0.4667
+    session_007: n=48 acc=0.8958 err=5 tp=15 tn=28 fp=0 fn=5 pred_pos=0.3125
+    session_053: n=65 acc=0.9385 err=4 tp=29 tn=32 fp=0 fn=4 pred_pos=0.4462
+    session_037: n=62 acc=0.9355 err=4 tp=27 tn=31 fp=0 fn=4 pred_pos=0.4355
+    session_047: n=61 acc=0.9508 err=3 tp=30 tn=28 fp=0 fn=3 pred_pos=0.4918
+    session_022: n=61 acc=0.9672 err=2 tp=30 tn=29 fp=0 fn=2 pred_pos=0.4918
+    session_032: n=59 acc=0.9661 err=2 tp=31 tn=26 fp=0 fn=2 pred_pos=0.5254
+    session_002: n=43 acc=0.9767 err=1 tp=18 tn=24 fp=0 fn=1 pred_pos=0.4186
+    session_012: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+  [val/material]
+    plastic: n=295 acc=0.8712 err=38 tp=98 tn=159 fp=3 fn=35 pred_pos=0.3424
+    A4 paper: n=122 acc=0.9016 err=12 tp=53 tn=57 fp=0 fn=12 pred_pos=0.4344
+    USB cable: n=121 acc=0.9339 err=8 tp=58 tn=55 fp=0 fn=8 pred_pos=0.4793
+    soft foam earplug: n=121 acc=0.9504 err=6 tp=58 tn=57 fp=0 fn=6 pred_pos=0.4793
+[INFO] epoch 19/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1719 avg=0.1719 speed=0.21 batch/s
+  [train] batch 20/77 loss=0.1932 avg=0.1731 speed=1.65 batch/s
+  [train] batch 40/77 loss=0.0647 avg=0.1544 speed=1.95 batch/s
+  [train] batch 60/77 loss=0.0652 avg=0.1582 speed=1.94 batch/s
+  [train] batch 77/77 loss=0.0354 avg=0.1507 speed=2.05 batch/s
+[Epoch 019] loss=0.1507 window=8 val_acc=0.9666 balanced_acc=0.9666 smoothed_balanced_acc=0.9447 f1=0.9660 precision=0.9781 recall=0.9543 pred_pos=0.4856 mean_p=0.4857 mean_p_pos=0.9369 mean_p_neg=0.0386 tp=313 tn=324 fp=7 fn=15 lr=5.00e-04 time=49.7s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8960 err=13 tp=112 tn=0 fp=0 fn=13 pred_pos=0.8960
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    diagonal constant-force pressing: n=48 acc=0.9583 err=2 tp=0 tn=46 fp=2 fn=0 pred_pos=0.0417
+    continuous variable-force pressing: n=143 acc=0.9930 err=1 tp=0 tn=142 fp=1 fn=0 pred_pos=0.0070
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.9114 err=14 tp=144 tn=0 fp=0 fn=14 pred_pos=0.9114
+    non-slip: n=331 acc=0.9789 err=7 tp=0 tn=324 fp=7 fn=0 pred_pos=0.0211
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_027: n=61 acc=0.9016 err=6 tp=27 tn=28 fp=0 fn=6 pred_pos=0.4426
+    session_058: n=63 acc=0.9365 err=4 tp=32 tn=27 fp=3 fn=1 pred_pos=0.5556
+    session_017: n=51 acc=0.9216 err=4 tp=15 tn=32 fp=0 fn=4 pred_pos=0.2941
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_012: n=25 acc=0.9200 err=2 tp=9 tn=14 fp=2 fn=0 pred_pos=0.4400
+    session_047: n=61 acc=0.9836 err=1 tp=33 tn=27 fp=1 fn=0 pred_pos=0.5574
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9661 err=10 tp=128 tn=157 fp=5 fn=5 pred_pos=0.4508
+    A4 paper: n=122 acc=0.9426 err=7 tp=59 tn=56 fp=1 fn=6 pred_pos=0.4918
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=0.9835 err=2 tp=65 tn=54 fp=1 fn=1 pred_pos=0.5455
+[INFO] epoch 20/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0235 avg=0.0235 speed=0.22 batch/s
+  [train] batch 20/77 loss=0.1786 avg=0.1102 speed=1.69 batch/s
+  [train] batch 40/77 loss=0.0106 avg=0.1190 speed=2.04 batch/s
+  [train] batch 60/77 loss=0.0417 avg=0.1296 speed=1.97 batch/s
+  [train] batch 77/77 loss=0.0145 avg=0.1186 speed=2.06 batch/s
+[Epoch 020] loss=0.1186 window=8 val_acc=0.9530 balanced_acc=0.9531 smoothed_balanced_acc=0.9407 f1=0.9543 precision=0.9231 recall=0.9878 pred_pos=0.5326 mean_p=0.5356 mean_p_pos=0.9744 mean_p_neg=0.1007 tp=324 tn=304 fp=27 fn=4 lr=5.00e-04 time=49.6s
+  [val/behavior]
+    diagonal constant-force pressing: n=48 acc=0.7292 err=13 tp=0 tn=35 fp=13 fn=0 pred_pos=0.2708
+    diagonal changing-force pressing: n=30 acc=0.7333 err=8 tp=0 tn=22 fp=8 fn=0 pred_pos=0.2667
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    rotational sliding: n=125 acc=0.9760 err=3 tp=122 tn=0 fp=0 fn=3 pred_pos=0.9760
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9184 err=27 tp=0 tn=304 fp=27 fn=0 pred_pos=0.0816
+    rotation: n=158 acc=0.9810 err=3 tp=155 tn=0 fp=0 fn=3 pred_pos=0.9810
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_012: n=25 acc=0.4800 err=13 tp=9 tn=3 fp=13 fn=0 pred_pos=0.8800
+    session_058: n=63 acc=0.8730 err=8 tp=33 tn=22 fp=8 fn=0 pred_pos=0.6508
+    session_027: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=1 fn=1 pred_pos=0.5410
+    session_047: n=61 acc=0.9672 err=2 tp=33 tn=26 fp=2 fn=0 pred_pos=0.5738
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_017: n=51 acc=0.9608 err=2 tp=18 tn=31 fp=1 fn=1 pred_pos=0.3725
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9220 err=23 tp=132 tn=140 fp=22 fn=1 pred_pos=0.5220
+    A4 paper: n=122 acc=0.9672 err=4 tp=64 tn=54 fp=3 fn=1 pred_pos=0.5492
+    USB cable: n=121 acc=0.9752 err=3 tp=65 tn=53 fp=2 fn=1 pred_pos=0.5537
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 21/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0963 avg=0.0963 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.0248 avg=0.1311 speed=1.76 batch/s
+  [train] batch 40/77 loss=0.0320 avg=0.1071 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.0102 avg=0.1127 speed=2.00 batch/s
+  [train] batch 77/77 loss=0.0042 avg=0.1068 speed=2.07 batch/s
+[BEST] epoch=21 smoothed_balanced_acc=0.9652 saved
+[Epoch 021] loss=0.1068 window=8 val_acc=0.9757 balanced_acc=0.9758 smoothed_balanced_acc=0.9652 f1=0.9760 precision=0.9615 recall=0.9909 pred_pos=0.5129 mean_p=0.5194 mean_p_pos=0.9764 mean_p_neg=0.0665 tp=325 tn=318 fp=13 fn=3 lr=5.00e-04 time=49.3s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    diagonal constant-force pressing: n=48 acc=0.9375 err=3 tp=0 tn=45 fp=3 fn=0 pred_pos=0.0625
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    rotational sliding: n=125 acc=0.9920 err=1 tp=124 tn=0 fp=0 fn=1 pred_pos=0.9920
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9607 err=13 tp=0 tn=318 fp=13 fn=0 pred_pos=0.0393
+    rotation: n=158 acc=0.9873 err=2 tp=156 tn=0 fp=0 fn=2 pred_pos=0.9873
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_058: n=63 acc=0.9206 err=5 tp=32 tn=26 fp=4 fn=1 pred_pos=0.5714
+    session_017: n=51 acc=0.9412 err=3 tp=18 tn=30 fp=2 fn=1 pred_pos=0.3922
+    session_012: n=25 acc=0.8800 err=3 tp=9 tn=13 fp=3 fn=0 pred_pos=0.4800
+    session_047: n=61 acc=0.9672 err=2 tp=33 tn=26 fp=2 fn=0 pred_pos=0.5738
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_027: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9593 err=12 tp=130 tn=153 fp=9 fn=3 pred_pos=0.4712
+    A4 paper: n=122 acc=0.9836 err=2 tp=65 tn=55 fp=2 fn=0 pred_pos=0.5492
+    USB cable: n=121 acc=0.9835 err=2 tp=66 tn=53 fp=2 fn=0 pred_pos=0.5620
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 22/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0441 avg=0.0441 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.2562 avg=0.0872 speed=1.72 batch/s
+  [train] batch 40/77 loss=0.0154 avg=0.1004 speed=1.99 batch/s
+  [train] batch 60/77 loss=0.1028 avg=0.0928 speed=1.97 batch/s
+  [train] batch 77/77 loss=0.0063 avg=0.0911 speed=2.04 batch/s
+[BEST] epoch=22 smoothed_balanced_acc=0.9662 saved
+[Epoch 022] loss=0.0911 window=8 val_acc=0.9697 balanced_acc=0.9696 smoothed_balanced_acc=0.9662 f1=0.9694 precision=0.9724 recall=0.9665 pred_pos=0.4947 mean_p=0.4943 mean_p_pos=0.9576 mean_p_neg=0.0352 tp=317 tn=322 fp=9 fn=11 lr=5.00e-04 time=49.8s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9360 err=8 tp=117 tn=0 fp=0 fn=8 pred_pos=0.9360
+    diagonal constant-force pressing: n=48 acc=0.9167 err=4 tp=0 tn=44 fp=4 fn=0 pred_pos=0.0833
+    translational sliding: n=137 acc=0.9781 err=3 tp=134 tn=0 fp=0 fn=3 pred_pos=0.9781
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    continuous variable-force pressing: n=143 acc=0.9930 err=1 tp=0 tn=142 fp=1 fn=0 pred_pos=0.0070
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9728 err=9 tp=0 tn=322 fp=9 fn=0 pred_pos=0.0272
+    rotation: n=158 acc=0.9494 err=8 tp=150 tn=0 fp=0 fn=8 pred_pos=0.9494
+    translation: n=170 acc=0.9824 err=3 tp=167 tn=0 fp=0 fn=3 pred_pos=0.9824
+  [val/session]
+    session_017: n=51 acc=0.9020 err=5 tp=15 tn=31 fp=1 fn=4 pred_pos=0.3137
+    session_012: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_058: n=63 acc=0.9524 err=3 tp=33 tn=27 fp=3 fn=0 pred_pos=0.5714
+    session_037: n=62 acc=0.9677 err=2 tp=29 tn=31 fp=0 fn=2 pred_pos=0.4677
+    session_027: n=61 acc=0.9672 err=2 tp=31 tn=28 fp=0 fn=2 pred_pos=0.5082
+    session_042: n=60 acc=0.9667 err=2 tp=31 tn=27 fp=0 fn=2 pred_pos=0.5167
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_007: n=48 acc=0.9792 err=1 tp=19 tn=28 fp=0 fn=1 pred_pos=0.3958
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_047: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9559 err=13 tp=128 tn=154 fp=8 fn=5 pred_pos=0.4610
+    A4 paper: n=122 acc=0.9754 err=3 tp=63 tn=56 fp=1 fn=2 pred_pos=0.5246
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=62 tn=57 fp=0 fn=2 pred_pos=0.5124
+    USB cable: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=0 fn=2 pred_pos=0.5289
+[INFO] epoch 23/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0274 avg=0.0274 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.1925 avg=0.0935 speed=1.74 batch/s
+  [train] batch 40/77 loss=0.0144 avg=0.0854 speed=2.00 batch/s
+  [train] batch 60/77 loss=0.0214 avg=0.0945 speed=2.00 batch/s
+  [train] batch 77/77 loss=0.0089 avg=0.0869 speed=2.09 batch/s
+[BEST] epoch=23 smoothed_balanced_acc=0.9692 saved
+[Epoch 023] loss=0.0869 window=8 val_acc=0.9621 balanced_acc=0.9621 smoothed_balanced_acc=0.9692 f1=0.9625 precision=0.9469 recall=0.9787 pred_pos=0.5144 mean_p=0.5231 mean_p_pos=0.9751 mean_p_neg=0.0752 tp=321 tn=313 fp=18 fn=7 lr=5.00e-04 time=48.9s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9301 err=10 tp=0 tn=133 fp=10 fn=0 pred_pos=0.0699
+    rotational sliding: n=125 acc=0.9600 err=5 tp=120 tn=0 fp=0 fn=5 pred_pos=0.9600
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    diagonal rotational sliding: n=33 acc=0.9394 err=2 tp=31 tn=0 fp=0 fn=2 pred_pos=0.9394
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9456 err=18 tp=0 tn=313 fp=18 fn=0 pred_pos=0.0544
+    rotation: n=158 acc=0.9557 err=7 tp=151 tn=0 fp=0 fn=7 pred_pos=0.9557
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.9048 err=6 tp=31 tn=26 fp=4 fn=2 pred_pos=0.5556
+    session_047: n=61 acc=0.9016 err=6 tp=33 tn=22 fp=6 fn=0 pred_pos=0.6393
+    session_027: n=61 acc=0.9180 err=5 tp=30 tn=26 fp=2 fn=3 pred_pos=0.5246
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_017: n=51 acc=0.9412 err=3 tp=17 tn=31 fp=1 fn=2 pred_pos=0.3529
+    session_037: n=62 acc=0.9839 err=1 tp=31 tn=30 fp=1 fn=0 pred_pos=0.5161
+    session_012: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9661 err=10 tp=129 tn=156 fp=6 fn=4 pred_pos=0.4576
+    A4 paper: n=122 acc=0.9344 err=8 tp=62 tn=52 fp=5 fn=3 pred_pos=0.5492
+    USB cable: n=121 acc=0.9504 err=6 tp=66 tn=49 fp=6 fn=0 pred_pos=0.5950
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=64 tn=56 fp=1 fn=0 pred_pos=0.5372
+[INFO] epoch 24/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0561 avg=0.0561 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.1171 avg=0.0855 speed=1.64 batch/s
+  [train] batch 40/77 loss=0.1064 avg=0.0900 speed=2.04 batch/s
+  [train] batch 60/77 loss=0.2584 avg=0.1111 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0056 avg=0.1118 speed=2.06 batch/s
+[Epoch 024] loss=0.1118 window=8 val_acc=0.9742 balanced_acc=0.9743 smoothed_balanced_acc=0.9687 f1=0.9744 precision=0.9642 recall=0.9848 pred_pos=0.5083 mean_p=0.5085 mean_p_pos=0.9728 mean_p_neg=0.0484 tp=323 tn=319 fp=12 fn=5 lr=5.00e-04 time=49.7s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    diagonal constant-force pressing: n=48 acc=0.9583 err=2 tp=0 tn=46 fp=2 fn=0 pred_pos=0.0417
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9637 err=12 tp=0 tn=319 fp=12 fn=0 pred_pos=0.0363
+    rotation: n=158 acc=0.9747 err=4 tp=154 tn=0 fp=0 fn=4 pred_pos=0.9747
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_058: n=63 acc=0.9365 err=4 tp=33 tn=26 fp=4 fn=0 pred_pos=0.5873
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_027: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=1 fn=1 pred_pos=0.5410
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_017: n=51 acc=0.9608 err=2 tp=17 tn=32 fp=0 fn=2 pred_pos=0.3333
+    session_012: n=25 acc=0.9200 err=2 tp=9 tn=14 fp=2 fn=0 pred_pos=0.4400
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9695 err=9 tp=130 tn=156 fp=6 fn=3 pred_pos=0.4610
+    A4 paper: n=122 acc=0.9672 err=4 tp=64 tn=54 fp=3 fn=1 pred_pos=0.5492
+    USB cable: n=121 acc=0.9752 err=3 tp=66 tn=52 fp=3 fn=0 pred_pos=0.5702
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 25/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.1538 avg=0.1538 speed=0.21 batch/s
+  [train] batch 20/77 loss=0.0534 avg=0.1213 speed=1.70 batch/s
+  [train] batch 40/77 loss=0.0304 avg=0.1029 speed=2.05 batch/s
+  [train] batch 60/77 loss=0.0321 avg=0.0962 speed=1.98 batch/s
+  [train] batch 77/77 loss=0.0003 avg=0.0906 speed=2.07 batch/s
+[Epoch 025] loss=0.0906 window=8 val_acc=0.9241 balanced_acc=0.9244 smoothed_balanced_acc=0.9536 f1=0.9288 precision=0.8717 recall=0.9939 pred_pos=0.5675 mean_p=0.5647 mean_p_pos=0.9887 mean_p_neg=0.1445 tp=326 tn=283 fp=48 fn=2 lr=5.00e-04 time=49.4s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.3000 err=21 tp=0 tn=9 fp=21 fn=0 pred_pos=0.7000
+    continuous variable-force pressing: n=143 acc=0.8671 err=19 tp=0 tn=124 fp=19 fn=0 pred_pos=0.1329
+    diagonal constant-force pressing: n=48 acc=0.8958 err=5 tp=0 tn=43 fp=5 fn=0 pred_pos=0.1042
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    rotational sliding: n=125 acc=0.9840 err=2 tp=123 tn=0 fp=0 fn=2 pred_pos=0.9840
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.8550 err=48 tp=0 tn=283 fp=48 fn=0 pred_pos=0.1450
+    rotation: n=158 acc=0.9873 err=2 tp=156 tn=0 fp=0 fn=2 pred_pos=0.9873
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.6667 err=21 tp=33 tn=9 fp=21 fn=0 pred_pos=0.8571
+    session_047: n=61 acc=0.8033 err=12 tp=33 tn=16 fp=12 fn=0 pred_pos=0.7377
+    session_017: n=51 acc=0.8824 err=6 tp=18 tn=27 fp=5 fn=1 pred_pos=0.4510
+    session_012: n=25 acc=0.8000 err=5 tp=9 tn=11 fp=5 fn=0 pred_pos=0.5600
+    session_027: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=2 fn=1 pred_pos=0.5574
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.8915 err=32 tp=132 tn=131 fp=31 fn=1 pred_pos=0.5525
+    USB cable: n=121 acc=0.9008 err=12 tp=66 tn=43 fp=12 fn=0 pred_pos=0.6446
+    A4 paper: n=122 acc=0.9508 err=6 tp=64 tn=52 fp=5 fn=1 pred_pos=0.5656
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 26/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.2267 avg=0.2267 speed=0.24 batch/s
+  [train] batch 20/77 loss=0.0729 avg=0.0826 speed=1.67 batch/s
+  [train] batch 40/77 loss=0.0670 avg=0.1077 speed=1.96 batch/s
+  [train] batch 60/77 loss=0.1085 avg=0.1002 speed=1.92 batch/s
+  [train] batch 77/77 loss=0.0044 avg=0.0989 speed=2.02 batch/s
+[Epoch 026] loss=0.0989 window=8 val_acc=0.9651 balanced_acc=0.9650 smoothed_balanced_acc=0.9546 f1=0.9642 precision=0.9841 recall=0.9451 pred_pos=0.4780 mean_p=0.4686 mean_p_pos=0.9213 mean_p_neg=0.0201 tp=310 tn=326 fp=5 fn=18 lr=5.00e-04 time=50.1s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9200 err=10 tp=115 tn=0 fp=0 fn=10 pred_pos=0.9200
+    diagonal rotational sliding: n=33 acc=0.8485 err=5 tp=28 tn=0 fp=0 fn=5 pred_pos=0.8485
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    translational sliding: n=137 acc=0.9854 err=2 tp=135 tn=0 fp=0 fn=2 pred_pos=0.9854
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.9051 err=15 tp=143 tn=0 fp=0 fn=15 pred_pos=0.9051
+    non-slip: n=331 acc=0.9849 err=5 tp=0 tn=326 fp=5 fn=0 pred_pos=0.0151
+    translation: n=170 acc=0.9824 err=3 tp=167 tn=0 fp=0 fn=3 pred_pos=0.9824
+  [val/session]
+    session_058: n=63 acc=0.8730 err=8 tp=28 tn=27 fp=3 fn=5 pred_pos=0.4921
+    session_027: n=61 acc=0.9344 err=4 tp=29 tn=28 fp=0 fn=4 pred_pos=0.4754
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_017: n=51 acc=0.9412 err=3 tp=16 tn=32 fp=0 fn=3 pred_pos=0.3137
+    session_042: n=60 acc=0.9667 err=2 tp=31 tn=27 fp=0 fn=2 pred_pos=0.5167
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_012: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_047: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9559 err=13 tp=124 tn=158 fp=4 fn=9 pred_pos=0.4339
+    A4 paper: n=122 acc=0.9590 err=5 tp=61 tn=56 fp=1 fn=4 pred_pos=0.5082
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=0 fn=2 pred_pos=0.5289
+[INFO] epoch 27/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0163 avg=0.0163 speed=0.27 batch/s
+  [train] batch 20/77 loss=0.0585 avg=0.0792 speed=1.74 batch/s
+  [train] batch 40/77 loss=0.0277 avg=0.0940 speed=1.96 batch/s
+  [train] batch 60/77 loss=0.0463 avg=0.1024 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0021 avg=0.0985 speed=2.06 batch/s
+[Epoch 027] loss=0.0985 window=8 val_acc=0.9697 balanced_acc=0.9697 smoothed_balanced_acc=0.9530 f1=0.9698 precision=0.9611 recall=0.9787 pred_pos=0.5068 mean_p=0.5069 mean_p_pos=0.9709 mean_p_neg=0.0471 tp=321 tn=318 fp=13 fn=7 lr=2.50e-04 time=49.6s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.7667 err=7 tp=0 tn=23 fp=7 fn=0 pred_pos=0.2333
+    rotational sliding: n=125 acc=0.9520 err=6 tp=119 tn=0 fp=0 fn=6 pred_pos=0.9520
+    continuous variable-force pressing: n=143 acc=0.9790 err=3 tp=0 tn=140 fp=3 fn=0 pred_pos=0.0210
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    constant-force pressing: n=81 acc=0.9877 err=1 tp=0 tn=80 fp=1 fn=0 pred_pos=0.0123
+    diagonal translational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9607 err=13 tp=0 tn=318 fp=13 fn=0 pred_pos=0.0393
+    rotation: n=158 acc=0.9620 err=6 tp=152 tn=0 fp=0 fn=6 pred_pos=0.9620
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_058: n=63 acc=0.8889 err=7 tp=33 tn=23 fp=7 fn=0 pred_pos=0.6349
+    session_027: n=61 acc=0.9508 err=3 tp=30 tn=28 fp=0 fn=3 pred_pos=0.4918
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_017: n=51 acc=0.9608 err=2 tp=17 tn=32 fp=0 fn=2 pred_pos=0.3333
+    session_053: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=0 fn=1 pred_pos=0.4923
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_032: n=59 acc=0.9831 err=1 tp=33 tn=25 fp=1 fn=0 pred_pos=0.5763
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9661 err=10 tp=130 tn=155 fp=7 fn=3 pred_pos=0.4644
+    A4 paper: n=122 acc=0.9590 err=5 tp=62 tn=55 fp=2 fn=3 pred_pos=0.5246
+    USB cable: n=121 acc=0.9752 err=3 tp=66 tn=52 fp=3 fn=0 pred_pos=0.5702
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=63 tn=56 fp=1 fn=1 pred_pos=0.5289
+[INFO] epoch 28/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0224 avg=0.0224 speed=0.25 batch/s
+  [train] batch 20/77 loss=0.1210 avg=0.0580 speed=1.69 batch/s
+  [train] batch 40/77 loss=0.0165 avg=0.0601 speed=2.02 batch/s
+  [train] batch 60/77 loss=0.1686 avg=0.0680 speed=1.98 batch/s
+  [train] batch 77/77 loss=0.0003 avg=0.0694 speed=2.08 batch/s
+[Epoch 028] loss=0.0694 window=8 val_acc=0.9590 balanced_acc=0.9592 smoothed_balanced_acc=0.9646 f1=0.9605 precision=0.9239 recall=1.0000 pred_pos=0.5387 mean_p=0.5428 mean_p_pos=0.9949 mean_p_neg=0.0947 tp=328 tn=304 fp=27 fn=0 lr=2.50e-04 time=49.1s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9161 err=12 tp=0 tn=131 fp=12 fn=0 pred_pos=0.0839
+    diagonal changing-force pressing: n=30 acc=0.7333 err=8 tp=0 tn=22 fp=8 fn=0 pred_pos=0.2667
+    diagonal constant-force pressing: n=48 acc=0.9167 err=4 tp=0 tn=44 fp=4 fn=0 pred_pos=0.0833
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotational sliding: n=125 acc=1.0000 err=0 tp=125 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9184 err=27 tp=0 tn=304 fp=27 fn=0 pred_pos=0.0816
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotation: n=158 acc=1.0000 err=0 tp=158 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_047: n=61 acc=0.8525 err=9 tp=33 tn=19 fp=9 fn=0 pred_pos=0.6885
+    session_058: n=63 acc=0.8730 err=8 tp=33 tn=22 fp=8 fn=0 pred_pos=0.6508
+    session_012: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_017: n=51 acc=0.9608 err=2 tp=19 tn=30 fp=2 fn=0 pred_pos=0.4118
+    session_027: n=61 acc=0.9836 err=1 tp=33 tn=27 fp=1 fn=0 pred_pos=0.5574
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9525 err=14 tp=133 tn=148 fp=14 fn=0 pred_pos=0.4983
+    USB cable: n=121 acc=0.9256 err=9 tp=66 tn=46 fp=9 fn=0 pred_pos=0.6198
+    A4 paper: n=122 acc=0.9672 err=4 tp=65 tn=53 fp=4 fn=0 pred_pos=0.5656
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 29/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0130 avg=0.0130 speed=0.22 batch/s
+  [train] batch 20/77 loss=0.0443 avg=0.0423 speed=1.71 batch/s
+  [train] batch 40/77 loss=0.0295 avg=0.0455 speed=1.99 batch/s
+  [train] batch 60/77 loss=0.4198 avg=0.0564 speed=1.97 batch/s
+  [train] batch 77/77 loss=0.0009 avg=0.0564 speed=2.04 batch/s
+[Epoch 029] loss=0.0564 window=8 val_acc=0.9742 balanced_acc=0.9743 smoothed_balanced_acc=0.9677 f1=0.9744 precision=0.9642 recall=0.9848 pred_pos=0.5083 mean_p=0.5137 mean_p_pos=0.9815 mean_p_neg=0.0501 tp=323 tn=319 fp=12 fn=5 lr=2.50e-04 time=50.0s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    diagonal constant-force pressing: n=48 acc=0.9167 err=4 tp=0 tn=44 fp=4 fn=0 pred_pos=0.0833
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    continuous variable-force pressing: n=143 acc=0.9790 err=3 tp=0 tn=140 fp=3 fn=0 pred_pos=0.0210
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9637 err=12 tp=0 tn=319 fp=12 fn=0 pred_pos=0.0363
+    rotation: n=158 acc=0.9684 err=5 tp=153 tn=0 fp=0 fn=5 pred_pos=0.9684
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.9206 err=5 tp=32 tn=26 fp=4 fn=1 pred_pos=0.5714
+    session_012: n=25 acc=0.8400 err=4 tp=9 tn=12 fp=4 fn=0 pred_pos=0.5200
+    session_017: n=51 acc=0.9412 err=3 tp=17 tn=31 fp=1 fn=2 pred_pos=0.3529
+    session_047: n=61 acc=0.9672 err=2 tp=33 tn=26 fp=2 fn=0 pred_pos=0.5738
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9593 err=12 tp=130 tn=153 fp=9 fn=3 pred_pos=0.4712
+    A4 paper: n=122 acc=0.9836 err=2 tp=64 tn=56 fp=1 fn=1 pred_pos=0.5328
+    USB cable: n=121 acc=0.9835 err=2 tp=66 tn=53 fp=2 fn=0 pred_pos=0.5620
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 30/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0964 avg=0.0964 speed=0.25 batch/s
+  [train] batch 20/77 loss=0.0043 avg=0.0624 speed=1.75 batch/s
+  [train] batch 40/77 loss=0.0208 avg=0.0493 speed=2.03 batch/s
+  [train] batch 60/77 loss=0.0065 avg=0.0664 speed=1.97 batch/s
+  [train] batch 77/77 loss=0.0027 avg=0.0711 speed=2.04 batch/s
+[BEST] epoch=30 smoothed_balanced_acc=0.9692 saved
+[Epoch 030] loss=0.0711 window=8 val_acc=0.9742 balanced_acc=0.9742 smoothed_balanced_acc=0.9692 f1=0.9739 precision=0.9814 recall=0.9665 pred_pos=0.4901 mean_p=0.4893 mean_p_pos=0.9568 mean_p_neg=0.0261 tp=317 tn=325 fp=6 fn=11 lr=2.50e-04 time=50.1s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9280 err=9 tp=116 tn=0 fp=0 fn=9 pred_pos=0.9280
+    continuous variable-force pressing: n=143 acc=0.9790 err=3 tp=0 tn=140 fp=3 fn=0 pred_pos=0.0210
+    diagonal changing-force pressing: n=30 acc=0.9333 err=2 tp=0 tn=28 fp=2 fn=0 pred_pos=0.0667
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.9367 err=10 tp=148 tn=0 fp=0 fn=10 pred_pos=0.9367
+    non-slip: n=331 acc=0.9819 err=6 tp=0 tn=325 fp=6 fn=0 pred_pos=0.0181
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_027: n=61 acc=0.9180 err=5 tp=28 tn=28 fp=0 fn=5 pred_pos=0.4590
+    session_058: n=63 acc=0.9524 err=3 tp=32 tn=28 fp=2 fn=1 pred_pos=0.5397
+    session_017: n=51 acc=0.9412 err=3 tp=17 tn=31 fp=1 fn=2 pred_pos=0.3529
+    session_037: n=62 acc=0.9677 err=2 tp=29 tn=31 fp=0 fn=2 pred_pos=0.4677
+    session_047: n=61 acc=0.9672 err=2 tp=33 tn=26 fp=2 fn=0 pred_pos=0.5738
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9797 err=6 tp=130 tn=159 fp=3 fn=3 pred_pos=0.4508
+    A4 paper: n=122 acc=0.9508 err=6 tp=60 tn=56 fp=1 fn=5 pred_pos=0.5000
+    USB cable: n=121 acc=0.9752 err=3 tp=65 tn=53 fp=2 fn=1 pred_pos=0.5537
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=62 tn=57 fp=0 fn=2 pred_pos=0.5124
+[INFO] epoch 31/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0761 avg=0.0761 speed=0.26 batch/s
+  [train] batch 20/77 loss=0.0248 avg=0.0414 speed=1.66 batch/s
+  [train] batch 40/77 loss=0.1975 avg=0.0478 speed=1.95 batch/s
+  [train] batch 60/77 loss=0.2619 avg=0.0506 speed=1.89 batch/s
+  [train] batch 77/77 loss=0.0049 avg=0.0527 speed=2.00 batch/s
+[BEST] epoch=31 smoothed_balanced_acc=0.9722 saved
+[Epoch 031] loss=0.0527 window=8 val_acc=0.9681 balanced_acc=0.9682 smoothed_balanced_acc=0.9722 f1=0.9685 precision=0.9528 recall=0.9848 pred_pos=0.5144 mean_p=0.5140 mean_p_pos=0.9805 mean_p_neg=0.0516 tp=323 tn=315 fp=16 fn=5 lr=2.50e-04 time=50.5s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.9510 err=7 tp=0 tn=136 fp=7 fn=0 pred_pos=0.0490
+    diagonal changing-force pressing: n=30 acc=0.7667 err=7 tp=0 tn=23 fp=7 fn=0 pred_pos=0.2333
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    diagonal constant-force pressing: n=48 acc=0.9792 err=1 tp=0 tn=47 fp=1 fn=0 pred_pos=0.0208
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9517 err=16 tp=0 tn=315 fp=16 fn=0 pred_pos=0.0483
+    rotation: n=158 acc=0.9684 err=5 tp=153 tn=0 fp=0 fn=5 pred_pos=0.9684
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.8730 err=8 tp=32 tn=23 fp=7 fn=1 pred_pos=0.6190
+    session_047: n=61 acc=0.9016 err=6 tp=33 tn=22 fp=6 fn=0 pred_pos=0.6393
+    session_017: n=51 acc=0.9412 err=3 tp=17 tn=31 fp=1 fn=2 pred_pos=0.3529
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_012: n=25 acc=0.9600 err=1 tp=9 tn=15 fp=1 fn=0 pred_pos=0.4000
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9593 err=12 tp=130 tn=153 fp=9 fn=3 pred_pos=0.4712
+    USB cable: n=121 acc=0.9504 err=6 tp=66 tn=49 fp=6 fn=0 pred_pos=0.5950
+    A4 paper: n=122 acc=0.9836 err=2 tp=64 tn=56 fp=1 fn=1 pred_pos=0.5328
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 32/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0761 avg=0.0761 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.0054 avg=0.0503 speed=1.70 batch/s
+  [train] batch 40/77 loss=0.0174 avg=0.0400 speed=1.88 batch/s
+  [train] batch 60/77 loss=0.1238 avg=0.0522 speed=1.93 batch/s
+  [train] batch 77/77 loss=0.0000 avg=0.0498 speed=2.04 batch/s
+[BEST] epoch=32 smoothed_balanced_acc=0.9732 saved
+[Epoch 032] loss=0.0498 window=8 val_acc=0.9772 balanced_acc=0.9772 smoothed_balanced_acc=0.9732 f1=0.9769 precision=0.9875 recall=0.9665 pred_pos=0.4871 mean_p=0.4823 mean_p_pos=0.9525 mean_p_neg=0.0163 tp=317 tn=327 fp=4 fn=11 lr=2.50e-04 time=49.9s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9200 err=10 tp=115 tn=0 fp=0 fn=10 pred_pos=0.9200
+    diagonal changing-force pressing: n=30 acc=0.9000 err=3 tp=0 tn=27 fp=3 fn=0 pred_pos=0.1000
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.9367 err=10 tp=148 tn=0 fp=0 fn=10 pred_pos=0.9367
+    non-slip: n=331 acc=0.9879 err=4 tp=0 tn=327 fp=4 fn=0 pred_pos=0.0121
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_017: n=51 acc=0.9020 err=5 tp=14 tn=32 fp=0 fn=5 pred_pos=0.2745
+    session_058: n=63 acc=0.9524 err=3 tp=33 tn=27 fp=3 fn=0 pred_pos=0.5714
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_027: n=61 acc=0.9672 err=2 tp=31 tn=28 fp=0 fn=2 pred_pos=0.5082
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_047: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9729 err=8 tp=128 tn=159 fp=3 fn=5 pred_pos=0.4441
+    A4 paper: n=122 acc=0.9754 err=3 tp=63 tn=56 fp=1 fn=2 pred_pos=0.5246
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=0.9917 err=1 tp=65 tn=55 fp=0 fn=1 pred_pos=0.5372
+[INFO] epoch 33/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0098 avg=0.0098 speed=0.27 batch/s
+  [train] batch 20/77 loss=0.0034 avg=0.0177 speed=1.68 batch/s
+  [train] batch 40/77 loss=0.0037 avg=0.0244 speed=1.98 batch/s
+  [train] batch 60/77 loss=0.0506 avg=0.0367 speed=2.00 batch/s
+  [train] batch 77/77 loss=0.0002 avg=0.0374 speed=2.07 batch/s
+[BEST] epoch=33 smoothed_balanced_acc=0.9747 saved
+[Epoch 033] loss=0.0374 window=8 val_acc=0.9788 balanced_acc=0.9788 smoothed_balanced_acc=0.9747 f1=0.9787 precision=0.9758 recall=0.9817 pred_pos=0.5008 mean_p=0.4978 mean_p_pos=0.9708 mean_p_neg=0.0291 tp=322 tn=323 fp=8 fn=6 lr=2.50e-04 time=49.6s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.8333 err=5 tp=0 tn=25 fp=5 fn=0 pred_pos=0.1667
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    diagonal constant-force pressing: n=48 acc=0.9583 err=2 tp=0 tn=46 fp=2 fn=0 pred_pos=0.0417
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    diagonal rotational sliding: n=33 acc=0.9697 err=1 tp=32 tn=0 fp=0 fn=1 pred_pos=0.9697
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9758 err=8 tp=0 tn=323 fp=8 fn=0 pred_pos=0.0242
+    rotation: n=158 acc=0.9684 err=5 tp=153 tn=0 fp=0 fn=5 pred_pos=0.9684
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_058: n=63 acc=0.9048 err=6 tp=32 tn=25 fp=5 fn=1 pred_pos=0.5873
+    session_012: n=25 acc=0.9200 err=2 tp=9 tn=14 fp=2 fn=0 pred_pos=0.4400
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_047: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_017: n=51 acc=0.9804 err=1 tp=18 tn=32 fp=0 fn=1 pred_pos=0.3529
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9695 err=9 tp=131 tn=155 fp=7 fn=2 pred_pos=0.4678
+    A4 paper: n=122 acc=0.9836 err=2 tp=64 tn=56 fp=1 fn=1 pred_pos=0.5328
+    USB cable: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=0 fn=2 pred_pos=0.5289
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207
+[INFO] epoch 34/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0302 avg=0.0302 speed=0.20 batch/s
+  [train] batch 20/77 loss=0.0027 avg=0.0160 speed=1.66 batch/s
+  [train] batch 40/77 loss=0.0049 avg=0.0318 speed=1.94 batch/s
+  [train] batch 60/77 loss=0.0025 avg=0.0321 speed=1.92 batch/s
+  [train] batch 77/77 loss=0.0033 avg=0.0463 speed=2.01 batch/s
+[BEST] epoch=34 smoothed_balanced_acc=0.9757 saved
+[Epoch 034] loss=0.0463 window=8 val_acc=0.9712 balanced_acc=0.9711 smoothed_balanced_acc=0.9757 f1=0.9708 precision=0.9783 recall=0.9634 pred_pos=0.4901 mean_p=0.4876 mean_p_pos=0.9529 mean_p_neg=0.0266 tp=316 tn=324 fp=7 fn=12 lr=2.50e-04 time=50.5s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9040 err=12 tp=113 tn=0 fp=0 fn=12 pred_pos=0.9040
+    diagonal changing-force pressing: n=30 acc=0.8000 err=6 tp=0 tn=24 fp=6 fn=0 pred_pos=0.2000
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.9241 err=12 tp=146 tn=0 fp=0 fn=12 pred_pos=0.9241
+    non-slip: n=331 acc=0.9789 err=7 tp=0 tn=324 fp=7 fn=0 pred_pos=0.0211
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.9048 err=6 tp=33 tn=24 fp=6 fn=0 pred_pos=0.6190
+    session_017: n=51 acc=0.9020 err=5 tp=14 tn=32 fp=0 fn=5 pred_pos=0.2745
+    session_037: n=62 acc=0.9355 err=4 tp=27 tn=31 fp=0 fn=4 pred_pos=0.4355
+    session_027: n=61 acc=0.9508 err=3 tp=30 tn=28 fp=0 fn=3 pred_pos=0.4918
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_047: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9627 err=11 tp=128 tn=156 fp=6 fn=5 pred_pos=0.4542
+    A4 paper: n=122 acc=0.9672 err=4 tp=62 tn=56 fp=1 fn=3 pred_pos=0.5164
+    soft foam earplug: n=121 acc=0.9669 err=4 tp=60 tn=57 fp=0 fn=4 pred_pos=0.4959
+    USB cable: n=121 acc=1.0000 err=0 tp=66 tn=55 fp=0 fn=0 pred_pos=0.5455
+[INFO] epoch 35/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0457 avg=0.0457 speed=0.27 batch/s
+  [train] batch 20/77 loss=0.0091 avg=0.0486 speed=1.71 batch/s
+  [train] batch 40/77 loss=0.0695 avg=0.0493 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.0547 avg=0.0364 speed=1.95 batch/s
+  [train] batch 77/77 loss=0.0002 avg=0.0372 speed=2.02 batch/s
+[BEST] epoch=35 smoothed_balanced_acc=0.9777 saved
+[Epoch 035] loss=0.0372 window=8 val_acc=0.9833 balanced_acc=0.9833 smoothed_balanced_acc=0.9777 f1=0.9834 precision=0.9760 recall=0.9909 pred_pos=0.5053 mean_p=0.5030 mean_p_pos=0.9863 mean_p_neg=0.0241 tp=325 tn=323 fp=8 fn=3 lr=2.50e-04 time=50.4s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    continuous variable-force pressing: n=143 acc=0.9790 err=3 tp=0 tn=140 fp=3 fn=0 pred_pos=0.0210
+    rotational sliding: n=125 acc=0.9760 err=3 tp=122 tn=0 fp=0 fn=3 pred_pos=0.9760
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9758 err=8 tp=0 tn=323 fp=8 fn=0 pred_pos=0.0242
+    rotation: n=158 acc=0.9810 err=3 tp=155 tn=0 fp=0 fn=3 pred_pos=0.9810
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.9365 err=4 tp=33 tn=26 fp=4 fn=0 pred_pos=0.5873
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_017: n=51 acc=0.9412 err=3 tp=16 tn=32 fp=0 fn=3 pred_pos=0.3137
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_027: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9763 err=7 tp=130 tn=158 fp=4 fn=3 pred_pos=0.4542
+    USB cable: n=121 acc=0.9752 err=3 tp=66 tn=52 fp=3 fn=0 pred_pos=0.5702
+    A4 paper: n=122 acc=0.9918 err=1 tp=65 tn=56 fp=1 fn=0 pred_pos=0.5410
+    soft foam earplug: n=121 acc=1.0000 err=0 tp=64 tn=57 fp=0 fn=0 pred_pos=0.5289
+[INFO] epoch 36/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0046 avg=0.0046 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.0458 avg=0.0491 speed=1.68 batch/s
+  [train] batch 40/77 loss=0.0021 avg=0.0469 speed=1.93 batch/s
+  [train] batch 60/77 loss=0.0899 avg=0.0466 speed=1.93 batch/s
+  [train] batch 77/77 loss=0.0000 avg=0.0439 speed=2.02 batch/s
+[Epoch 036] loss=0.0439 window=8 val_acc=0.9742 balanced_acc=0.9742 smoothed_balanced_acc=0.9762 f1=0.9741 precision=0.9726 recall=0.9756 pred_pos=0.4992 mean_p=0.4970 mean_p_pos=0.9707 mean_p_neg=0.0275 tp=320 tn=322 fp=9 fn=8 lr=2.50e-04 time=50.3s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.9360 err=8 tp=117 tn=0 fp=0 fn=8 pred_pos=0.9360
+    continuous variable-force pressing: n=143 acc=0.9720 err=4 tp=0 tn=139 fp=4 fn=0 pred_pos=0.0280
+    diagonal changing-force pressing: n=30 acc=0.8667 err=4 tp=0 tn=26 fp=4 fn=0 pred_pos=0.1333
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9728 err=9 tp=0 tn=322 fp=9 fn=0 pred_pos=0.0272
+    rotation: n=158 acc=0.9494 err=8 tp=150 tn=0 fp=0 fn=8 pred_pos=0.9494
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_017: n=51 acc=0.9020 err=5 tp=15 tn=31 fp=1 fn=4 pred_pos=0.3137
+    session_058: n=63 acc=0.9365 err=4 tp=33 tn=26 fp=4 fn=0 pred_pos=0.5873
+    session_047: n=61 acc=0.9508 err=3 tp=33 tn=25 fp=3 fn=0 pred_pos=0.5902
+    session_037: n=62 acc=0.9677 err=2 tp=29 tn=31 fp=0 fn=2 pred_pos=0.4677
+    session_027: n=61 acc=0.9672 err=2 tp=31 tn=28 fp=0 fn=2 pred_pos=0.5082
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9695 err=9 tp=129 tn=157 fp=5 fn=4 pred_pos=0.4542
+    A4 paper: n=122 acc=0.9754 err=3 tp=63 tn=56 fp=1 fn=2 pred_pos=0.5246
+    USB cable: n=121 acc=0.9752 err=3 tp=66 tn=52 fp=3 fn=0 pred_pos=0.5702
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=62 tn=57 fp=0 fn=2 pred_pos=0.5124
+[INFO] epoch 37/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.2927 avg=0.2927 speed=0.22 batch/s
+  [train] batch 20/77 loss=0.0045 avg=0.0459 speed=1.69 batch/s
+  [train] batch 40/77 loss=0.0493 avg=0.0396 speed=1.93 batch/s
+  [train] batch 60/77 loss=0.0955 avg=0.0447 speed=1.93 batch/s
+  [train] batch 77/77 loss=0.0020 avg=0.0516 speed=2.03 batch/s
+[Epoch 037] loss=0.0516 window=8 val_acc=0.9241 balanced_acc=0.9245 smoothed_balanced_acc=0.9607 f1=0.9292 precision=0.8677 recall=1.0000 pred_pos=0.5736 mean_p=0.5738 mean_p_pos=0.9992 mean_p_neg=0.1522 tp=328 tn=281 fp=50 fn=0 lr=2.50e-04 time=50.4s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.3667 err=19 tp=0 tn=11 fp=19 fn=0 pred_pos=0.6333
+    diagonal constant-force pressing: n=48 acc=0.6875 err=15 tp=0 tn=33 fp=15 fn=0 pred_pos=0.3125
+    continuous variable-force pressing: n=143 acc=0.9091 err=13 tp=0 tn=130 fp=13 fn=0 pred_pos=0.0909
+    static no motion: n=29 acc=0.9310 err=2 tp=0 tn=27 fp=2 fn=0 pred_pos=0.0690
+    constant-force pressing: n=81 acc=0.9877 err=1 tp=0 tn=80 fp=1 fn=0 pred_pos=0.0123
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotational sliding: n=125 acc=1.0000 err=0 tp=125 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.8489 err=50 tp=0 tn=281 fp=50 fn=0 pred_pos=0.1511
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotation: n=158 acc=1.0000 err=0 tp=158 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.6984 err=19 tp=33 tn=11 fp=19 fn=0 pred_pos=0.8254
+    session_012: n=25 acc=0.4000 err=15 tp=9 tn=1 fp=15 fn=0 pred_pos=0.9600
+    session_047: n=61 acc=0.8689 err=8 tp=33 tn=20 fp=8 fn=0 pred_pos=0.6721
+    session_017: n=51 acc=0.9020 err=5 tp=19 tn=27 fp=5 fn=0 pred_pos=0.4706
+    session_022: n=61 acc=0.9672 err=2 tp=32 tn=27 fp=2 fn=0 pred_pos=0.5574
+    session_032: n=59 acc=0.9831 err=1 tp=33 tn=25 fp=1 fn=0 pred_pos=0.5763
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_027: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.8678 err=39 tp=133 tn=123 fp=39 fn=0 pred_pos=0.5831
+    USB cable: n=121 acc=0.9339 err=8 tp=66 tn=47 fp=8 fn=0 pred_pos=0.6116
+    A4 paper: n=122 acc=0.9836 err=2 tp=65 tn=55 fp=2 fn=0 pred_pos=0.5492
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=64 tn=56 fp=1 fn=0 pred_pos=0.5372
+[INFO] epoch 38/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.2263 avg=0.2263 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.1200 avg=0.0471 speed=1.66 batch/s
+  [train] batch 40/77 loss=0.0021 avg=0.0304 speed=1.97 batch/s
+  [train] batch 60/77 loss=0.0017 avg=0.0300 speed=1.96 batch/s
+  [train] batch 77/77 loss=0.0000 avg=0.0348 speed=2.06 batch/s
+[Epoch 038] loss=0.0348 window=8 val_acc=0.9621 balanced_acc=0.9619 smoothed_balanced_acc=0.9535 f1=0.9608 precision=0.9903 recall=0.9329 pred_pos=0.4689 mean_p=0.4687 mean_p_pos=0.9317 mean_p_neg=0.0099 tp=306 tn=328 fp=3 fn=22 lr=2.50e-04 time=49.8s
+  [val/behavior]
+    rotational sliding: n=125 acc=0.8560 err=18 tp=107 tn=0 fp=0 fn=18 pred_pos=0.8560
+    diagonal rotational sliding: n=33 acc=0.9091 err=3 tp=30 tn=0 fp=0 fn=3 pred_pos=0.9091
+    diagonal changing-force pressing: n=30 acc=0.9333 err=2 tp=0 tn=28 fp=2 fn=0 pred_pos=0.0667
+    translational sliding: n=137 acc=0.9927 err=1 tp=136 tn=0 fp=0 fn=1 pred_pos=0.9927
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    continuous variable-force pressing: n=143 acc=1.0000 err=0 tp=0 tn=143 fp=0 fn=0 pred_pos=0.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=158 acc=0.8671 err=21 tp=137 tn=0 fp=0 fn=21 pred_pos=0.8671
+    non-slip: n=331 acc=0.9909 err=3 tp=0 tn=328 fp=3 fn=0 pred_pos=0.0091
+    translation: n=170 acc=0.9941 err=1 tp=169 tn=0 fp=0 fn=1 pred_pos=0.9941
+  [val/session]
+    session_017: n=51 acc=0.8627 err=7 tp=12 tn=32 fp=0 fn=7 pred_pos=0.2353
+    session_027: n=61 acc=0.9016 err=6 tp=27 tn=28 fp=0 fn=6 pred_pos=0.4426
+    session_058: n=63 acc=0.9206 err=5 tp=30 tn=28 fp=2 fn=3 pred_pos=0.5079
+    session_037: n=62 acc=0.9516 err=3 tp=28 tn=31 fp=0 fn=3 pred_pos=0.4516
+    session_047: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=0.9833 err=1 tp=32 tn=27 fp=0 fn=1 pred_pos=0.5333
+    session_012: n=25 acc=0.9600 err=1 tp=8 tn=16 fp=0 fn=1 pred_pos=0.3200
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9559 err=13 tp=122 tn=160 fp=2 fn=11 pred_pos=0.4203
+    A4 paper: n=122 acc=0.9426 err=7 tp=59 tn=56 fp=1 fn=6 pred_pos=0.4918
+    soft foam earplug: n=121 acc=0.9752 err=3 tp=61 tn=57 fp=0 fn=3 pred_pos=0.5041
+    USB cable: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=0 fn=2 pred_pos=0.5289
+[INFO] epoch 39/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0123 avg=0.0123 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.0963 avg=0.0416 speed=1.71 batch/s
+  [train] batch 40/77 loss=0.0025 avg=0.0348 speed=2.01 batch/s
+  [train] batch 60/77 loss=0.0099 avg=0.0307 speed=2.00 batch/s
+  [train] batch 77/77 loss=0.0057 avg=0.0332 speed=2.07 batch/s
+[Epoch 039] loss=0.0332 window=8 val_acc=0.9499 balanced_acc=0.9502 smoothed_balanced_acc=0.9455 f1=0.9521 precision=0.9086 recall=1.0000 pred_pos=0.5478 mean_p=0.5523 mean_p_pos=0.9992 mean_p_neg=0.1094 tp=328 tn=298 fp=33 fn=0 lr=1.25e-04 time=49.2s
+  [val/behavior]
+    continuous variable-force pressing: n=143 acc=0.8671 err=19 tp=0 tn=124 fp=19 fn=0 pred_pos=0.1329
+    diagonal changing-force pressing: n=30 acc=0.8000 err=6 tp=0 tn=24 fp=6 fn=0 pred_pos=0.2000
+    diagonal constant-force pressing: n=48 acc=0.9375 err=3 tp=0 tn=45 fp=3 fn=0 pred_pos=0.0625
+    static no motion: n=29 acc=0.8966 err=3 tp=0 tn=26 fp=3 fn=0 pred_pos=0.1034
+    constant-force pressing: n=81 acc=0.9753 err=2 tp=0 tn=79 fp=2 fn=0 pred_pos=0.0247
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotational sliding: n=125 acc=1.0000 err=0 tp=125 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9003 err=33 tp=0 tn=298 fp=33 fn=0 pred_pos=0.0997
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+    rotation: n=158 acc=1.0000 err=0 tp=158 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_047: n=61 acc=0.7705 err=14 tp=33 tn=14 fp=14 fn=0 pred_pos=0.7705
+    session_058: n=63 acc=0.9048 err=6 tp=33 tn=24 fp=6 fn=0 pred_pos=0.6190
+    session_017: n=51 acc=0.9020 err=5 tp=19 tn=27 fp=5 fn=0 pred_pos=0.4706
+    session_022: n=61 acc=0.9508 err=3 tp=32 tn=26 fp=3 fn=0 pred_pos=0.5738
+    session_012: n=25 acc=0.8800 err=3 tp=9 tn=13 fp=3 fn=0 pred_pos=0.4800
+    session_032: n=59 acc=0.9661 err=2 tp=33 tn=24 fp=2 fn=0 pred_pos=0.5932
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_037: n=62 acc=1.0000 err=0 tp=31 tn=31 fp=0 fn=0 pred_pos=0.5000
+    session_027: n=61 acc=1.0000 err=0 tp=33 tn=28 fp=0 fn=0 pred_pos=0.5410
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+  [val/material]
+    plastic: n=295 acc=0.9525 err=14 tp=133 tn=148 fp=14 fn=0 pred_pos=0.4983
+    USB cable: n=121 acc=0.8843 err=14 tp=66 tn=41 fp=14 fn=0 pred_pos=0.6612
+    A4 paper: n=122 acc=0.9754 err=3 tp=65 tn=54 fp=3 fn=0 pred_pos=0.5574
+    soft foam earplug: n=121 acc=0.9835 err=2 tp=64 tn=55 fp=2 fn=0 pred_pos=0.5455
+[INFO] epoch 40/40 started augment=probabilistic-augment
+  [train] batch 1/77 loss=0.0071 avg=0.0071 speed=0.23 batch/s
+  [train] batch 20/77 loss=0.0032 avg=0.0390 speed=1.72 batch/s
+  [train] batch 40/77 loss=0.0036 avg=0.0296 speed=1.99 batch/s
+  [train] batch 60/77 loss=0.0250 avg=0.0312 speed=1.98 batch/s
+  [train] batch 77/77 loss=0.0000 avg=0.0284 speed=2.08 batch/s
+[Epoch 040] loss=0.0284 window=8 val_acc=0.9803 balanced_acc=0.9803 smoothed_balanced_acc=0.9641 f1=0.9803 precision=0.9730 recall=0.9878 pred_pos=0.5053 mean_p=0.5059 mean_p_pos=0.9878 mean_p_neg=0.0284 tp=324 tn=322 fp=9 fn=4 lr=1.25e-04 time=49.1s
+  [val/behavior]
+    diagonal changing-force pressing: n=30 acc=0.8000 err=6 tp=0 tn=24 fp=6 fn=0 pred_pos=0.2000
+    rotational sliding: n=125 acc=0.9680 err=4 tp=121 tn=0 fp=0 fn=4 pred_pos=0.9680
+    continuous variable-force pressing: n=143 acc=0.9860 err=2 tp=0 tn=141 fp=2 fn=0 pred_pos=0.0140
+    static no motion: n=29 acc=0.9655 err=1 tp=0 tn=28 fp=1 fn=0 pred_pos=0.0345
+    translational sliding: n=137 acc=1.0000 err=0 tp=137 tn=0 fp=0 fn=0 pred_pos=1.0000
+    constant-force pressing: n=81 acc=1.0000 err=0 tp=0 tn=81 fp=0 fn=0 pred_pos=0.0000
+    diagonal constant-force pressing: n=48 acc=1.0000 err=0 tp=0 tn=48 fp=0 fn=0 pred_pos=0.0000
+    diagonal translational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal rotational sliding: n=33 acc=1.0000 err=0 tp=33 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    non-slip: n=331 acc=0.9728 err=9 tp=0 tn=322 fp=9 fn=0 pred_pos=0.0272
+    rotation: n=158 acc=0.9747 err=4 tp=154 tn=0 fp=0 fn=4 pred_pos=0.9747
+    translation: n=170 acc=1.0000 err=0 tp=170 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_058: n=63 acc=0.9048 err=6 tp=33 tn=24 fp=6 fn=0 pred_pos=0.6190
+    session_047: n=61 acc=0.9672 err=2 tp=33 tn=26 fp=2 fn=0 pred_pos=0.5738
+    session_017: n=51 acc=0.9608 err=2 tp=17 tn=32 fp=0 fn=2 pred_pos=0.3333
+    session_037: n=62 acc=0.9839 err=1 tp=30 tn=31 fp=0 fn=1 pred_pos=0.4839
+    session_027: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=0 fn=1 pred_pos=0.5246
+    session_022: n=61 acc=0.9836 err=1 tp=32 tn=28 fp=1 fn=0 pred_pos=0.5410
+    session_053: n=65 acc=1.0000 err=0 tp=33 tn=32 fp=0 fn=0 pred_pos=0.5077
+    session_042: n=60 acc=1.0000 err=0 tp=33 tn=27 fp=0 fn=0 pred_pos=0.5500
+    session_032: n=59 acc=1.0000 err=0 tp=33 tn=26 fp=0 fn=0 pred_pos=0.5593
+    session_007: n=48 acc=1.0000 err=0 tp=20 tn=28 fp=0 fn=0 pred_pos=0.4167
+    session_002: n=43 acc=1.0000 err=0 tp=19 tn=24 fp=0 fn=0 pred_pos=0.4419
+    session_012: n=25 acc=1.0000 err=0 tp=9 tn=16 fp=0 fn=0 pred_pos=0.3600
+  [val/material]
+    plastic: n=295 acc=0.9729 err=8 tp=131 tn=156 fp=6 fn=2 pred_pos=0.4644
+    A4 paper: n=122 acc=0.9836 err=2 tp=64 tn=56 fp=1 fn=1 pred_pos=0.5328
+    USB cable: n=121 acc=0.9835 err=2 tp=66 tn=53 fp=2 fn=0 pred_pos=0.5620
+    soft foam earplug: n=121 acc=0.9917 err=1 tp=63 tn=57 fp=0 fn=1 pred_pos=0.5207

@@ -1,0 +1,41 @@
+[INFO] device=cpu
+[INFO] loading checkpoint: slip_detection\cluster_augdiag_final_results\checkpoints\model_v2_augdiag_59_augprob08_p05_warm3\slip_cnn_v2_best.pth
+[INFO] checkpoint metadata: epoch=32 best_metric=smoothed_balanced_acc=0.9654850746268657 input_mode=refdiff norm=instance architecture=stacked temporal_agg=meanmax
+[INFO] loading eval dataset: slip_detection\data\raw_cnn_test\test_windows_diag_062_065.csv
+[INFO] eval samples=262
+[THRESHOLD] value=0.5000
+[FINAL-TEST] threshold=0.5000 acc=0.9847 balanced_acc=0.9847 f1=0.9845 precision=0.9922 recall=0.9769 specificity=0.9924 pred_pos=0.4885 tp=127 tn=131 fp=1 fn=3
+  [val/behavior]
+    diagonal rotational sliding: n=66 acc=0.9697 err=2 tp=64 tn=0 fp=0 fn=2 pred_pos=0.9697
+    diagonal changing-force pressing: n=66 acc=0.9848 err=1 tp=0 tn=65 fp=1 fn=0 pred_pos=0.0152
+    diagonal translational sliding: n=64 acc=0.9844 err=1 tp=63 tn=0 fp=0 fn=1 pred_pos=0.9844
+    diagonal constant-force pressing: n=66 acc=1.0000 err=0 tp=0 tn=66 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=66 acc=0.9697 err=2 tp=64 tn=0 fp=0 fn=2 pred_pos=0.9697
+    non-slip: n=132 acc=0.9924 err=1 tp=0 tn=131 fp=1 fn=0 pred_pos=0.0076
+    translation: n=64 acc=0.9844 err=1 tp=63 tn=0 fp=0 fn=1 pred_pos=0.9844
+  [val/session]
+    session_063: n=66 acc=0.9697 err=2 tp=32 tn=32 fp=1 fn=1 pred_pos=0.5000
+    session_062: n=66 acc=0.9848 err=1 tp=32 tn=33 fp=0 fn=1 pred_pos=0.4848
+    session_065: n=65 acc=0.9846 err=1 tp=31 tn=33 fp=0 fn=1 pred_pos=0.4769
+    session_064: n=65 acc=1.0000 err=0 tp=32 tn=33 fp=0 fn=0 pred_pos=0.4923
+  [val/material]
+    plastic: n=262 acc=0.9847 err=4 tp=127 tn=131 fp=1 fn=3 pred_pos=0.4885
+[THRESHOLD] value=0.7000
+[FINAL-TEST] threshold=0.7000 acc=0.9618 balanced_acc=0.9616 f1=0.9603 precision=0.9918 recall=0.9308 specificity=0.9924 pred_pos=0.4656 tp=121 tn=131 fp=1 fn=9
+  [val/behavior]
+    diagonal rotational sliding: n=66 acc=0.9091 err=6 tp=60 tn=0 fp=0 fn=6 pred_pos=0.9091
+    diagonal translational sliding: n=64 acc=0.9531 err=3 tp=61 tn=0 fp=0 fn=3 pred_pos=0.9531
+    diagonal changing-force pressing: n=66 acc=0.9848 err=1 tp=0 tn=65 fp=1 fn=0 pred_pos=0.0152
+    diagonal constant-force pressing: n=66 acc=1.0000 err=0 tp=0 tn=66 fp=0 fn=0 pred_pos=0.0000
+  [val/motion_type]
+    rotation: n=66 acc=0.9091 err=6 tp=60 tn=0 fp=0 fn=6 pred_pos=0.9091
+    translation: n=64 acc=0.9531 err=3 tp=61 tn=0 fp=0 fn=3 pred_pos=0.9531
+    non-slip: n=132 acc=0.9924 err=1 tp=0 tn=131 fp=1 fn=0 pred_pos=0.0076
+  [val/session]
+    session_062: n=66 acc=0.9242 err=5 tp=28 tn=33 fp=0 fn=5 pred_pos=0.4242
+    session_063: n=66 acc=0.9697 err=2 tp=32 tn=32 fp=1 fn=1 pred_pos=0.5000
+    session_064: n=65 acc=0.9692 err=2 tp=30 tn=33 fp=0 fn=2 pred_pos=0.4615
+    session_065: n=65 acc=0.9846 err=1 tp=31 tn=33 fp=0 fn=1 pred_pos=0.4769
+  [val/material]
+    plastic: n=262 acc=0.9618 err=10 tp=121 tn=131 fp=1 fn=9 pred_pos=0.4656

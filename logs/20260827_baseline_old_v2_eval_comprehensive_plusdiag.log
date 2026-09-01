@@ -1,0 +1,49 @@
+[INFO] device=cuda
+[INFO] loading checkpoint: checkpoints/slip_cnn_v2_best.pth
+[INFO] checkpoint metadata: epoch=28 best_metric=smoothed_balanced_acc=0.9529850746268655 input_mode=refdiff norm=instance architecture=stacked temporal_agg=meanmax
+[INFO] loading eval dataset: data/raw_cnn_test/test_windows_final_plus_diag.csv
+[INFO] eval samples=1439
+Normal_Pred/eval_on_test.py:65: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(args.checkpoint, map_location=DEVICE)
+[FINAL-TEST] acc=0.8402 balanced_acc=0.8400 f1=0.8357 precision=0.8540 recall=0.8182 specificity=0.8619 pred_pos=0.4760 tp=585 tn=624 fp=100 fn=130
+  [val/behavior]
+    rotational sliding: n=326 acc=0.7086 err=95 tp=231 tn=0 fp=0 fn=95 pred_pos=0.7086
+    constant-force pressing: n=262 acc=0.8435 err=41 tp=0 tn=221 fp=41 fn=0 pred_pos=0.1565
+    diagonal rotational sliding: n=66 acc=0.4697 err=35 tp=31 tn=0 fp=0 fn=35 pred_pos=0.4697
+    diagonal constant-force pressing: n=132 acc=0.7879 err=28 tp=0 tn=104 fp=28 fn=0 pred_pos=0.2121
+    diagonal changing-force pressing: n=66 acc=0.6515 err=23 tp=0 tn=43 fp=23 fn=0 pred_pos=0.3485
+    continuous variable-force pressing: n=264 acc=0.9697 err=8 tp=0 tn=256 fp=8 fn=0 pred_pos=0.0303
+    translational sliding: n=259 acc=1.0000 err=0 tp=259 tn=0 fp=0 fn=0 pred_pos=1.0000
+    diagonal translational sliding: n=64 acc=1.0000 err=0 tp=64 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=392 acc=0.6684 err=130 tp=262 tn=0 fp=0 fn=130 pred_pos=0.6684
+    non-slip: n=724 acc=0.8619 err=100 tp=0 tn=624 fp=100 fn=0 pred_pos=0.1381
+    translation: n=323 acc=1.0000 err=0 tp=323 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_017: n=65 acc=0.3231 err=44 tp=15 tn=6 fp=27 fn=17 pred_pos=0.6462
+    session_062: n=66 acc=0.5152 err=32 tp=8 tn=26 fp=7 fn=25 pred_pos=0.2273
+    session_010: n=64 acc=0.5000 err=32 tp=32 tn=0 fp=32 fn=0 pred_pos=1.0000
+    session_015: n=65 acc=0.5846 err=27 tp=5 tn=33 fp=0 fn=27 pred_pos=0.0769
+    session_063: n=66 acc=0.6061 err=26 tp=23 tn=17 fp=16 fn=10 pred_pos=0.5909
+    session_018: n=65 acc=0.7538 err=16 tp=16 tn=33 fp=0 fn=16 pred_pos=0.2462
+    session_001: n=66 acc=0.7879 err=14 tp=23 tn=29 fp=4 fn=10 pred_pos=0.4091
+    session_002: n=65 acc=0.7846 err=14 tp=18 tn=33 fp=0 fn=14 pred_pos=0.2769
+    session_009: n=63 acc=0.8571 err=9 tp=31 tn=23 fp=9 fn=0 pred_pos=0.6349
+    session_011: n=66 acc=0.8939 err=7 tp=26 tn=33 fp=0 fn=7 pred_pos=0.3939
+    session_016: n=66 acc=0.9091 err=6 tp=30 tn=30 fp=3 fn=3 pred_pos=0.5000
+    session_012: n=66 acc=0.9697 err=2 tp=32 tn=32 fp=1 fn=1 pred_pos=0.5000
+    session_064: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=1 fn=0 pred_pos=0.5077
+    session_003: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_004: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_005: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_006: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_008: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_013: n=66 acc=1.0000 err=0 tp=33 tn=33 fp=0 fn=0 pred_pos=0.5000
+    session_007: n=65 acc=1.0000 err=0 tp=32 tn=33 fp=0 fn=0 pred_pos=0.4923
+    session_014: n=65 acc=1.0000 err=0 tp=32 tn=33 fp=0 fn=0 pred_pos=0.4923
+    session_065: n=65 acc=1.0000 err=0 tp=32 tn=33 fp=0 fn=0 pred_pos=0.4923
+  [val/material]
+    plastic: n=654 acc=0.7676 err=152 tp=226 tn=276 fp=54 fn=98 pred_pos=0.4281
+    A4 paper: n=258 acc=0.7326 err=69 tp=104 tn=85 fp=45 fn=24 pred_pos=0.5775
+    USB cable: n=263 acc=0.9658 err=9 tp=123 tn=131 fp=1 fn=8 pred_pos=0.4715
+    soft foam earplug: n=264 acc=1.0000 err=0 tp=132 tn=132 fp=0 fn=0 pred_pos=0.5000

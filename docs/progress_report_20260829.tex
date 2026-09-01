@@ -1,0 +1,219 @@
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=2.4cm}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue
+}
+
+\title{Slip Detection CNN 阶段汇报}
+\author{}
+\date{2026-08-29}
+
+\begin{document}
+
+\maketitle
+
+\section{项目目标}
+
+本阶段目标是在 NLiPsTac 视觉触觉传感器采集的 RGB 图像序列上，训练一个二分类 CNN，用于判断当前接触状态是否发生滑动。模型输入为连续 8 帧触觉图像窗口，输出为 slip / non-slip 判断。
+
+当前重点不是追求单一训练集上的最高准确率，而是验证模型在跨 session、跨材料、跨接触行为条件下的泛化能力。
+
+\section{方法概述}
+
+当前主模型为 \texttt{slip\_cnn\_v2.py} 中的 stacked-frame CNN：
+
+\begin{itemize}
+  \item 输入模式：\texttt{refdiff}，即当前帧减去该 session 的参考帧；
+  \item 窗口长度：8 帧；
+  \item 输入尺寸：320 $\times$ 180；
+  \item 归一化：InstanceNorm；
+  \item checkpoint 选择：使用 3-epoch smoothed balanced accuracy，避免选中单 epoch 噪声峰值；
+  \item 数据增强：训练阶段加入随机平移增强，幅度 $\pm$8\%，概率 0.5，前 3 个 epoch 不增强作为 warmup。
+\end{itemize}
+
+采用 session-level 划分，保证训练集、验证集、测试集之间没有窗口级泄漏。
+
+\section{数据集情况}
+
+当前数据覆盖 4 类材料：plastic、A4 paper、soft foam earplug、USB cable。最终训练/验证集来自 59 个 session，包含原有直线/旋转滑动行为，以及后续补充的 diagonal 行为。最终独立测试集 \texttt{test\_windows\_final\_plus\_diag.csv} 包含 22 个 session。
+
+\begin{table}[h]
+\centering
+\caption{数据集划分}
+\begin{tabular}{lrrrr}
+\toprule
+Split & Windows & Sessions & Label 0 & Label 1 \\
+\midrule
+Train & 2798 & 49 & 1399 & 1399 \\
+Val & 294 & 10 & 160 & 134 \\
+Test final\_plus\_diag & 1439 & 22 & 724 & 715 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{测试集材料分布}
+\begin{tabular}{lr}
+\toprule
+Material & Windows \\
+\midrule
+plastic & 654 \\
+A4 paper & 258 \\
+soft foam earplug & 264 \\
+USB cable & 263 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{交叉验证结果}
+
+在 \texttt{cv\_multi\_material\_augdiag\_59} 上完成 5 折 session-level 交叉验证。各折 best smoothed balanced accuracy 如表 \ref{tab:cv} 所示。
+
+\begin{table}[h]
+\centering
+\caption{5 折交叉验证结果}
+\label{tab:cv}
+\begin{tabular}{lrr}
+\toprule
+Fold & Best epoch & Best smoothed balanced accuracy \\
+\midrule
+0 & 34 & 96.70\% \\
+1 & 35 & 97.77\% \\
+2 & 40 & 97.34\% \\
+3 & 34 & 95.58\% \\
+4 & 37 & 93.70\% \\
+\midrule
+Mean & -- & 96.22\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+5 折平均 best smoothed balanced accuracy 为 \textbf{96.22\%}，说明模型在当前训练分布和 session-level 验证设置下已经能够稳定学习 slip / non-slip 判别特征。
+
+\section{最终模型与独立测试}
+
+最终模型训练完成于 \textbf{2026-08-27 20:42}。最佳 checkpoint 保存于 epoch 32：
+
+\begin{itemize}
+  \item checkpoint：\texttt{model\_v2\_augdiag\_59\_augprob08\_p05\_warm3/slip\_cnn\_v2\_best.pth}
+  \item best smoothed balanced accuracy：\textbf{96.55\%}
+  \item train samples：2798
+  \item val samples：294
+\end{itemize}
+
+在独立测试集 \texttt{test\_windows\_final\_plus\_diag.csv} 上，默认阈值 0.5 的结果如下。
+
+\begin{table}[h]
+\centering
+\caption{独立测试集整体结果}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Accuracy & 87.77\% \\
+Balanced accuracy & 87.79\% \\
+F1 & 88.04\% \\
+Precision & 85.60\% \\
+Recall & 90.63\% \\
+Specificity & 84.94\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{独立测试集混淆矩阵}
+\begin{tabular}{rrrr}
+\toprule
+TP & TN & FP & FN \\
+\midrule
+648 & 615 & 109 & 67 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{按材料划分的测试准确率}
+\begin{tabular}{lr}
+\toprule
+Material & Accuracy \\
+\midrule
+plastic & 84.40\% \\
+A4 paper & 77.91\% \\
+USB cable & 95.82\% \\
+soft foam earplug & 97.73\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{按运动类型划分的测试准确率}
+\begin{tabular}{lr}
+\toprule
+Motion type & Accuracy \\
+\midrule
+non-slip & 84.94\% \\
+rotation & 83.16\% \\
+translation & 99.69\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+结果表明：模型对 translational sliding 的识别非常稳定，但在 rotational sliding、A4 paper、plastic 以及部分非滑动强形变样本上仍存在混淆。
+
+\section{阈值敏感性分析}
+
+最新阈值扫描完成于 \textbf{2026-08-29 21:16}。在 \texttt{test\_windows\_final\_plus\_diag.csv} 上，阈值从 0.5 调整到 0.7 后，balanced accuracy 从 \textbf{87.79\%} 提升到 \textbf{88.32\%}。
+
+在旧测试集 \texttt{test\_windows\_final.csv} 上，阈值从 0.5 调整到 0.7 后，balanced accuracy 从 \textbf{85.41\%} 提升到 \textbf{86.58\%}。
+
+该结果说明决策阈值对最终表现有小幅影响，但提升有限。报告中应将其表述为 threshold sensitivity analysis，而不是主要模型改进。
+
+\section{当前问题}
+
+当前主要问题不是训练集拟合不足，而是独立测试集上的泛化差距：
+
+\begin{itemize}
+  \item 5 折交叉验证平均 balanced accuracy 约 96.22\%；
+  \item 独立测试集 balanced accuracy 约 87.79\%，最佳扫描阈值约 88.32\%；
+  \item 说明模型在已见分布附近表现稳定，但面对更难的 held-out session 时仍有下降。
+\end{itemize}
+
+主要误差来源包括：
+
+\begin{itemize}
+  \item \texttt{diagonal constant-force pressing}：非滑动但存在明显形变，容易被误判为滑动；
+  \item \texttt{rotational sliding}：召回仍不如 translational sliding；
+  \item \texttt{A4 paper} 和 \texttt{plastic}：相对 USB cable、soft foam earplug 泛化更弱。
+\end{itemize}
+
+\section{下一步计划}
+
+在不增加新数据的前提下，后续可以优先完善以下内容：
+
+\begin{enumerate}
+  \item 使用验证集选择部署阈值，再在测试集上固定评估；
+  \item 加入简单 temporal smoothing 或连续窗口投票，减少单窗口误判；
+  \item 在报告中补充 failure case 分析，重点解释非滑动强形变与旋转滑动的混淆；
+  \item 整理最终提交包，包含最终 checkpoint、训练日志、独立测试日志、阈值扫描日志和本报告。
+\end{enumerate}
+
+\section{阶段结论}
+
+本阶段已经完成从数据采集、窗口构建、session-level 交叉验证、最终模型训练到独立测试评估的完整流程。当前模型在 5 折交叉验证中达到约 \textbf{96.22\%} 的平均 balanced accuracy，在更严格的独立测试集上达到约 \textbf{87.79\%} 的 balanced accuracy，阈值扫描后最高约 \textbf{88.32\%}。
+
+整体来看，该模型已经形成一个可复现、可提交的 slip detection baseline。现阶段的主要价值在于证明 RGB 视觉触觉序列可以有效区分 slip / non-slip，同时明确了下一阶段需要重点解决的泛化问题：旋转滑动、非滑动强形变以及部分材料上的跨 session 稳定性。
+
+\end{document}

@@ -1,0 +1,24 @@
+[INFO] device=cuda
+[INFO] loading checkpoint: checkpoints/slip_cnn_v2_best.pth
+[INFO] checkpoint metadata: epoch=28 best_metric=smoothed_balanced_acc=0.9529850746268655 input_mode=refdiff norm=instance architecture=stacked temporal_agg=meanmax
+[INFO] loading eval dataset: data/raw_cnn_test/test_windows_diag_062_065.csv
+[INFO] eval samples=262
+Normal_Pred/eval_on_test.py:65: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state = torch.load(args.checkpoint, map_location=DEVICE)
+[FINAL-TEST] acc=0.7748 balanced_acc=0.7745 f1=0.7631 precision=0.7983 recall=0.7308 specificity=0.8182 pred_pos=0.4542 tp=95 tn=108 fp=24 fn=35
+  [val/behavior]
+    diagonal rotational sliding: n=66 acc=0.4697 err=35 tp=31 tn=0 fp=0 fn=35 pred_pos=0.4697
+    diagonal changing-force pressing: n=66 acc=0.6515 err=23 tp=0 tn=43 fp=23 fn=0 pred_pos=0.3485
+    diagonal constant-force pressing: n=66 acc=0.9848 err=1 tp=0 tn=65 fp=1 fn=0 pred_pos=0.0152
+    diagonal translational sliding: n=64 acc=1.0000 err=0 tp=64 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/motion_type]
+    rotation: n=66 acc=0.4697 err=35 tp=31 tn=0 fp=0 fn=35 pred_pos=0.4697
+    non-slip: n=132 acc=0.8182 err=24 tp=0 tn=108 fp=24 fn=0 pred_pos=0.1818
+    translation: n=64 acc=1.0000 err=0 tp=64 tn=0 fp=0 fn=0 pred_pos=1.0000
+  [val/session]
+    session_062: n=66 acc=0.5152 err=32 tp=8 tn=26 fp=7 fn=25 pred_pos=0.2273
+    session_063: n=66 acc=0.6061 err=26 tp=23 tn=17 fp=16 fn=10 pred_pos=0.5909
+    session_064: n=65 acc=0.9846 err=1 tp=32 tn=32 fp=1 fn=0 pred_pos=0.5077
+    session_065: n=65 acc=1.0000 err=0 tp=32 tn=33 fp=0 fn=0 pred_pos=0.4923
+  [val/material]
+    plastic: n=262 acc=0.7748 err=59 tp=95 tn=108 fp=24 fn=35 pred_pos=0.4542

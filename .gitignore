@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Large local-only data, checkpoints, and archives
+data/
+checkpoints/
+cluster_*_results/checkpoints/
+logs_archive/
+*.pth
+*.pt
+*.zip
+*.tar.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
