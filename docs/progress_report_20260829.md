@@ -21,6 +21,10 @@
 
 采用 session-level 划分，保证训练集、验证集、测试集之间没有窗口级泄漏。
 
+模型设计上主要参考 PPTac 中利用多帧触觉图像判断滑移的思路，先使用结构较简单的 CNN 作为 baseline。早期版本在训练后期出现过验证集指标明显震荡的问题，相邻 epoch 的 balanced accuracy 有时会相差较大；因此后续加入了梯度裁剪、学习率自动衰减、early stopping，以及使用平滑后的 balanced accuracy 选择 checkpoint。
+
+另外，7 月底的可视化检查发现，部分误判和接触位置、session 间外观差异有关。例如物体按压在传感器边缘时更容易被判为 slip，而在中心区域时相对稳定。这说明模型可能学习到了一些和空间位置或单个 session 外观相关的 shortcut。基于这个观察，后续训练中加入了随机平移增强，并使用 `refdiff` 与 InstanceNorm 来减弱 session 背景差异的影响。
+
 ## 3. 数据集情况
 
 当前数据覆盖 4 类材料：
@@ -208,13 +212,15 @@
 
 结果表明：模型对 translational sliding 的识别非常稳定，但在 rotational sliding、A4 paper、plastic 以及部分非滑动强形变样本上仍存在混淆。
 
+从 session-level 和可视化结果看，测试集上的下降并不是均匀发生在所有 session 上，而是集中在少数较难样本中。旧测试集分析中，`session_017`、`session_010`、`session_015` 曾明显拉低整体结果；同材质、同行为组合下的另一些 session 表现相对正常。这说明误差可能不完全来自模型结构本身，也和人工采集过程中的 session 间差异有关，例如接触位置、施力方式、非滑动阶段是否存在细微位移等。
+
 ## 7. 阈值敏感性分析
 
 最新阈值扫描完成于 **2026-08-29 21:16**。在 `test_windows_final_plus_diag.csv` 上，阈值从 0.5 调整到 0.7 后，balanced accuracy 从 **87.79%** 提升到 **88.32%**。
 
 在旧测试集 `test_windows_final.csv` 上，阈值从 0.5 调整到 0.7 后，balanced accuracy 从 **85.41%** 提升到 **86.58%**。
 
-该结果说明决策阈值对最终表现有小幅影响，但提升有限。报告中应将其表述为 threshold sensitivity analysis，而不是主要模型改进。
+进行阈值扫描的主要原因是可视化时观察到连续窗口的 slip probability 存在一定抖动，默认 0.5 阈值不一定是最稳定的部署决策边界。该结果说明决策阈值对最终表现有小幅影响，但提升有限，因此这里更适合表述为 threshold sensitivity analysis，而不是主要模型改进。
 
 ## 8. 阶段结论
 
