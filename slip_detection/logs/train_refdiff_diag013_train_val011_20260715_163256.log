@@ -1,5 +1,0 @@
-[INFO] device=cuda
-[INFO] loading train dataset: data/raw_cnn/train_windows_diag013_train_val011.csv
-[INFO] train samples=600 window=8 input_mode=refdiff norm=batch size=320x180
-[INFO] loading val dataset: data/raw_cnn/val_windows_diag013_train_val011.csv
-[INFO] val samples=116
